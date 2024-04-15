@@ -7,7 +7,7 @@
         <artifactId>CPT202-SHSLSC</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>shsl-poji</artifactId>
+    <artifactId>shsl-pojo</artifactId>
     <packaging>war</packaging>
     <name>shsl-poji Maven Webapp</name>
     <url>http://maven.apache.org</url>
