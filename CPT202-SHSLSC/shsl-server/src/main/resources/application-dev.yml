@@ -1,4 +1,4 @@
-sky:
+shsl:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     host: shslsc.mysql.polardb.rds.aliyuncs.com
