@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e28db028-5cd2-463c-8a8e-351c2e744006" name="更改" comment="Maven install" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="70ce41ed-fb82-42fd-91a1-ea8be7fd7cb3" />
+        <option name="url" value="https://github.com/THGRakid/CPT202---Super-high-school-level-Sport-Centre.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../course/Java/apache-maven-3.8.6" />
+        <option name="userSettingsFile" value="D:\course\Java\apache-maven-3.8.6\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2dxUogFe2KepQieiIsPkUbwjcnu" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "corretto-1.8",
+    "last_opened_file_path": "D:/WorkSpace/CPT202---Super-high-school-level-Sport-Centre/CPT202-SHSLSC/shsl-common/src/main/java/com/shsl",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "spring.configuration.checksum": "6af9928afe64817b7e130de7e6673c61",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\java" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.shsl.config" />
+      <recent name="com.shsl.handler" />
+      <recent name="com.shsl.json" />
+      <recent name="com.shsl.enymeration" />
+      <recent name="com.shsl.context" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Maven.CPT202-SHSLSC [install]">
+    <configuration name="EuclideanPoint" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.shsl.EuclideanPoint" />
+      <module name="CPT202-SHSLSC" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shsl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="java" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.shsl.java" />
+      <module name="CPT202-SHSLSC" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shsl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CPT202-SHSLSC [clean]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="CPT202-SHSLSC [install]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="install" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Maven.CPT202-SHSLSC [install]" />
+      <item itemvalue="Maven.CPT202-SHSLSC [clean]" />
+      <item itemvalue="应用程序.EuclideanPoint" />
+      <item itemvalue="应用程序.java" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="应用程序.java" />
+        <item itemvalue="应用程序.EuclideanPoint" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="e28db028-5cd2-463c-8a8e-351c2e744006" name="更改" comment="" />
+      <created>1710949404437</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1710949404437</updated>
+      <workItem from="1710949405455" duration="1675000" />
+      <workItem from="1710998383951" duration="869000" />
+      <workItem from="1711009218685" duration="807000" />
+      <workItem from="1711076635291" duration="25000" />
+      <workItem from="1711683832405" duration="59000" />
+      <workItem from="1711871250121" duration="932000" />
+      <workItem from="1711874781772" duration="2328000" />
+      <workItem from="1712143168498" duration="726000" />
+      <workItem from="1712221784119" duration="3133000" />
+      <workItem from="1712235749923" duration="595000" />
+      <workItem from="1712283475827" duration="706000" />
+      <workItem from="1712557296592" duration="4844000" />
+      <workItem from="1712764835090" duration="67000" />
+      <workItem from="1712996555328" duration="753000" />
+      <workItem from="1713147409208" duration="638000" />
+      <workItem from="1713149917468" duration="1602000" />
+      <workItem from="1713152526282" duration="14442000" />
+      <workItem from="1713257491585" duration="1436000" />
+      <workItem from="1713326523466" duration="12038000" />
+    </task>
+    <task id="LOCAL-00001" summary="github初始化">
+      <option name="closed" value="true" />
+      <created>1710949434880</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1710949434880</updated>
+    </task>
+    <task id="LOCAL-00002" summary="github初始化">
+      <option name="closed" value="true" />
+      <created>1713165808346</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1713165808346</updated>
+    </task>
+    <task id="LOCAL-00003" summary="entity完成">
+      <option name="closed" value="true" />
+      <created>1713179789853</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1713179789853</updated>
+    </task>
+    <task id="LOCAL-00004" summary="entity完成‘">
+      <option name="closed" value="true" />
+      <created>1713179828810</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1713179828810</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Maven install">
+      <option name="closed" value="true" />
+      <created>1713348768434</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1713348768434</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Three project initial modules" />
+    <MESSAGE value="github初始化" />
+    <MESSAGE value="entity完成" />
+    <MESSAGE value="entity完成‘" />
+    <MESSAGE value="Maven install" />
+    <option name="LAST_COMMIT_MESSAGE" value="Maven install" />
+  </component>
+</project>

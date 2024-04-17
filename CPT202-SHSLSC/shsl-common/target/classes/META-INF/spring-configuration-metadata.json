@@ -1,0 +1,121 @@
+{
+  "groups": [
+    {
+      "name": "shsl.alioss",
+      "type": "com.shsl.properties.AliOssProperties",
+      "sourceType": "com.shsl.properties.AliOssProperties"
+    },
+    {
+      "name": "shsl.jwt",
+      "type": "com.shsl.properties.JwtProperties",
+      "sourceType": "com.shsl.properties.JwtProperties"
+    },
+    {
+      "name": "shsl.wechat",
+      "type": "com.shsl.properties.WeChatProperties",
+      "sourceType": "com.shsl.properties.WeChatProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "shsl.alioss.access-key-id",
+      "type": "java.lang.String",
+      "sourceType": "com.shsl.properties.AliOssProperties"
+    },
+    {
+      "name": "shsl.alioss.access-key-secret",
+      "type": "java.lang.String",
+      "sourceType": "com.shsl.properties.AliOssProperties"
+    },
+    {
+      "name": "shsl.alioss.bucket-name",
+      "type": "java.lang.String",
+      "sourceType": "com.shsl.properties.AliOssProperties"
+    },
+    {
+      "name": "shsl.alioss.endpoint",
+      "type": "java.lang.String",
+      "sourceType": "com.shsl.properties.AliOssProperties"
+    },
+    {
+      "name": "shsl.jwt.admin-secret-key",
+      "type": "java.lang.String",
+      "description": "管理端员工生成jwt令牌相关配置",
+      "sourceType": "com.shsl.properties.JwtProperties"
+    },
+    {
+      "name": "shsl.jwt.admin-token-name",
+      "type": "java.lang.String",
+      "sourceType": "com.shsl.properties.JwtProperties"
+    },
+    {
+      "name": "shsl.jwt.admin-ttl",
+      "type": "java.lang.Long",
+      "sourceType": "com.shsl.properties.JwtProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "shsl.jwt.user-secret-key",
+      "type": "java.lang.String",
+      "description": "用户端微信用户生成jwt令牌相关配置",
+      "sourceType": "com.shsl.properties.JwtProperties"
+    },
+    {
+      "name": "shsl.jwt.user-token-name",
+      "type": "java.lang.String",
+      "sourceType": "com.shsl.properties.JwtProperties"
+    },
+    {
+      "name": "shsl.jwt.user-ttl",
+      "type": "java.lang.Long",
+      "sourceType": "com.shsl.properties.JwtProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "shsl.wechat.api-v3-key",
+      "type": "java.lang.String",
+      "sourceType": "com.shsl.properties.WeChatProperties"
+    },
+    {
+      "name": "shsl.wechat.appid",
+      "type": "java.lang.String",
+      "sourceType": "com.shsl.properties.WeChatProperties"
+    },
+    {
+      "name": "shsl.wechat.mch-serial-no",
+      "type": "java.lang.String",
+      "sourceType": "com.shsl.properties.WeChatProperties"
+    },
+    {
+      "name": "shsl.wechat.mchid",
+      "type": "java.lang.String",
+      "sourceType": "com.shsl.properties.WeChatProperties"
+    },
+    {
+      "name": "shsl.wechat.notify-url",
+      "type": "java.lang.String",
+      "sourceType": "com.shsl.properties.WeChatProperties"
+    },
+    {
+      "name": "shsl.wechat.private-key-file-path",
+      "type": "java.lang.String",
+      "sourceType": "com.shsl.properties.WeChatProperties"
+    },
+    {
+      "name": "shsl.wechat.refund-notify-url",
+      "type": "java.lang.String",
+      "sourceType": "com.shsl.properties.WeChatProperties"
+    },
+    {
+      "name": "shsl.wechat.secret",
+      "type": "java.lang.String",
+      "sourceType": "com.shsl.properties.WeChatProperties"
+    },
+    {
+      "name": "shsl.wechat.we-chat-pay-cert-file-path",
+      "type": "java.lang.String",
+      "sourceType": "com.shsl.properties.WeChatProperties"
+    }
+  ],
+  "hints": []
+}
