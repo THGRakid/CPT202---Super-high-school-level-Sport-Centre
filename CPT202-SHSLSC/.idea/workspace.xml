@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e28db028-5cd2-463c-8a8e-351c2e744006" name="更改" comment="entity3.0">
+    <list default="true" id="e28db028-5cd2-463c-8a8e-351c2e744006" name="更改" comment="前期工作完成">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/1bda1ae0-ee6d-4420-8f4a-f2d89be01e47.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1bda1ae0-ee6d-4420-8f4a-f2d89be01e47.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/SHSLApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/SHSLApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/config/WebMvcConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/config/WebMvcConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/controller/admin/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/controller/admin/AdminController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,32 +54,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "corretto-1.8",
-    "last_opened_file_path": "D:/WorkSpace/CPT202---Super-high-school-level-Sport-Centre/CPT202-SHSLSC/shsl-common/src/main/java/com/shsl",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "模块",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "MavenSettings",
-    "spring.configuration.checksum": "6af9928afe64817b7e130de7e6673c61",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-1.8&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/WorkSpace/CPT202---Super-high-school-level-Sport-Centre/CPT202-SHSLSC/shsl-common/src/main/java/com/shsl&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;355e0e4bae7823ef320f17a8f91d2db6&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl" />
@@ -174,9 +172,17 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
+    <configuration name="SHSLApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="shsl-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.shsl.SHSLApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Maven.CPT202-SHSLSC [install]" />
       <item itemvalue="Maven.CPT202-SHSLSC [clean]" />
+      <item itemvalue="Spring Boot.SHSLApplication" />
       <item itemvalue="应用程序.EuclideanPoint" />
       <item itemvalue="应用程序.java" />
     </list>
@@ -213,7 +219,8 @@
       <workItem from="1713149917468" duration="1602000" />
       <workItem from="1713152526282" duration="14442000" />
       <workItem from="1713257491585" duration="1436000" />
-      <workItem from="1713326523466" duration="13455000" />
+      <workItem from="1713326523466" duration="16543000" />
+      <workItem from="1713361273642" duration="498000" />
     </task>
     <task id="LOCAL-00001" summary="github初始化">
       <option name="closed" value="true" />
@@ -271,7 +278,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713349829393</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="前期工作完成">
+      <option name="closed" value="true" />
+      <created>1713350658844</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1713350658844</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,6 +311,7 @@
     <MESSAGE value="Maven install" />
     <MESSAGE value="common" />
     <MESSAGE value="entity3.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="entity3.0" />
+    <MESSAGE value="前期工作完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="前期工作完成" />
   </component>
 </project>

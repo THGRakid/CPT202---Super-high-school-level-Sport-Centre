@@ -24,7 +24,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/admin")
 @Slf4j
-public class EmployeeController {
+public class AdminController {
 
     @Autowired
     private AdminService adminService;
