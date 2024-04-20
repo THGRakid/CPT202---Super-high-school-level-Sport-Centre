@@ -9,10 +9,10 @@ public interface UserMapper {
 
     /**
      * 根据用户名查询用户
-     * @param adminName
+     * @param userName
      * @return
      */
     @Select("select * from user where user_name = #{userName}")
-    User getByUserName(String Name);
+    User getByUserName(String userName);
 
 }

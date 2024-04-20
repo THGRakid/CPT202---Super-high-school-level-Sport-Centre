@@ -13,7 +13,7 @@ public interface AdminMapper {
      * @param adminName
      * @return
      */
-    @Select("select * from admin where adminName = #{adminName}")
+    @Select("select * from admin where admin_name = #{adminName}")
     Admin getByAdminName(String adminName);
 
 }

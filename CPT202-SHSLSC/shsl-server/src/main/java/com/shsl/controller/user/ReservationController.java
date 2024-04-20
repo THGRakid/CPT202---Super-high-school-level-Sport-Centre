@@ -1,4 +1,4 @@
-package com.shsl.controller.admin;
+package com.shsl.controller.user;
 
 import com.shsl.entity.ReservationRecord;
 import com.shsl.service.ReservationService;

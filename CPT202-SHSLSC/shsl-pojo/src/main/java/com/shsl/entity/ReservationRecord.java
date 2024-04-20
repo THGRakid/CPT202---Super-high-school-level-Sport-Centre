@@ -19,6 +19,9 @@ public class ReservationRecord implements Serializable {
     //预订记录唯一标识
     private Integer resId;
 
+    //场管唯一标识
+    private Integer stadiumId;
+
     //场地唯一标识
     private Integer placeId;
 
