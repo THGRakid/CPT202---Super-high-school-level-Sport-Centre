@@ -1,3 +1,4 @@
+
 package com.shsl;
 
 import lombok.extern.slf4j.Slf4j;
@@ -14,3 +15,4 @@ public class SHSLApplication {
         log.info("server started");
     }
 }
+

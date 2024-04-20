@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/CPT202-SHSLSC.iml" filepath="$PROJECT_DIR$/CPT202-SHSLSC.iml" />
       <module fileurl="file://$PROJECT_DIR$/shsl-common.iml" filepath="$PROJECT_DIR$/shsl-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/shsl-server.iml" filepath="$PROJECT_DIR$/shsl-server.iml" />
     </modules>

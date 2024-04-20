@@ -9,7 +9,7 @@ import org.apache.ibatis.annotations.Select;
 public interface AdminMapper {
 
     /**
-     * 根据用户名查询员工
+     * 根据员工查询员工
      * @param adminName
      * @return
      */

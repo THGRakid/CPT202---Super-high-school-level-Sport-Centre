@@ -8,6 +8,8 @@ import com.shsl.vo.AdminLoginVO;
 import com.shsl.constant.JwtClaimsConstant;
 import com.shsl.properties.JwtProperties;
 import com.shsl.result.Result;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,6 +26,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/admin")
 @Slf4j
+@Api(tags = "管理员相关接口")
 public class AdminController {
 
     @Autowired
@@ -38,6 +41,7 @@ public class AdminController {
      * @return
      */
     @PostMapping("/login")
+    @ApiOperation(value = "管理员登录")
     public Result<AdminLoginVO> login(@RequestBody AdminLoginDTO adminLoginDTO) {
         log.info("员工登录：{}", adminLoginDTO);
 
@@ -66,6 +70,7 @@ public class AdminController {
      * @return
      */
     @PostMapping("/logout")
+    @ApiOperation(value = "管理员登出")
     public Result<String> logout() {
         return Result.success();
     }
