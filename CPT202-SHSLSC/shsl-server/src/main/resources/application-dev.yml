@@ -3,6 +3,6 @@ shsl:
     driver-class-name: com.mysql.cj.jdbc.Driver
     host: shslsc.mysql.polardb.rds.aliyuncs.com
     port: 3306
-    database: shslsc
+    database:
     username: cpt202_46
     password: CPT202_46
