@@ -18,14 +18,17 @@ public class User implements Serializable {
     //用户唯一标识
     private Integer userId;
 
+    //微信用户唯一标识
+    private String openid;
+
     //姓名
     private String userName;
 
+    //电话
+    private String phone;
+
     //电子邮件
     private String email;
-
-    //电话
-    private String phoneNumber;
 
     //Gender 0 female 1 male
     private String sex;

@@ -1,0 +1,1453 @@
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\r\n         xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n    <modelVersion>4.0.0</modelVersion>\r\n    <parent>\r\n        <artifactId>spring-boot-starter-parent</artifactId>\r\n        <groupId>org.springframework.boot</groupId>\r\n        <version>2.7.3</version>\r\n    </parent>\r\n    <groupId>com.shsl</groupId>\r\n    <artifactId>CPT202-SHSLSC</artifactId>\r\n    <packaging>pom</packaging>\r\n    <version>1.0-SNAPSHOT</version>\r\n    <modules>\r\n        <module>shsl-common</module>\r\n        <module>shsl-pojo</module>\r\n        <module>shsl-server</module>\r\n    </modules>\r\n\r\n    <properties>\r\n        <mybatis.spring>2.2.0</mybatis.spring>\r\n        <lombok>1.18.20</lombok>\r\n        <fastjson>1.2.76</fastjson>\r\n        <commons.lang>2.6</commons.lang>\r\n        <druid>1.2.1</druid>\r\n        <pagehelper>1.3.0</pagehelper>\r\n        <aliyun.sdk.oss>3.10.2</aliyun.sdk.oss>\r\n        <knife4j>3.0.2</knife4j>\r\n        <aspectj>1.9.4</aspectj>\r\n        <jjwt>0.9.1</jjwt>\r\n        <jaxb-api>2.3.1</jaxb-api>\r\n        <poi>3.16</poi>\r\n    </properties>\r\n    <dependencyManagement>\r\n        <dependencies>\r\n            <dependency>\r\n                <groupId>org.springframework</groupId>\r\n                <artifactId>spring-web</artifactId>\r\n                <version>5.3.22</version>\r\n            </dependency>\r\n\r\n            <dependency>\r\n                <groupId>org.mybatis.spring.boot</groupId>\r\n                <artifactId>mybatis-spring-boot-starter</artifactId>\r\n                <version>${mybatis.spring}</version>\r\n            </dependency>\r\n\r\n            <dependency>\r\n                <groupId>org.projectlombok</groupId>\r\n                <artifactId>lombok</artifactId>\r\n                <version>${lombok}</version>\r\n            </dependency>\r\n\r\n            <dependency>\r\n                <groupId>com.alibaba</groupId>\r\n                <artifactId>fastjson</artifactId>\r\n                <version>${fastjson}</version>\r\n            </dependency>\r\n\r\n            <dependency>\r\n                <groupId>commons-lang</groupId>\r\n                <artifactId>commons-lang</artifactId>\r\n                <version>${commons.lang}</version>\r\n            </dependency>\r\n\r\n            <dependency>\r\n                <groupId>com.alibaba</groupId>\r\n                <artifactId>druid-spring-boot-starter</artifactId>\r\n                <version>${druid}</version>\r\n            </dependency>\r\n\r\n            <dependency>\r\n                <groupId>com.github.pagehelper</groupId>\r\n                <artifactId>pagehelper-spring-boot-starter</artifactId>\r\n                <version>${pagehelper}</version>\r\n            </dependency>\r\n\r\n            <dependency>\r\n                <groupId>com.github.xiaoymin</groupId>\r\n                <artifactId>knife4j-spring-boot-starter</artifactId>\r\n                <version>${knife4j}</version>\r\n            </dependency>\r\n\r\n            <dependency>\r\n                <groupId>org.aspectj</groupId>\r\n                <artifactId>aspectjrt</artifactId>\r\n                <version>${aspectj}</version>\r\n            </dependency>\r\n\r\n            <dependency>\r\n                <groupId>org.aspectj</groupId>\r\n                <artifactId>aspectjweaver</artifactId>\r\n                <version>${aspectj}</version>\r\n            </dependency>\r\n\r\n            <dependency>\r\n                <groupId>io.jsonwebtoken</groupId>\r\n                <artifactId>jjwt</artifactId>\r\n                <version>${jjwt}</version>\r\n            </dependency>\r\n\r\n            <dependency>\r\n                <groupId>com.aliyun.oss</groupId>\r\n                <artifactId>aliyun-sdk-oss</artifactId>\r\n                <version>${aliyun.sdk.oss}</version>\r\n            </dependency>\r\n\r\n            <dependency>\r\n                <groupId>javax.xml.bind</groupId>\r\n                <artifactId>jaxb-api</artifactId>\r\n                <version>${jaxb-api}</version>\r\n            </dependency>\r\n\r\n            <!-- poi -->\r\n            <dependency>\r\n                <groupId>org.apache.poi</groupId>\r\n                <artifactId>poi</artifactId>\r\n                <version>${poi}</version>\r\n            </dependency>\r\n            <dependency>\r\n                <groupId>org.apache.poi</groupId>\r\n                <artifactId>poi-ooxml</artifactId>\r\n                <version>${poi}</version>\r\n            </dependency>\r\n            <!--微信支付-->\r\n            <dependency>\r\n                <groupId>com.github.wechatpay-apiv3</groupId>\r\n                <artifactId>wechatpay-apache-httpclient</artifactId>\r\n                <version>0.4.8</version>\r\n            </dependency>\r\n        </dependencies>\r\n    </dependencyManagement>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pom.xml b/pom.xml
+--- a/pom.xml	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
++++ b/pom.xml	(date 1713966939061)
+@@ -6,7 +6,7 @@
+     <parent>
+         <artifactId>spring-boot-starter-parent</artifactId>
+         <groupId>org.springframework.boot</groupId>
+-        <version>2.7.3</version>
++        <version>2.5.6</version>
+     </parent>
+     <groupId>com.shsl</groupId>
+     <artifactId>CPT202-SHSLSC</artifactId>
+@@ -30,8 +30,7 @@
+         <aspectj>1.9.4</aspectj>
+         <jjwt>0.9.1</jjwt>
+         <jaxb-api>2.3.1</jaxb-api>
+-        <poi>3.16</poi>
+-    </properties>
++        <poi>3.16</poi></properties>
+     <dependencyManagement>
+         <dependencies>
+             <dependency>
+@@ -81,7 +80,6 @@
+                 <artifactId>knife4j-spring-boot-starter</artifactId>
+                 <version>${knife4j}</version>
+             </dependency>
+-
+             <dependency>
+                 <groupId>org.aspectj</groupId>
+                 <artifactId>aspectjrt</artifactId>
+Index: shsl-server/src/main/resources/application.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>server:\r\n  port: 3306\r\n\r\nspring:\r\n  profiles:\r\n    active: dev\r\n  main:\r\n    allow-circular-references: true\r\n  datasource:\r\n    druid:\r\n      driver-class-name: ${shsl.datasource.driver-class-name}\r\n      url: jdbc:mysql://${shsl.datasource.host}:${shsl.datasource.port}/${shsl.datasource.database}?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true\r\n      username: ${shsl.datasource.username}\r\n      password: ${shsl.datasource.password}\r\n\r\nmybatis:\r\n  #mapper配置文件\r\n  mapper-locations: classpath:mapper/*.xml\r\n  type-aliases-package: com.shsl.entity\r\n  configuration:\r\n    #开启驼峰命名\r\n    map-underscore-to-camel-case: true\r\n\r\nlogging:\r\n  level:\r\n    com:\r\n      shsl:\r\n        mapper: debug\r\n        service: info\r\n        controller: info\r\n\r\nshsl:\r\n  jwt:\r\n    # 设置jwt签名加密时使用的秘钥\r\n    admin-secret-key: shslad\r\n    user-secret-key: shslus\r\n    # 设置jwt过期时间\r\n    admin-ttl: 7200000\r\n    user-ttl: 7200000\r\n    # 设置前端传递过来的令牌名称\r\n    admin-token-name: token\r\n    user-token-name: token\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/shsl-server/src/main/resources/application.yml b/shsl-server/src/main/resources/application.yml
+--- a/shsl-server/src/main/resources/application.yml	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
++++ b/shsl-server/src/main/resources/application.yml	(date 1713966892095)
+@@ -1,5 +1,5 @@
+ server:
+-  port: 3306
++  port: 8080
+ 
+ spring:
+   profiles:
+@@ -33,10 +33,7 @@
+   jwt:
+     # 设置jwt签名加密时使用的秘钥
+     admin-secret-key: shslad
+-    user-secret-key: shslus
+     # 设置jwt过期时间
+     admin-ttl: 7200000
+-    user-ttl: 7200000
+     # 设置前端传递过来的令牌名称
+     admin-token-name: token
+-    user-token-name: token
+Index: shsl-server/src/main/resources/application-dev.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>shsl:\r\n  datasource:\r\n    driver-class-name: com.mysql.cj.jdbc.Driver\r\n    host: shslsc.mysql.polardb.rds.aliyuncs.com\r\n    port: 3306\r\n    database: shslsc\r\n    username: cpt202_46\r\n    password: CPT202_46\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/shsl-server/src/main/resources/application-dev.yml b/shsl-server/src/main/resources/application-dev.yml
+--- a/shsl-server/src/main/resources/application-dev.yml	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
++++ b/shsl-server/src/main/resources/application-dev.yml	(date 1713966905106)
+@@ -3,6 +3,6 @@
+     driver-class-name: com.mysql.cj.jdbc.Driver
+     host: shslsc.mysql.polardb.rds.aliyuncs.com
+     port: 3306
+-    database: shslsc
++    database:
+     username: cpt202_46
+     password: CPT202_46
+Index: shsl-pojo/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd\">\r\n    <parent>\r\n        <artifactId>CPT202-SHSLSC</artifactId>\r\n        <groupId>com.shsl</groupId>\r\n        <version>1.0-SNAPSHOT</version>\r\n    </parent>\r\n    <modelVersion>4.0.0</modelVersion>\r\n    <artifactId>shsl-pojo</artifactId>\r\n    <dependencies>\r\n        <dependency>\r\n            <groupId>junit</groupId>\r\n            <artifactId>junit</artifactId>\r\n            <version>3.8.1</version>\r\n            <scope>test</scope>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.projectlombok</groupId>\r\n            <artifactId>lombok</artifactId>\r\n            <version>1.18.4</version>\r\n            <scope>provided</scope>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>com.fasterxml.jackson.core</groupId>\r\n            <artifactId>jackson-databind</artifactId>\r\n            <version>2.9.2</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>com.github.xiaoymin</groupId>\r\n            <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>\r\n            <version>4.4.0</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>io.swagger</groupId>\r\n            <artifactId>swagger-annotations</artifactId>\r\n            <version>1.5.22</version>\r\n            <scope>compile</scope>\r\n        </dependency>\r\n    </dependencies>\r\n</project>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/shsl-pojo/pom.xml b/shsl-pojo/pom.xml
+--- a/shsl-pojo/pom.xml	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
++++ b/shsl-pojo/pom.xml	(date 1713965360890)
+@@ -18,8 +18,6 @@
+         <dependency>
+             <groupId>org.projectlombok</groupId>
+             <artifactId>lombok</artifactId>
+-            <version>1.18.4</version>
+-            <scope>provided</scope>
+         </dependency>
+         <dependency>
+             <groupId>com.fasterxml.jackson.core</groupId>
+@@ -32,10 +30,14 @@
+             <version>4.4.0</version>
+         </dependency>
+         <dependency>
+-            <groupId>io.swagger</groupId>
+-            <artifactId>swagger-annotations</artifactId>
+-            <version>1.5.22</version>
+-            <scope>compile</scope>
++            <groupId>io.springfox</groupId>
++            <artifactId>springfox-swagger2</artifactId>
++            <version>3.0.0</version>
++        </dependency>
++        <dependency>
++            <groupId>io.springfox</groupId>
++            <artifactId>springfox-swagger-ui</artifactId>
++            <version>3.0.0</version>
+         </dependency>
+     </dependencies>
+ </project>
+Index: ../CPT202SHSLSC/server/src/main/java/com/shsl/mapper/StadiumMapper.java
+===================================================================
+diff --git a/../CPT202SHSLSC/server/src/main/java/com/shsl/mapper/StadiumMapper.java b/../CPT202SHSLSC/server/src/main/java/com/shsl/mapper/StadiumMapper.java
+deleted file mode 100644
+--- a/../CPT202SHSLSC/server/src/main/java/com/shsl/mapper/StadiumMapper.java	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
++++ /dev/null	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
+@@ -1,78 +0,0 @@
+-package com.shsl.mapper;
+-
+-import com.shsl.pojo.Stadium;
+-
+-import java.util.Collection;
+-import java.util.HashMap;
+-import java.util.Map;
+-import java.util.Optional;
+-
+-public class StadiumMapper {
+-
+-    private static Map<Integer, Stadium> stadiums = new HashMap<>();
+-    private static final String ADMIN_ROLE = "admin";
+-
+-    // 添加体育馆信息（管理员）
+-    public void addStadium(Stadium stadium, String role) {
+-        try {
+-            if (isAdmin(role)) {
+-                stadiums.put(stadium.getId(), stadium);
+-                System.out.println("成功添加体育馆：" + stadium.getName());
+-            } else {
+-                System.out.println("无权限添加体育馆");
+-            }
+-        } catch (NullPointerException e) {
+-            System.out.println("体育馆信息添加失败：空指针异常");
+-        }
+-    }
+-
+-    // 更新体育馆信息（管理员）
+-    public void updateStadium(Integer id, Stadium stadium, String role) {
+-        try {
+-            if (isAdmin(role)) {
+-                stadiums.put(id, stadium);
+-                System.out.println("成功更新体育馆：" + stadium.getName());
+-            } else {
+-                System.out.println("无权限更新体育馆");
+-            }
+-        } catch (NullPointerException e) {
+-            System.out.println("体育馆信息更新失败：空指针异常");
+-        }
+-    }
+-
+-    // 删除体育馆信息（管理员）
+-    public void deleteStadium(Integer id, String role) {
+-        try {
+-            if (isAdmin(role)) {
+-                stadiums.remove(id);
+-                System.out.println("成功删除体育馆，ID：" + id);
+-            } else {
+-                System.out.println("无权限删除体育馆");
+-            }
+-        } catch (NullPointerException e) {
+-            System.out.println("体育馆信息删除失败：空指针异常");
+-        }
+-    }
+-
+-    // 获取所有体育馆的信息（无需权限验证）
+-    public Collection<Stadium> getAllStadiums() {
+-        return stadiums.values();
+-    }
+-
+-    // 根据ID获取体育馆信息（无需权限验证）
+-    public Optional<Stadium> getStadiumById(Integer id) {
+-        return Optional.ofNullable(stadiums.get(id));
+-    }
+-
+-    // 获取指定名称的体育馆（无需权限验证）
+-    public Optional<Stadium> getStadiumByName(String name) {
+-        return stadiums.values().stream()
+-                .filter(stadium -> stadium.getName().equalsIgnoreCase(name))
+-                .findFirst();
+-    }
+-
+-    // 权限验证
+-    private boolean isAdmin(String role) {
+-        return ADMIN_ROLE.equals(role);
+-    }
+-}
+Index: ../CPT202SHSLSC/pojo/src/main/java/com/shsl/entity/Stadium.java
+===================================================================
+diff --git a/../CPT202SHSLSC/pojo/src/main/java/com/shsl/entity/Stadium.java b/../CPT202SHSLSC/pojo/src/main/java/com/shsl/entity/Stadium.java
+deleted file mode 100644
+--- a/../CPT202SHSLSC/pojo/src/main/java/com/shsl/entity/Stadium.java	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
++++ /dev/null	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
+@@ -1,47 +0,0 @@
+-package com.shsl.entity;
+-
+-import lombok.AllArgsConstructor;
+-import lombok.Builder;
+-import lombok.Data;
+-import lombok.NoArgsConstructor;
+-
+-import java.io.Serializable;
+-import java.util.Date;
+-
+-@Data
+-@Builder
+-@NoArgsConstructor
+-@AllArgsConstructor
+-public class Stadium implements Serializable {
+-    private static final long serialVersionUID = 1L;
+-
+-    //场馆唯一标识
+-    private Integer staId;
+-
+-    //场馆名字
+-    private String staName;
+-
+-    //场地数量
+-    private Integer placeNumber;
+-
+-    //开启时间
+-    private Date openTime;
+-
+-    //关闭时间
+-    private Date closeTime;
+-
+-    //场馆信息
+-    private String staInfo;
+-
+-    //场馆图片
+-    private String staPicture;
+-
+-    //场地人数限制
+-    private Integer limit;
+-
+-    //场馆价格
+-    private Integer price;
+-
+-    //场馆位置
+-    private String location;
+-}
+Index: ../CPT202SHSLSC/pojo/src/main/java/com/shsl/entity/ReservationRecord.java
+===================================================================
+diff --git a/../CPT202SHSLSC/pojo/src/main/java/com/shsl/entity/ReservationRecord.java b/../CPT202SHSLSC/pojo/src/main/java/com/shsl/entity/ReservationRecord.java
+deleted file mode 100644
+--- a/../CPT202SHSLSC/pojo/src/main/java/com/shsl/entity/ReservationRecord.java	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
++++ /dev/null	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
+@@ -1,36 +0,0 @@
+-package com.shsl.entity;
+-
+-import lombok.AllArgsConstructor;
+-import lombok.Builder;
+-import lombok.Data;
+-import lombok.NoArgsConstructor;
+-
+-import java.io.Serializable;
+-import java.util.Date;
+-
+-@Data
+-@Builder
+-@NoArgsConstructor
+-@AllArgsConstructor
+-public class ReservationRecord implements Serializable {
+-
+-    private static final long serialVersionUID = 1L;
+-
+-    //预订记录唯一标识
+-    private Integer resId;
+-
+-    //场地唯一标识
+-    private Integer placeId;
+-
+-    //用户唯一标识
+-    private Integer userId;
+-
+-    //到达时间
+-    private Date startTime;
+-
+-    //结束时间
+-    private Date leaveTime;
+-
+-    //人数
+-    private Integer people;
+-}
+Index: ../CPT202SHSLSC/.idea/.gitignore
+===================================================================
+diff --git a/../CPT202SHSLSC/.idea/.gitignore b/../CPT202SHSLSC/.idea/.gitignore
+deleted file mode 100644
+--- a/../CPT202SHSLSC/.idea/.gitignore	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
++++ /dev/null	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
+@@ -1,8 +0,0 @@
+-# 默认忽略的文件
+-/shelf/
+-/workspace.xml
+-# 基于编辑器的 HTTP 客户端请求
+-/httpRequests/
+-# Datasource local storage ignored files
+-/dataSources/
+-/dataSources.local.xml
+Index: ../CPT202SHSLSC/pojo/src/main/java/com/shsl/entity/Place.java
+===================================================================
+diff --git a/../CPT202SHSLSC/pojo/src/main/java/com/shsl/entity/Place.java b/../CPT202SHSLSC/pojo/src/main/java/com/shsl/entity/Place.java
+deleted file mode 100644
+--- a/../CPT202SHSLSC/pojo/src/main/java/com/shsl/entity/Place.java	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
++++ /dev/null	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
+@@ -1,26 +0,0 @@
+-package com.shsl.entity;
+-
+-import lombok.AllArgsConstructor;
+-import lombok.Builder;
+-import lombok.Data;
+-import lombok.NoArgsConstructor;
+-
+-import java.io.Serializable;
+-
+-@Data
+-@Builder
+-@NoArgsConstructor
+-@AllArgsConstructor
+-public class Place implements Serializable {
+-
+-    private static final long serialVersionUID = 1L;
+-
+-    //场地唯一标识
+-    private Integer placeId;
+-
+-    //属于哪个场馆
+-    private Integer staId;
+-
+-    //status: not open / free / full
+-    private String status;
+-}
+Index: ../CPT202SHSLSC/pojo/src/main/java/com/shsl/entity/Admin.java
+===================================================================
+diff --git a/../CPT202SHSLSC/pojo/src/main/java/com/shsl/entity/Admin.java b/../CPT202SHSLSC/pojo/src/main/java/com/shsl/entity/Admin.java
+deleted file mode 100644
+--- a/../CPT202SHSLSC/pojo/src/main/java/com/shsl/entity/Admin.java	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
++++ /dev/null	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
+@@ -1,42 +0,0 @@
+-package com.shsl.entity;
+-
+-import lombok.AllArgsConstructor;
+-import lombok.Builder;
+-import lombok.Data;
+-import lombok.NoArgsConstructor;
+-
+-import java.io.Serializable;
+-import java.time.LocalDateTime;
+-import java.util.Date;
+-
+-@Data
+-@Builder
+-@NoArgsConstructor
+-@AllArgsConstructor
+-public class Admin implements Serializable {
+-
+-    private static final long serialVersionUID = 1L;
+-
+-    //管理员唯一标识
+-    private Integer adminId;
+-
+-    //管理员姓名
+-    private String adminName;
+-
+-    //密码
+-    private String password;
+-
+-    //登录邮箱
+-    private String email;
+-
+-    //权利等级：1~3
+-    private Integer power;
+-
+-    //创建时间
+-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+-    private LocalDateTime createTime;
+-
+-    //权限到期时间
+-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+-    private Date expirationTime;
+-}
+Index: .idea/shelf/在进行更新之前于_2024_4_15_19_16_取消提交了更改_[更改]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/在进行更新之前于_2024_4_15_19_16_取消提交了更改_[更改]/shelved.patch b/.idea/shelf/在进行更新之前于_2024_4_15_19_16_取消提交了更改_[更改]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/在进行更新之前于_2024_4_15_19_16_取消提交了更改_[更改]/shelved.patch	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
++++ /dev/null	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
+@@ -1,74 +0,0 @@
+-Index: shsl-common/pom.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/shsl-common/pom.xml b/shsl-common/pom.xml
+-new file mode 100644
+---- /dev/null	(date 1713168646936)
+-+++ b/shsl-common/pom.xml	(date 1713168646936)
+-@@ -0,0 +1,64 @@
+-+<?xml version="1.0" encoding="UTF-8"?>
+-+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+-+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+-+    <modelVersion>4.0.0</modelVersion>
+-+    <parent>
+-+        <groupId>org.example</groupId>
+-+        <artifactId>CPT202-SHSLSC</artifactId>
+-+        <version>1.0-SNAPSHOT</version>
+-+    </parent>
+-+    <artifactId>shsl-common</artifactId>
+-+    <packaging>war</packaging>
+-+    <name>shsl-common Maven Webapp</name>
+-+    <url>http://maven.apache.org</url>
+-+    <dependencies>
+-+        <dependency>
+-+            <groupId>junit</groupId>
+-+            <artifactId>junit</artifactId>
+-+            <version>3.8.1</version>
+-+            <scope>test</scope>
+-+        </dependency>
+-+        <dependency>
+-+            <groupId>org.projectlombok</groupId>
+-+            <artifactId>lombok</artifactId>
+-+        </dependency>
+-+        <dependency>
+-+            <groupId>com.alibaba</groupId>
+-+            <artifactId>fastjson</artifactId>
+-+        </dependency>
+-+        <dependency>
+-+            <groupId>commons-lang</groupId>
+-+            <artifactId>commons-lang</artifactId>
+-+        </dependency>
+-+        <dependency>
+-+            <groupId>org.springframework.boot</groupId>
+-+            <artifactId>spring-boot-starter-json</artifactId>
+-+        </dependency>
+-+        <dependency>
+-+            <groupId>io.jsonwebtoken</groupId>
+-+            <artifactId>jjwt</artifactId>
+-+        </dependency>
+-+        <!--支持配置属性类，yml文件中可以提示配置项-->
+-+        <dependency>
+-+            <groupId>org.springframework.boot</groupId>
+-+            <artifactId>spring-boot-configuration-processor</artifactId>
+-+            <optional>true</optional>
+-+        </dependency>
+-+        <dependency>
+-+            <groupId>com.aliyun.oss</groupId>
+-+            <artifactId>aliyun-sdk-oss</artifactId>
+-+        </dependency>
+-+        <dependency>
+-+            <groupId>javax.xml.bind</groupId>
+-+            <artifactId>jaxb-api</artifactId>
+-+        </dependency>
+-+        <!--微信支付-->
+-+        <dependency>
+-+            <groupId>com.github.wechatpay-apiv3</groupId>
+-+            <artifactId>wechatpay-apache-httpclient</artifactId>
+-+        </dependency>
+-+    </dependencies>
+-+    <build>
+-+        <finalName>shsl-common</finalName>
+-+    </build>
+-+</project>
+Index: ../CPT202SHSLSC/pojo/.gitignore
+===================================================================
+diff --git a/../CPT202SHSLSC/pojo/.gitignore b/../CPT202SHSLSC/pojo/.gitignore
+deleted file mode 100644
+--- a/../CPT202SHSLSC/pojo/.gitignore	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
++++ /dev/null	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
+@@ -1,38 +0,0 @@
+-target/
+-!.mvn/wrapper/maven-wrapper.jar
+-!**/src/main/**/target/
+-!**/src/test/**/target/
+-
+-### IntelliJ IDEA ###
+-.idea/modules.xml
+-.idea/jarRepositories.xml
+-.idea/compiler.xml
+-.idea/libraries/
+-*.iws
+-*.iml
+-*.ipr
+-
+-### Eclipse ###
+-.apt_generated
+-.classpath
+-.factorypath
+-.project
+-.settings
+-.springBeans
+-.sts4-cache
+-
+-### NetBeans ###
+-/nbproject/private/
+-/nbbuild/
+-/dist/
+-/nbdist/
+-/.nb-gradle/
+-build/
+-!**/src/main/**/build/
+-!**/src/test/**/build/
+-
+-### VS Code ###
+-.vscode/
+-
+-### Mac OS ###
+-.DS_Store
+\ No newline at end of file
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+deleted file mode 100644
+--- a/.idea/modules.xml	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
++++ /dev/null	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
+@@ -1,10 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ProjectModuleManager">
+-    <modules>
+-      <module fileurl="file://$PROJECT_DIR$/CPT202-SHSLSC.iml" filepath="$PROJECT_DIR$/CPT202-SHSLSC.iml" />
+-      <module fileurl="file://$PROJECT_DIR$/shsl-common.iml" filepath="$PROJECT_DIR$/shsl-common.iml" />
+-      <module fileurl="file://$PROJECT_DIR$/shsl-server.iml" filepath="$PROJECT_DIR$/shsl-server.iml" />
+-    </modules>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: ../CPT202SHSLSC/common/.gitignore
+===================================================================
+diff --git a/../CPT202SHSLSC/common/.gitignore b/../CPT202SHSLSC/common/.gitignore
+deleted file mode 100644
+--- a/../CPT202SHSLSC/common/.gitignore	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
++++ /dev/null	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
+@@ -1,38 +0,0 @@
+-target/
+-!.mvn/wrapper/maven-wrapper.jar
+-!**/src/main/**/target/
+-!**/src/test/**/target/
+-
+-### IntelliJ IDEA ###
+-.idea/modules.xml
+-.idea/jarRepositories.xml
+-.idea/compiler.xml
+-.idea/libraries/
+-*.iws
+-*.iml
+-*.ipr
+-
+-### Eclipse ###
+-.apt_generated
+-.classpath
+-.factorypath
+-.project
+-.settings
+-.springBeans
+-.sts4-cache
+-
+-### NetBeans ###
+-/nbproject/private/
+-/nbbuild/
+-/dist/
+-/nbdist/
+-/.nb-gradle/
+-build/
+-!**/src/main/**/build/
+-!**/src/test/**/build/
+-
+-### VS Code ###
+-.vscode/
+-
+-### Mac OS ###
+-.DS_Store
+\ No newline at end of file
+Index: ../CPT202SHSLSC/.gitignore
+===================================================================
+diff --git a/../CPT202SHSLSC/.gitignore b/../CPT202SHSLSC/.gitignore
+deleted file mode 100644
+--- a/../CPT202SHSLSC/.gitignore	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
++++ /dev/null	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
+@@ -1,38 +0,0 @@
+-target/
+-!.mvn/wrapper/maven-wrapper.jar
+-!**/src/main/**/target/
+-!**/src/test/**/target/
+-
+-### IntelliJ IDEA ###
+-.idea/modules.xml
+-.idea/jarRepositories.xml
+-.idea/compiler.xml
+-.idea/libraries/
+-*.iws
+-*.iml
+-*.ipr
+-
+-### Eclipse ###
+-.apt_generated
+-.classpath
+-.factorypath
+-.project
+-.settings
+-.springBeans
+-.sts4-cache
+-
+-### NetBeans ###
+-/nbproject/private/
+-/nbbuild/
+-/dist/
+-/nbdist/
+-/.nb-gradle/
+-build/
+-!**/src/main/**/build/
+-!**/src/test/**/build/
+-
+-### VS Code ###
+-.vscode/
+-
+-### Mac OS ###
+-.DS_Store
+\ No newline at end of file
+Index: ../CPT202SHSLSC/pojo/src/main/java/com/shsl/entity/User.java
+===================================================================
+diff --git a/../CPT202SHSLSC/pojo/src/main/java/com/shsl/entity/User.java b/../CPT202SHSLSC/pojo/src/main/java/com/shsl/entity/User.java
+deleted file mode 100644
+--- a/../CPT202SHSLSC/pojo/src/main/java/com/shsl/entity/User.java	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
++++ /dev/null	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
+@@ -1,38 +0,0 @@
+-package com.shsl.entity;
+-
+-import lombok.AllArgsConstructor;
+-import lombok.Builder;
+-import lombok.Data;
+-import lombok.NoArgsConstructor;
+-
+-import java.io.Serializable;
+-import java.time.LocalDateTime;
+-
+-@Data
+-@Builder
+-@NoArgsConstructor
+-@AllArgsConstructor
+-public class User implements Serializable {
+-    private static final long serialVersionUID = 1L;
+-
+-    //用户唯一标识
+-    private Integer userId;
+-
+-    //姓名
+-    private String userName;
+-
+-    //电子邮件
+-    private String email;
+-
+-    //Gender 0 female 1 male
+-    private String sex;
+-
+-    //密码
+-    private String password;
+-
+-    //头像
+-    private String avatar;
+-
+-    //注册时间
+-    private LocalDateTime createTime;
+-}
+Index: .idea/shelf/_2024_4_15_19_16____.xml
+===================================================================
+diff --git a/.idea/shelf/_2024_4_15_19_16____.xml b/.idea/shelf/_2024_4_15_19_16____.xml
+deleted file mode 100644
+--- a/.idea/shelf/_2024_4_15_19_16____.xml	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
++++ /dev/null	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
+@@ -1,4 +0,0 @@
+-<changelist name="在进行更新之前于_2024_4_15_19_16_取消提交了更改_[更改]" date="1713179813248" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2024_4_15_19_16_取消提交了更改_[更改]/shelved.patch" />
+-  <option name="DESCRIPTION" value="在进行更新之前于 2024/4/15 19:16 取消提交了更改 [更改]" />
+-</changelist>
+\ No newline at end of file
+Index: ../CPT202SHSLSC/server/.gitignore
+===================================================================
+diff --git a/../CPT202SHSLSC/server/.gitignore b/../CPT202SHSLSC/server/.gitignore
+deleted file mode 100644
+--- a/../CPT202SHSLSC/server/.gitignore	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
++++ /dev/null	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
+@@ -1,38 +0,0 @@
+-target/
+-!.mvn/wrapper/maven-wrapper.jar
+-!**/src/main/**/target/
+-!**/src/test/**/target/
+-
+-### IntelliJ IDEA ###
+-.idea/modules.xml
+-.idea/jarRepositories.xml
+-.idea/compiler.xml
+-.idea/libraries/
+-*.iws
+-*.iml
+-*.ipr
+-
+-### Eclipse ###
+-.apt_generated
+-.classpath
+-.factorypath
+-.project
+-.settings
+-.springBeans
+-.sts4-cache
+-
+-### NetBeans ###
+-/nbproject/private/
+-/nbbuild/
+-/dist/
+-/nbdist/
+-/.nb-gradle/
+-build/
+-!**/src/main/**/build/
+-!**/src/test/**/build/
+-
+-### VS Code ###
+-.vscode/
+-
+-### Mac OS ###
+-.DS_Store
+\ No newline at end of file
+Index: shsl-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>D:\\SportsCenter\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-common\\src\\main\\java\\com\\shsl\\utils\\JwtUtil.java\r\nD:\\SportsCenter\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-common\\src\\main\\java\\com\\shsl\\constant\\JwtClaimsConstant.java\r\nD:\\SportsCenter\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-common\\src\\main\\java\\com\\shsl\\utils\\AliOssUtil.java\r\nD:\\SportsCenter\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-common\\src\\main\\java\\com\\shsl\\constant\\PasswordConstant.java\r\nD:\\SportsCenter\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-common\\src\\main\\java\\com\\shsl\\constant\\StatusConstant.java\r\nD:\\SportsCenter\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-common\\src\\main\\java\\com\\shsl\\utils\\HttpClientUtil.java\r\nD:\\SportsCenter\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-common\\src\\main\\java\\com\\shsl\\exception\\SetmealEnableFailedException.java\r\nD:\\SportsCenter\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-common\\src\\main\\java\\com\\shsl\\result\\PageResult.java\r\nD:\\SportsCenter\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-common\\src\\main\\java\\com\\shsl\\properties\\WeChatProperties.java\r\nD:\\SportsCenter\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-common\\src\\main\\java\\com\\shsl\\result\\Result.java\r\nD:\\SportsCenter\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-common\\src\\main\\java\\com\\shsl\\properties\\JwtProperties.java\r\nD:\\SportsCenter\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-common\\src\\main\\java\\com\\shsl\\exception\\PasswordErrorException.java\r\nD:\\SportsCenter\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-common\\src\\main\\java\\com\\shsl\\exception\\OrderBusinessException.java\r\nD:\\SportsCenter\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-common\\src\\main\\java\\com\\shsl\\utils\\WeChatPayUtil.java\r\nD:\\SportsCenter\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-common\\src\\main\\java\\com\\shsl\\constant\\AutoFillConstant.java\r\nD:\\SportsCenter\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-common\\src\\main\\java\\com\\shsl\\context\\BaseContext.java\r\nD:\\SportsCenter\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-common\\src\\main\\java\\com\\shsl\\exception\\AddressBookBusinessException.java\r\nD:\\SportsCenter\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-common\\src\\main\\java\\com\\shsl\\exception\\PasswordEditFailedException.java\r\nD:\\SportsCenter\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-common\\src\\main\\java\\com\\shsl\\properties\\AliOssProperties.java\r\nD:\\SportsCenter\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-common\\src\\main\\java\\com\\shsl\\exception\\ShoppingCartBusinessException.java\r\nD:\\SportsCenter\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-common\\src\\main\\java\\com\\shsl\\exception\\UserNotLoginException.java\r\nD:\\SportsCenter\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-common\\src\\main\\java\\com\\shsl\\exception\\AccountLockedException.java\r\nD:\\SportsCenter\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-common\\src\\main\\java\\com\\shsl\\json\\JacksonObjectMapper.java\r\nD:\\SportsCenter\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-common\\src\\main\\java\\com\\shsl\\enymeration\\OperationType.java\r\nD:\\SportsCenter\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-common\\src\\main\\java\\com\\shsl\\constant\\MessageConstant.java\r\nD:\\SportsCenter\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-common\\src\\main\\java\\com\\shsl\\exception\\DeletionNotAllowedException.java\r\nD:\\SportsCenter\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-common\\src\\main\\java\\com\\shsl\\exception\\LoginFailedException.java\r\nD:\\SportsCenter\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-common\\src\\main\\java\\com\\shsl\\exception\\AccountNotFoundException.java\r\nD:\\SportsCenter\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-common\\src\\main\\java\\com\\shsl\\exception\\BaseException.java\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/shsl-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst b/shsl-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+--- a/shsl-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
++++ b/shsl-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst	(date 1713966993359)
+@@ -1,29 +1,28 @@
+-D:\SportsCenter\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\utils\JwtUtil.java
+-D:\SportsCenter\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\constant\JwtClaimsConstant.java
+-D:\SportsCenter\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\utils\AliOssUtil.java
+-D:\SportsCenter\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\constant\PasswordConstant.java
+-D:\SportsCenter\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\constant\StatusConstant.java
+-D:\SportsCenter\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\utils\HttpClientUtil.java
+-D:\SportsCenter\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\exception\SetmealEnableFailedException.java
+-D:\SportsCenter\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\result\PageResult.java
+-D:\SportsCenter\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\properties\WeChatProperties.java
+-D:\SportsCenter\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\result\Result.java
+-D:\SportsCenter\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\properties\JwtProperties.java
+-D:\SportsCenter\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\exception\PasswordErrorException.java
+-D:\SportsCenter\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\exception\OrderBusinessException.java
+-D:\SportsCenter\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\utils\WeChatPayUtil.java
+-D:\SportsCenter\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\constant\AutoFillConstant.java
+-D:\SportsCenter\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\context\BaseContext.java
+-D:\SportsCenter\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\exception\AddressBookBusinessException.java
+-D:\SportsCenter\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\exception\PasswordEditFailedException.java
+-D:\SportsCenter\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\properties\AliOssProperties.java
+-D:\SportsCenter\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\exception\ShoppingCartBusinessException.java
+-D:\SportsCenter\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\exception\UserNotLoginException.java
+-D:\SportsCenter\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\exception\AccountLockedException.java
+-D:\SportsCenter\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\json\JacksonObjectMapper.java
+-D:\SportsCenter\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\enymeration\OperationType.java
+-D:\SportsCenter\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\constant\MessageConstant.java
+-D:\SportsCenter\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\exception\DeletionNotAllowedException.java
+-D:\SportsCenter\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\exception\LoginFailedException.java
+-D:\SportsCenter\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\exception\AccountNotFoundException.java
+-D:\SportsCenter\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\exception\BaseException.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\utils\HttpClientUtil.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\constant\PasswordConstant.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\constant\JwtClaimsConstant.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\exception\DeletionNotAllowedException.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\result\Result.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\exception\ReserveFailureByFull.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\utils\JwtUtil.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\exception\AccountNotFoundException.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\exception\EmailVerifyException.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\exception\PasswordEditFailedException.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\constant\MessageConstant.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\utils\AliOssUtil.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\exception\LoginFailedException.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\result\PageResult.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\utils\WeChatPayUtil.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\exception\ReserveFailureByClose.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\json\JacksonObjectMapper.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\constant\AutoFillConstant.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\exception\UserNotLoginException.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\properties\WeChatProperties.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\exception\BaseException.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\constant\StatusConstant.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\context\BaseContext.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\exception\PasswordErrorException.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\properties\JwtProperties.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\properties\AliOssProperties.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\exception\AccountLockedException.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl\enymeration\OperationType.java
+Index: shsl-server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>D:\\WorkSpace\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-server\\src\\main\\java\\com\\shsl\\SHSLApplication.java\r\nD:\\WorkSpace\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-server\\src\\main\\java\\com\\shsl\\handler\\GlobalExceptionHandler.java\r\nD:\\WorkSpace\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-server\\src\\main\\java\\com\\shsl\\config\\WebMvcConfiguration.java\r\nD:\\WorkSpace\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-server\\src\\main\\java\\com\\shsl\\interceptor\\JwtTokenAdminInterceptor.java\r\nD:\\WorkSpace\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-server\\src\\main\\java\\com\\shsl\\service\\AdminService.java\r\nD:\\WorkSpace\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-server\\src\\main\\java\\com\\shsl\\controller\\admin\\AdminController.java\r\nD:\\WorkSpace\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-server\\src\\main\\java\\com\\shsl\\mapper\\AdminMapper.java\r\nD:\\WorkSpace\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-server\\src\\main\\java\\com\\shsl\\service\\impl\\AdminServiceImpl.java\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/shsl-server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst b/shsl-server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+--- a/shsl-server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
++++ b/shsl-server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst	(date 1713967067010)
+@@ -1,8 +1,21 @@
+-D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\java\com\shsl\SHSLApplication.java
+-D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\java\com\shsl\handler\GlobalExceptionHandler.java
+-D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\java\com\shsl\config\WebMvcConfiguration.java
+-D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\java\com\shsl\interceptor\JwtTokenAdminInterceptor.java
+-D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\java\com\shsl\service\AdminService.java
+-D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\java\com\shsl\controller\admin\AdminController.java
+-D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\java\com\shsl\mapper\AdminMapper.java
+-D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\java\com\shsl\service\impl\AdminServiceImpl.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\java\com\shsl\controller\user\ReservationController.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\java\com\shsl\controller\admin\AdminController.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\java\com\shsl\service\impl\StadiumServiceImpl.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\java\MyApplication.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\java\com\shsl\handler\GlobalExceptionHandler.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\java\com\shsl\service\AdminService.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\java\com\shsl\controller\user\StadiumController.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\java\com\shsl\service\impl\ReservationImpl.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\java\com\shsl\mapper\UserMapper.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\java\com\shsl\SHSLApplication.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\java\com\shsl\controller\user\UserController.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\java\com\shsl\mapper\ReservationMapper.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\java\com\shsl\service\StadiumService.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\java\com\shsl\interceptor\JwtTokenAdminInterceptor.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\java\com\shsl\config\WebMvcConfiguration.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\java\com\shsl\service\impl\AdminServiceImpl.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\java\com\shsl\mapper\StadiumMapper.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\java\com\shsl\service\UserService.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\java\com\shsl\service\impl\UserServiceImpl.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\java\com\shsl\mapper\AdminMapper.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\java\com\shsl\service\ReservationService.java
+Index: shsl-server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>com\\shsl\\service\\impl\\AdminServiceImpl.class\r\ncom\\shsl\\service\\StadiumService.class\r\ncom\\shsl\\controller\\admin\\StadiumController.class\r\ncom\\shsl\\service\\ReservationService.class\r\ncom\\shsl\\handler\\GlobalExceptionHandler.class\r\ncom\\shsl\\mapper\\ReservationMapper.class\r\nMyApplication.class\r\ncom\\shsl\\controller\\admin\\AdminController.class\r\ncom\\shsl\\controller\\admin\\ReservationController.class\r\ncom\\shsl\\mapper\\AdminMapper.class\r\ncom\\shsl\\mapper\\StadiumMapper.class\r\ncom\\shsl\\service\\impl\\StadiumServiceImpl.class\r\ncom\\shsl\\service\\impl\\ReservationImpl.class\r\ncom\\shsl\\service\\AdminService.class\r\ncom\\shsl\\config\\WebMvcConfiguration.class\r\ncom\\shsl\\interceptor\\JwtTokenAdminInterceptor.class\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/shsl-server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst b/shsl-server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+--- a/shsl-server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
++++ b/shsl-server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst	(date 1713967067009)
+@@ -1,16 +1,21 @@
+ com\shsl\service\impl\AdminServiceImpl.class
+-com\shsl\service\StadiumService.class
+-com\shsl\controller\admin\StadiumController.class
+ com\shsl\service\ReservationService.class
++com\shsl\service\impl\UserServiceImpl.class
++com\shsl\SHSLApplication.class
++com\shsl\mapper\AdminMapper.class
++com\shsl\service\impl\StadiumServiceImpl.class
++com\shsl\service\impl\ReservationImpl.class
++com\shsl\service\AdminService.class
++com\shsl\service\UserService.class
++com\shsl\interceptor\JwtTokenAdminInterceptor.class
++com\shsl\service\StadiumService.class
++com\shsl\controller\user\StadiumController.class
+ com\shsl\handler\GlobalExceptionHandler.class
++com\shsl\mapper\UserMapper.class
+ com\shsl\mapper\ReservationMapper.class
++com\shsl\controller\user\ReservationController.class
+ MyApplication.class
+ com\shsl\controller\admin\AdminController.class
+-com\shsl\controller\admin\ReservationController.class
+-com\shsl\mapper\AdminMapper.class
+ com\shsl\mapper\StadiumMapper.class
+-com\shsl\service\impl\StadiumServiceImpl.class
+-com\shsl\service\impl\ReservationImpl.class
+-com\shsl\service\AdminService.class
+ com\shsl\config\WebMvcConfiguration.class
+-com\shsl\interceptor\JwtTokenAdminInterceptor.class
++com\shsl\controller\user\UserController.class
+Index: shsl-server/target/classes/application.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>server:\r\n  port: 3306\r\n\r\nspring:\r\n  profiles:\r\n    active: dev\r\n  main:\r\n    allow-circular-references: true\r\n  datasource:\r\n    druid:\r\n      driver-class-name: ${shsl.datasource.driver-class-name}\r\n      url: jdbc:mysql://${shsl.datasource.host}:${shsl.datasource.port}/${shsl.datasource.database}?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true\r\n      username: ${shsl.datasource.username}\r\n      password: ${shsl.datasource.password}\r\n\r\nmybatis:\r\n  #mapper配置文件\r\n  mapper-locations: classpath:mapper/*.xml\r\n  type-aliases-package: com.shsl.entity\r\n  configuration:\r\n    #开启驼峰命名\r\n    map-underscore-to-camel-case: true\r\n\r\nlogging:\r\n  level:\r\n    com:\r\n      shsl:\r\n        mapper: debug\r\n        service: info\r\n        controller: info\r\n\r\nshsl:\r\n  jwt:\r\n    # 设置jwt签名加密时使用的秘钥\r\n    admin-secret-key: itcast\r\n    # 设置jwt过期时间\r\n    admin-ttl: 7200000\r\n    # 设置前端传递过来的令牌名称\r\n    admin-token-name: token\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/shsl-server/target/classes/application.yml b/shsl-server/target/classes/application.yml
+--- a/shsl-server/target/classes/application.yml	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
++++ b/shsl-server/target/classes/application.yml	(date 1713967079260)
+@@ -1,5 +1,5 @@
+ server:
+-  port: 3306
++  port: 8080
+ 
+ spring:
+   profiles:
+@@ -32,7 +32,7 @@
+ shsl:
+   jwt:
+     # 设置jwt签名加密时使用的秘钥
+-    admin-secret-key: itcast
++    admin-secret-key: shslad
+     # 设置jwt过期时间
+     admin-ttl: 7200000
+     # 设置前端传递过来的令牌名称
+Index: shsl-pojo/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/shsl-pojo/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst b/shsl-pojo/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+--- a/shsl-pojo/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
++++ b/shsl-pojo/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst	(date 1713967036310)
+@@ -1,0 +1,19 @@
++com\shsl\dto\UserLoginDTO.class
++com\shsl\entity\Place$PlaceBuilder.class
++com\shsl\entity\Admin$AdminBuilder.class
++com\shsl\vo\UserLoginVO$UserLoginVOBuilder.class
++com\shsl\entity\User$UserBuilder.class
++com\shsl\dto\AdminLoginDTO.class
++com\shsl\entity\ReservationRecord.class
++com\shsl\entity\Stadium$StadiumBuilder.class
++com\shsl\vo\UserLoginVO.class
++com\shsl\entity\User.class
++com\shsl\entity\Admin.class
++com\shsl\vo\AdminLoginVO.class
++com\shsl\entity\Place.class
++com\shsl\entity\ReservationRecord$ReservationRecordBuilder.class
++com\shsl\entity\Stadium.class
++com\shsl\vo\AdminLoginVO$AdminLoginVOBuilder.class
++com\shsl\vo\UserReportVO.class
++com\shsl\dto\AdminDTO.class
++com\shsl\vo\UserReportVO$UserReportVOBuilder.class
+Index: shsl-pojo/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>D:\\WorkSpace\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-pojo\\src\\main\\java\\com\\shsl\\dto\\UserLoginDTO.java\r\nD:\\WorkSpace\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-pojo\\src\\main\\java\\com\\shsl\\dto\\AdminDTO.java\r\nD:\\WorkSpace\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-pojo\\src\\main\\java\\com\\shsl\\entity\\ReservationRecord.java\r\nD:\\WorkSpace\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-pojo\\src\\main\\java\\com\\shsl\\dto\\AdminLoginDTO.java\r\nD:\\WorkSpace\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-pojo\\src\\main\\java\\com\\shsl\\vo\\UserReportVO.java\r\nD:\\WorkSpace\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-pojo\\src\\main\\java\\com\\shsl\\entity\\Place.java\r\nD:\\WorkSpace\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-pojo\\src\\main\\java\\com\\shsl\\entity\\Admin.java\r\nD:\\WorkSpace\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-pojo\\src\\main\\java\\com\\shsl\\entity\\Stadium.java\r\nD:\\WorkSpace\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-pojo\\src\\main\\java\\com\\shsl\\entity\\User.java\r\nD:\\WorkSpace\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-pojo\\src\\main\\java\\com\\shsl\\vo\\AdminLoginVO.java\r\nD:\\WorkSpace\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-pojo\\src\\main\\java\\com\\shsl\\vo\\UserLoginVO.java\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/shsl-pojo/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst b/shsl-pojo/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+--- a/shsl-pojo/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
++++ b/shsl-pojo/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst	(date 1713967036311)
+@@ -1,11 +1,11 @@
+-D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-pojo\src\main\java\com\shsl\dto\UserLoginDTO.java
+-D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-pojo\src\main\java\com\shsl\dto\AdminDTO.java
+-D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-pojo\src\main\java\com\shsl\entity\ReservationRecord.java
+-D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-pojo\src\main\java\com\shsl\dto\AdminLoginDTO.java
+-D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-pojo\src\main\java\com\shsl\vo\UserReportVO.java
+-D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-pojo\src\main\java\com\shsl\entity\Place.java
+-D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-pojo\src\main\java\com\shsl\entity\Admin.java
+-D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-pojo\src\main\java\com\shsl\entity\Stadium.java
+-D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-pojo\src\main\java\com\shsl\entity\User.java
+-D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-pojo\src\main\java\com\shsl\vo\AdminLoginVO.java
+-D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-pojo\src\main\java\com\shsl\vo\UserLoginVO.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-pojo\src\main\java\com\shsl\vo\AdminLoginVO.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-pojo\src\main\java\com\shsl\dto\AdminLoginDTO.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-pojo\src\main\java\com\shsl\entity\Place.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-pojo\src\main\java\com\shsl\entity\User.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-pojo\src\main\java\com\shsl\entity\Admin.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-pojo\src\main\java\com\shsl\entity\ReservationRecord.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-pojo\src\main\java\com\shsl\vo\UserReportVO.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-pojo\src\main\java\com\shsl\dto\UserLoginDTO.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-pojo\src\main\java\com\shsl\vo\UserLoginVO.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-pojo\src\main\java\com\shsl\entity\Stadium.java
++D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-pojo\src\main\java\com\shsl\dto\AdminDTO.java
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"e28db028-5cd2-463c-8a8e-351c2e744006\" name=\"更改\" comment=\"user login\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/dataSources/1bda1ae0-ee6d-4420-8f4a-f2d89be01e47.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/dataSources/1bda1ae0-ee6d-4420-8f4a-f2d89be01e47.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/shsl-pojo/src/main/java/com/shsl/entity/ReservationRecord.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/shsl-pojo/src/main/java/com/shsl/entity/ReservationRecord.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/controller/admin/ReservationController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/controller/user/ReservationController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/controller/admin/StadiumController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/controller/user/StadiumController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/mapper/AdminMapper.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/mapper/AdminMapper.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/mapper/ReservationMapper.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/mapper/ReservationMapper.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/mapper/StadiumMapper.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/mapper/StadiumMapper.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/mapper/UserMapper.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/mapper/UserMapper.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Interface\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/..\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">\r\n    <option name=\"selectedUrlAndAccountId\">\r\n      <UrlAndAccount>\r\n        <option name=\"accountId\" value=\"70ce41ed-fb82-42fd-91a1-ea8be7fd7cb3\" />\r\n        <option name=\"url\" value=\"https://github.com/THGRakid/CPT202---Super-high-school-level-Sport-Centre.git\" />\r\n      </UrlAndAccount>\r\n    </option>\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHome\" value=\"$PROJECT_DIR$/../../../course/Java/apache-maven-3.8.6\" />\r\n        <option name=\"userSettingsFile\" value=\"D:\\course\\Java\\apache-maven-3.8.6\\conf\\settings.xml\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2dxUogFe2KepQieiIsPkUbwjcnu\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,\r\n    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,\r\n    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,\r\n    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-1.8&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;D:/WorkSpace/CPT202---Super-high-school-level-Sport-Centre/CPT202-SHSLSC/shsl-common/src/main/java/com/shsl&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,\r\n    &quot;spring.configuration.checksum&quot;: &quot;355e0e4bae7823ef320f17a8f91d2db6&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  },\r\n  &quot;keyToStringList&quot;: {\r\n    &quot;DatabaseDriversLRU&quot;: [\r\n      &quot;mysql&quot;\r\n    ]\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\WorkSpace\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-common\\src\\main\\java\\com\\shsl\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\WorkSpace\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\" />\r\n      <recent name=\"D:\\WorkSpace\\CPT202---Super-high-school-level-Sport-Centre\\CPT202-SHSLSC\\shsl-server\\src\\main\\java\" />\r\n    </key>\r\n    <key name=\"CopyClassDialog.RECENTS_KEY\">\r\n      <recent name=\"com.shsl.exception\" />\r\n      <recent name=\"com.shsl.config\" />\r\n      <recent name=\"com.shsl.handler\" />\r\n      <recent name=\"com.shsl.json\" />\r\n      <recent name=\"com.shsl.enymeration\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Spring Boot.SHSLApplication\">\r\n    <configuration name=\"EuclideanPoint\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.shsl.EuclideanPoint\" />\r\n      <module name=\"CPT202-SHSLSC\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.shsl.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"java\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.shsl.java\" />\r\n      <module name=\"CPT202-SHSLSC\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.shsl.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"CPT202-SHSLSC [clean]\" type=\"MavenRunConfiguration\" factoryName=\"Maven\" nameIsGenerated=\"true\">\r\n      <MavenSettings>\r\n        <option name=\"myGeneralSettings\" />\r\n        <option name=\"myRunnerSettings\" />\r\n        <option name=\"myRunnerParameters\">\r\n          <MavenRunnerParameters>\r\n            <option name=\"profiles\">\r\n              <set />\r\n            </option>\r\n            <option name=\"goals\">\r\n              <list>\r\n                <option value=\"clean\" />\r\n              </list>\r\n            </option>\r\n            <option name=\"pomFileName\" />\r\n            <option name=\"profilesMap\">\r\n              <map />\r\n            </option>\r\n            <option name=\"resolveToWorkspace\" value=\"false\" />\r\n            <option name=\"workingDirPath\" value=\"$PROJECT_DIR$\" />\r\n          </MavenRunnerParameters>\r\n        </option>\r\n      </MavenSettings>\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"CPT202-SHSLSC [install]\" type=\"MavenRunConfiguration\" factoryName=\"Maven\" nameIsGenerated=\"true\">\r\n      <MavenSettings>\r\n        <option name=\"myGeneralSettings\" />\r\n        <option name=\"myRunnerSettings\" />\r\n        <option name=\"myRunnerParameters\">\r\n          <MavenRunnerParameters>\r\n            <option name=\"profiles\">\r\n              <set />\r\n            </option>\r\n            <option name=\"goals\">\r\n              <list>\r\n                <option value=\"install\" />\r\n              </list>\r\n            </option>\r\n            <option name=\"pomFileName\" />\r\n            <option name=\"profilesMap\">\r\n              <map />\r\n            </option>\r\n            <option name=\"resolveToWorkspace\" value=\"false\" />\r\n            <option name=\"workingDirPath\" value=\"$PROJECT_DIR$\" />\r\n          </MavenRunnerParameters>\r\n        </option>\r\n      </MavenSettings>\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"SHSLApplication\" type=\"SpringBootApplicationConfigurationType\" factoryName=\"Spring Boot\" nameIsGenerated=\"true\">\r\n      <module name=\"shsl-server\" />\r\n      <option name=\"SPRING_BOOT_MAIN_CLASS\" value=\"com.shsl.SHSLApplication\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"Maven.CPT202-SHSLSC [install]\" />\r\n      <item itemvalue=\"Maven.CPT202-SHSLSC [clean]\" />\r\n      <item itemvalue=\"Spring Boot.SHSLApplication\" />\r\n      <item itemvalue=\"应用程序.EuclideanPoint\" />\r\n      <item itemvalue=\"应用程序.java\" />\r\n    </list>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"应用程序级\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"默认任务\">\r\n      <changelist id=\"e28db028-5cd2-463c-8a8e-351c2e744006\" name=\"更改\" comment=\"\" />\r\n      <created>1710949404437</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1710949404437</updated>\r\n      <workItem from=\"1710949405455\" duration=\"1675000\" />\r\n      <workItem from=\"1710998383951\" duration=\"869000\" />\r\n      <workItem from=\"1711009218685\" duration=\"807000\" />\r\n      <workItem from=\"1711076635291\" duration=\"25000\" />\r\n      <workItem from=\"1711683832405\" duration=\"59000\" />\r\n      <workItem from=\"1711871250121\" duration=\"932000\" />\r\n      <workItem from=\"1711874781772\" duration=\"2328000\" />\r\n      <workItem from=\"1712143168498\" duration=\"726000\" />\r\n      <workItem from=\"1712221784119\" duration=\"3133000\" />\r\n      <workItem from=\"1712235749923\" duration=\"595000\" />\r\n      <workItem from=\"1712283475827\" duration=\"706000\" />\r\n      <workItem from=\"1712557296592\" duration=\"4844000\" />\r\n      <workItem from=\"1712764835090\" duration=\"67000\" />\r\n      <workItem from=\"1712996555328\" duration=\"753000\" />\r\n      <workItem from=\"1713147409208\" duration=\"638000\" />\r\n      <workItem from=\"1713149917468\" duration=\"1602000\" />\r\n      <workItem from=\"1713152526282\" duration=\"14442000\" />\r\n      <workItem from=\"1713257491585\" duration=\"1436000\" />\r\n      <workItem from=\"1713326523466\" duration=\"16543000\" />\r\n      <workItem from=\"1713361273642\" duration=\"498000\" />\r\n      <workItem from=\"1713363729061\" duration=\"33000\" />\r\n      <workItem from=\"1713364860881\" duration=\"56000\" />\r\n      <workItem from=\"1713365844354\" duration=\"762000\" />\r\n      <workItem from=\"1713404964531\" duration=\"632000\" />\r\n      <workItem from=\"1713406584251\" duration=\"259000\" />\r\n      <workItem from=\"1713410926810\" duration=\"7393000\" />\r\n      <workItem from=\"1713496377001\" duration=\"777000\" />\r\n      <workItem from=\"1713497236227\" duration=\"141000\" />\r\n      <workItem from=\"1713497388669\" duration=\"156000\" />\r\n      <workItem from=\"1713497565363\" duration=\"2155000\" />\r\n      <workItem from=\"1713600475717\" duration=\"8263000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"github初始化\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1710949434880</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1710949434880</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"github初始化\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1713165808346</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713165808346</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"entity完成\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1713179789853</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713179789853</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"entity完成‘\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1713179828810</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713179828810</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Maven install\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1713348768434</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713348768434</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"common\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1713349277360</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713349277360</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"entity3.0\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1713349829393</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713349829393</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"前期工作完成\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1713350658844</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713350658844</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"前期工作完成plus\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1713363751305</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713363751305</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"exception class\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1713424302141</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713424302141</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"user login\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1713621115148</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713621115148</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"user login\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1713621124552</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713621124552</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"13\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Three project initial modules\" />\r\n    <MESSAGE value=\"github初始化\" />\r\n    <MESSAGE value=\"entity完成\" />\r\n    <MESSAGE value=\"entity完成‘\" />\r\n    <MESSAGE value=\"Maven install\" />\r\n    <MESSAGE value=\"common\" />\r\n    <MESSAGE value=\"entity3.0\" />\r\n    <MESSAGE value=\"前期工作完成\" />\r\n    <MESSAGE value=\"前期工作完成plus\" />\r\n    <MESSAGE value=\"exception class\" />\r\n    <MESSAGE value=\"user login\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"user login\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
++++ b/.idea/workspace.xml	(date 1714008412708)
+@@ -5,14 +5,57 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="e28db028-5cd2-463c-8a8e-351c2e744006" name="更改" comment="user login">
++      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/dataSources/1bda1ae0-ee6d-4420-8f4a-f2d89be01e47.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1bda1ae0-ee6d-4420-8f4a-f2d89be01e47.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/shsl-pojo/src/main/java/com/shsl/entity/ReservationRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-pojo/src/main/java/com/shsl/entity/ReservationRecord.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/controller/admin/ReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/controller/user/ReservationController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/controller/admin/StadiumController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/controller/user/StadiumController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/mapper/AdminMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/mapper/AdminMapper.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/mapper/ReservationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/mapper/ReservationMapper.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/mapper/StadiumMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/mapper/StadiumMapper.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/mapper/UserMapper.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/_2024_4_15_19_16____.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2024_4_15_19_16_取消提交了更改_[更改]/shelved.patch" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/shsl-common/target/classes/META-INF/spring-configuration-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-common/target/classes/META-INF/spring-configuration-metadata.json" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/shsl-common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/shsl-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/shsl-common/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/shsl-common/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/shsl-common/target/shsl-common-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-common/target/shsl-common-1.0-SNAPSHOT.jar" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/shsl-pojo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-pojo/pom.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/dto/UserLoginDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/dto/UserLoginDTO.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/entity/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/entity/Admin.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/entity/ReservationRecord$ReservationRecordBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/entity/ReservationRecord$ReservationRecordBuilder.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/entity/ReservationRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/entity/ReservationRecord.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/entity/Stadium.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/entity/Stadium.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/entity/User.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/vo/UserLoginVO$UserLoginVOBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/vo/UserLoginVO$UserLoginVOBuilder.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/vo/UserLoginVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/vo/UserLoginVO.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/shsl-pojo/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-pojo/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/shsl-pojo/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-pojo/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/shsl-pojo/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/shsl-pojo/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/shsl-pojo/target/shsl-pojo-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-pojo/target/shsl-pojo-1.0-SNAPSHOT.jar" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/resources/application-dev.yml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/resources/application.yml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/application-dev.yml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/application.yml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/controller/admin/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/controller/admin/AdminController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/mapper/AdminMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/mapper/AdminMapper.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/shsl-server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/shsl-server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/shsl-server/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/shsl-server/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/shsl-server/target/shsl-server-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/shsl-server-1.0-SNAPSHOT.jar" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/shsl-server/target/shsl-server-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/shsl-server-1.0-SNAPSHOT.jar.original" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../CPT202SHSLSC/.gitignore" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../CPT202SHSLSC/.idea/.gitignore" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../CPT202SHSLSC/common/.gitignore" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../CPT202SHSLSC/pojo/.gitignore" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../CPT202SHSLSC/pojo/src/main/java/com/shsl/entity/Admin.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../CPT202SHSLSC/pojo/src/main/java/com/shsl/entity/Place.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../CPT202SHSLSC/pojo/src/main/java/com/shsl/entity/ReservationRecord.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../CPT202SHSLSC/pojo/src/main/java/com/shsl/entity/Stadium.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../CPT202SHSLSC/pojo/src/main/java/com/shsl/entity/User.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../CPT202SHSLSC/server/.gitignore" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../CPT202SHSLSC/server/src/main/java/com/shsl/mapper/StadiumMapper.java" beforeDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -46,7 +89,7 @@
+   <component name="MavenImportPreferences">
+     <option name="generalSettings">
+       <MavenGeneralSettings>
+-        <option name="mavenHome" value="$PROJECT_DIR$/../../../course/Java/apache-maven-3.8.6" />
++        <option name="mavenHome" value="$PROJECT_DIR$/../../../../course/Java/apache-maven-3.6.3" />
+         <option name="userSettingsFile" value="D:\course\Java\apache-maven-3.8.6\conf\settings.xml" />
+       </MavenGeneralSettings>
+     </option>
+@@ -70,17 +113,17 @@
+     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-1.8&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;D:/WorkSpace/CPT202---Super-high-school-level-Sport-Centre/CPT202-SHSLSC/shsl-common/src/main/java/com/shsl&quot;,
++    &quot;last_opened_file_path&quot;: &quot;D:/WorkSpace/CPT202---Super-high-school-level-Sport-Centre/CPT202---Super-high-school-level-Sport-Centre/CPT202-SHSLSC&quot;,
+     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+-    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;SDK&quot;,
+     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+     &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+-    &quot;spring.configuration.checksum&quot;: &quot;355e0e4bae7823ef320f17a8f91d2db6&quot;,
++    &quot;spring.configuration.checksum&quot;: &quot;0a8fe18d387b54b046ceff9be507a45a&quot;,
+     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   },
+   &quot;keyToStringList&quot;: {
+@@ -236,6 +279,9 @@
+       <workItem from="1713497388669" duration="156000" />
+       <workItem from="1713497565363" duration="2155000" />
+       <workItem from="1713600475717" duration="8263000" />
++      <workItem from="1713958883882" duration="5277000" />
++      <workItem from="1713965624608" duration="929000" />
++      <workItem from="1713966684260" duration="1629000" />
+     </task>
+     <task id="LOCAL-00001" summary="github初始化">
+       <option name="closed" value="true" />
+@@ -344,7 +390,19 @@
+       <map>
+         <entry key="MAIN">
+           <value>
+-            <State />
++            <State>
++              <option name="FILTERS">
++                <map>
++                  <entry key="branch">
++                    <value>
++                      <list>
++                        <option value="origin/main" />
++                      </list>
++                    </value>
++                  </entry>
++                </map>
++              </option>
++            </State>
+           </value>
+         </entry>
+       </map>
+Index: shsl-server/target/classes/application-dev.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>shsl:\r\n  datasource:\r\n    driver-class-name: com.mysql.cj.jdbc.Driver\r\n    host: shslsc.mysql.polardb.rds.aliyuncs.com\r\n    port: 3306\r\n    database: shslsc\r\n    username: cpt202_46\r\n    password: CPT202_46\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/shsl-server/target/classes/application-dev.yml b/shsl-server/target/classes/application-dev.yml
+--- a/shsl-server/target/classes/application-dev.yml	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
++++ b/shsl-server/target/classes/application-dev.yml	(date 1713967079259)
+@@ -3,6 +3,6 @@
+     driver-class-name: com.mysql.cj.jdbc.Driver
+     host: shslsc.mysql.polardb.rds.aliyuncs.com
+     port: 3306
+-    database: shslsc
++    database:
+     username: cpt202_46
+     password: CPT202_46
+Index: .idea/dataSources/1bda1ae0-ee6d-4420-8f4a-f2d89be01e47.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<dataSource name=\"@shslsc.mysql.polardb.rds.aliyuncs.com\">\r\n  <database-model serializer=\"dbm\" dbms=\"MYSQL\" family-id=\"MYSQL\" format-version=\"4.48\">\r\n    <root id=\"1\">\r\n      <DefaultCasing>lower/lower</DefaultCasing>\r\n      <DefaultEngine>InnoDB</DefaultEngine>\r\n      <DefaultTmpEngine>InnoDB</DefaultTmpEngine>\r\n      <Grants>|root||cpt202_46||ALTER|G\r\n|root||root|127.0.0.1|ALTER|G\r\n|root||root|localhost|ALTER|G\r\n|root||cpt202_46||ALTER ROUTINE|G\r\n|root||root|127.0.0.1|ALTER ROUTINE|G\r\n|root||root|localhost|ALTER ROUTINE|G\r\n|root||root|127.0.0.1|BACKUP_ADMIN|G\r\n|root||root|localhost|BACKUP_ADMIN|G\r\n|root||root|127.0.0.1|BINLOG_ADMIN|G\r\n|root||root|localhost|BINLOG_ADMIN|G\r\n|root||root|127.0.0.1|CONNECTION_ADMIN|G\r\n|root||root|localhost|CONNECTION_ADMIN|G\r\n|root||cpt202_46||CREATE|G\r\n|root||root|127.0.0.1|CREATE|G\r\n|root||root|localhost|CREATE|G\r\n|root||root|127.0.0.1|CREATE ROLE|G\r\n|root||root|localhost|CREATE ROLE|G\r\n|root||cpt202_46||CREATE ROUTINE|G\r\n|root||root|127.0.0.1|CREATE ROUTINE|G\r\n|root||root|localhost|CREATE ROUTINE|G\r\n|root||root|127.0.0.1|CREATE TABLESPACE|G\r\n|root||root|localhost|CREATE TABLESPACE|G\r\n|root||cpt202_46||CREATE TEMPORARY TABLES|G\r\n|root||root|127.0.0.1|CREATE TEMPORARY TABLES|G\r\n|root||root|localhost|CREATE TEMPORARY TABLES|G\r\n|root||cpt202_46||CREATE USER|G\r\n|root||root|127.0.0.1|CREATE USER|G\r\n|root||root|localhost|CREATE USER|G\r\n|root||cpt202_46||CREATE VIEW|G\r\n|root||root|127.0.0.1|CREATE VIEW|G\r\n|root||root|localhost|CREATE VIEW|G\r\n|root||cpt202_46||DELETE|G\r\n|root||root|127.0.0.1|DELETE|G\r\n|root||root|localhost|DELETE|G\r\n|root||cpt202_46||DROP|G\r\n|root||root|127.0.0.1|DROP|G\r\n|root||root|localhost|DROP|G\r\n|root||root|127.0.0.1|DROP ROLE|G\r\n|root||root|localhost|DROP ROLE|G\r\n|root||root|127.0.0.1|ENCRYPTION_KEY_ADMIN|G\r\n|root||root|localhost|ENCRYPTION_KEY_ADMIN|G\r\n|root||cpt202_46||EVENT|G\r\n|root||root|127.0.0.1|EVENT|G\r\n|root||root|localhost|EVENT|G\r\n|root||cpt202_46||EXECUTE|G\r\n|root||root|127.0.0.1|EXECUTE|G\r\n|root||root|localhost|EXECUTE|G\r\n|root||root|127.0.0.1|FILE|G\r\n|root||root|localhost|FILE|G\r\n|root||root|127.0.0.1|FLUSH_OPTIMIZER_COSTS|G\r\n|root||root|localhost|FLUSH_OPTIMIZER_COSTS|G\r\n|root||root|127.0.0.1|FLUSH_STATUS|G\r\n|root||root|localhost|FLUSH_STATUS|G\r\n|root||root|127.0.0.1|FLUSH_TABLES|G\r\n|root||root|localhost|FLUSH_TABLES|G\r\n|root||root|127.0.0.1|FLUSH_USER_RESOURCES|G\r\n|root||root|localhost|FLUSH_USER_RESOURCES|G\r\n|root||root|127.0.0.1|GROUP_REPLICATION_ADMIN|G\r\n|root||root|localhost|GROUP_REPLICATION_ADMIN|G\r\n|root||cpt202_46||INDEX|G\r\n|root||root|127.0.0.1|INDEX|G\r\n|root||root|localhost|INDEX|G\r\n|root||cpt202_46||INSERT|G\r\n|root||root|127.0.0.1|INSERT|G\r\n|root||root|localhost|INSERT|G\r\n|root||cpt202_46||LOCK TABLES|G\r\n|root||root|127.0.0.1|LOCK TABLES|G\r\n|root||root|localhost|LOCK TABLES|G\r\n|root||mysql.session|localhost|PERSIST_RO_VARIABLES_ADMIN|G\r\n|root||root|127.0.0.1|PERSIST_RO_VARIABLES_ADMIN|G\r\n|root||root|localhost|PERSIST_RO_VARIABLES_ADMIN|G\r\n|root||aurora||PROCESS|G\r\n|root||cpt202_46||PROCESS|G\r\n|root||root|127.0.0.1|PROCESS|G\r\n|root||root|localhost|PROCESS|G\r\n|root||test46||PROCESS|G\r\n|root||cpt202_46||REFERENCES|G\r\n|root||root|127.0.0.1|REFERENCES|G\r\n|root||root|localhost|REFERENCES|G\r\n|root||aurora||RELOAD|G\r\n|root||cpt202_46||RELOAD|G\r\n|root||replicator|10.254.122.16|RELOAD|G\r\n|root||replicator|10.254.122.86|RELOAD|G\r\n|root||root|127.0.0.1|RELOAD|G\r\n|root||root|localhost|RELOAD|G\r\n|root||aurora||REPLICATION CLIENT|G\r\n|root||cpt202_46||REPLICATION CLIENT|G\r\n|root||replicator|10.254.122.16|REPLICATION CLIENT|G\r\n|root||replicator|10.254.122.86|REPLICATION CLIENT|G\r\n|root||root|127.0.0.1|REPLICATION CLIENT|G\r\n|root||root|localhost|REPLICATION CLIENT|G\r\n|root||test46||REPLICATION CLIENT|G\r\n|root||aurora||REPLICATION SLAVE|G\r\n|root||cpt202_46||REPLICATION SLAVE|G\r\n|root||replicator|10.254.122.16|REPLICATION SLAVE|G\r\n|root||replicator|10.254.122.86|REPLICATION SLAVE|G\r\n|root||root|127.0.0.1|REPLICATION SLAVE|G\r\n|root||root|localhost|REPLICATION SLAVE|G\r\n|root||test46||REPLICATION SLAVE|G\r\n|root||root|127.0.0.1|REPLICATION_SLAVE_ADMIN|G\r\n|root||root|localhost|REPLICATION_SLAVE_ADMIN|G\r\n|root||root|127.0.0.1|RESOURCE_GROUP_ADMIN|G\r\n|root||root|localhost|RESOURCE_GROUP_ADMIN|G\r\n|root||root|127.0.0.1|RESOURCE_GROUP_USER|G\r\n|root||root|localhost|RESOURCE_GROUP_USER|G\r\n|root||root|127.0.0.1|ROLE_ADMIN|G\r\n|root||root|localhost|ROLE_ADMIN|G\r\n|root||aurora||SELECT|G\r\n|root||cpt202_46||SELECT|G\r\n|root||mysql.infoschema|localhost|SELECT|G\r\n|root||replicator|10.254.122.16|SELECT|G\r\n|root||replicator|10.254.122.86|SELECT|G\r\n|root||root|127.0.0.1|SELECT|G\r\n|root||root|localhost|SELECT|G\r\n|root||cpt202_46||SERVERS_ADMIN|G\r\n|root||root|127.0.0.1|SERVERS_ADMIN|G\r\n|root||root|localhost|SERVERS_ADMIN|G\r\n|root||root|127.0.0.1|SET_USER_ID|G\r\n|root||root|localhost|SET_USER_ID|G\r\n|root||root|127.0.0.1|SHOW DATABASES|G\r\n|root||root|localhost|SHOW DATABASES|G\r\n|root||cpt202_46||SHOW VIEW|G\r\n|root||root|127.0.0.1|SHOW VIEW|G\r\n|root||root|localhost|SHOW VIEW|G\r\n|root||root|127.0.0.1|SHOW_ROUTINE|G\r\n|root||root|localhost|SHOW_ROUTINE|G\r\n|root||root|127.0.0.1|SHUTDOWN|G\r\n|root||root|localhost|SHUTDOWN|G\r\n|root||aurora||SUPER|G\r\n|root||mysql.session|localhost|SUPER|G\r\n|root||replicator|10.254.122.16|SUPER|G\r\n|root||replicator|10.254.122.86|SUPER|G\r\n|root||root|127.0.0.1|SUPER|G\r\n|root||root|localhost|SUPER|G\r\n|root||mysql.session|localhost|SYSTEM_VARIABLES_ADMIN|G\r\n|root||root|127.0.0.1|SYSTEM_VARIABLES_ADMIN|G\r\n|root||root|localhost|SYSTEM_VARIABLES_ADMIN|G\r\n|root||cpt202_46||TRIGGER|G\r\n|root||root|127.0.0.1|TRIGGER|G\r\n|root||root|localhost|TRIGGER|G\r\n|root||cpt202_46||UPDATE|G\r\n|root||root|127.0.0.1|UPDATE|G\r\n|root||root|localhost|UPDATE|G\r\n|root||root|127.0.0.1|XA_RECOVER_ADMIN|G\r\n|root||root|localhost|XA_RECOVER_ADMIN|G\r\n|root||test46||XA_RECOVER_ADMIN|G\r\n|root||cpt202_46||grant option|G\r\n|root||replicator|10.254.122.16|grant option|G\r\n|root||replicator|10.254.122.86|grant option|G\r\n|root||root|127.0.0.1|grant option|G\r\n|root||root|localhost|grant option|G\r\nmysql|schema||aurora||ALTER|G\r\nmysql|schema||aurora||ALTER ROUTINE|G\r\nmysql|schema||aurora||CREATE|G\r\nmysql|schema||aurora||CREATE ROUTINE|G\r\nmysql|schema||aurora||CREATE TEMPORARY TABLES|G\r\nmysql|schema||aurora||CREATE VIEW|G\r\nmysql|schema||aurora||DELETE|G\r\nmysql|schema||aurora||DROP|G\r\nmysql|schema||aurora||EVENT|G\r\nmysql|schema||aurora||EXECUTE|G\r\nmysql|schema||aurora||INDEX|G\r\nmysql|schema||aurora||INSERT|G\r\nmysql|schema||aurora||LOCK TABLES|G\r\nmysql|schema||aurora||REFERENCES|G\r\nmysql|schema||aurora||SELECT|G\r\nmysql|schema||aurora||SHOW VIEW|G\r\nmysql|schema||aurora||TRIGGER|G\r\nmysql|schema||aurora||UPDATE|G\r\nmysql|schema||aurora||grant option|G\r\nperformance_schema|schema||mysql.session|localhost|SELECT|G\r\nshslsc|schema||test46||ALTER|G\r\nshslsc|schema||test46||ALTER ROUTINE|G\r\nshslsc|schema||test46||CREATE|G\r\nshslsc|schema||test46||CREATE ROUTINE|G\r\nshslsc|schema||test46||CREATE TEMPORARY TABLES|G\r\nshslsc|schema||test46||CREATE VIEW|G\r\nshslsc|schema||test46||DELETE|G\r\nshslsc|schema||test46||DROP|G\r\nshslsc|schema||test46||EVENT|G\r\nshslsc|schema||test46||EXECUTE|G\r\nshslsc|schema||test46||INDEX|G\r\nshslsc|schema||test46||INSERT|G\r\nshslsc|schema||test46||LOCK TABLES|G\r\nshslsc|schema||test46||REFERENCES|G\r\nshslsc|schema||test46||SELECT|G\r\nshslsc|schema||test46||SHOW VIEW|G\r\nshslsc|schema||test46||TRIGGER|G\r\nshslsc|schema||test46||UPDATE|G\r\nsys|schema||mysql.sys|localhost|TRIGGER|G\r\ntest|schema||aurora||ALTER|G\r\ntest|schema||aurora||ALTER ROUTINE|G\r\ntest|schema||aurora||CREATE|G\r\ntest|schema||aurora||CREATE ROUTINE|G\r\ntest|schema||aurora||CREATE TEMPORARY TABLES|G\r\ntest|schema||aurora||CREATE VIEW|G\r\ntest|schema||aurora||DELETE|G\r\ntest|schema||aurora||DROP|G\r\ntest|schema||aurora||EVENT|G\r\ntest|schema||aurora||EXECUTE|G\r\ntest|schema||aurora||INDEX|G\r\ntest|schema||aurora||INSERT|G\r\ntest|schema||aurora||LOCK TABLES|G\r\ntest|schema||aurora||REFERENCES|G\r\ntest|schema||aurora||SELECT|G\r\ntest|schema||aurora||SHOW VIEW|G\r\ntest|schema||aurora||TRIGGER|G\r\ntest|schema||aurora||UPDATE|G\r\ntest|schema||aurora||grant option|G</Grants>\r\n      <ServerVersion>8.0.13</ServerVersion>\r\n    </root>\r\n    <collation id=\"2\" parent=\"1\" name=\"armscii8_bin\">\r\n      <Charset>armscii8</Charset>\r\n    </collation>\r\n    <collation id=\"3\" parent=\"1\" name=\"armscii8_general_ci\">\r\n      <Charset>armscii8</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"4\" parent=\"1\" name=\"ascii_bin\">\r\n      <Charset>ascii</Charset>\r\n    </collation>\r\n    <collation id=\"5\" parent=\"1\" name=\"ascii_general_ci\">\r\n      <Charset>ascii</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"6\" parent=\"1\" name=\"big5_bin\">\r\n      <Charset>big5</Charset>\r\n    </collation>\r\n    <collation id=\"7\" parent=\"1\" name=\"big5_chinese_ci\">\r\n      <Charset>big5</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"8\" parent=\"1\" name=\"binary\">\r\n      <Charset>binary</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"9\" parent=\"1\" name=\"cp1250_bin\">\r\n      <Charset>cp1250</Charset>\r\n    </collation>\r\n    <collation id=\"10\" parent=\"1\" name=\"cp1250_croatian_ci\">\r\n      <Charset>cp1250</Charset>\r\n    </collation>\r\n    <collation id=\"11\" parent=\"1\" name=\"cp1250_czech_cs\">\r\n      <Charset>cp1250</Charset>\r\n    </collation>\r\n    <collation id=\"12\" parent=\"1\" name=\"cp1250_general_ci\">\r\n      <Charset>cp1250</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"13\" parent=\"1\" name=\"cp1250_polish_ci\">\r\n      <Charset>cp1250</Charset>\r\n    </collation>\r\n    <collation id=\"14\" parent=\"1\" name=\"cp1251_bin\">\r\n      <Charset>cp1251</Charset>\r\n    </collation>\r\n    <collation id=\"15\" parent=\"1\" name=\"cp1251_bulgarian_ci\">\r\n      <Charset>cp1251</Charset>\r\n    </collation>\r\n    <collation id=\"16\" parent=\"1\" name=\"cp1251_general_ci\">\r\n      <Charset>cp1251</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"17\" parent=\"1\" name=\"cp1251_general_cs\">\r\n      <Charset>cp1251</Charset>\r\n    </collation>\r\n    <collation id=\"18\" parent=\"1\" name=\"cp1251_ukrainian_ci\">\r\n      <Charset>cp1251</Charset>\r\n    </collation>\r\n    <collation id=\"19\" parent=\"1\" name=\"cp1256_bin\">\r\n      <Charset>cp1256</Charset>\r\n    </collation>\r\n    <collation id=\"20\" parent=\"1\" name=\"cp1256_general_ci\">\r\n      <Charset>cp1256</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"21\" parent=\"1\" name=\"cp1257_bin\">\r\n      <Charset>cp1257</Charset>\r\n    </collation>\r\n    <collation id=\"22\" parent=\"1\" name=\"cp1257_general_ci\">\r\n      <Charset>cp1257</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"23\" parent=\"1\" name=\"cp1257_lithuanian_ci\">\r\n      <Charset>cp1257</Charset>\r\n    </collation>\r\n    <collation id=\"24\" parent=\"1\" name=\"cp850_bin\">\r\n      <Charset>cp850</Charset>\r\n    </collation>\r\n    <collation id=\"25\" parent=\"1\" name=\"cp850_general_ci\">\r\n      <Charset>cp850</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"26\" parent=\"1\" name=\"cp852_bin\">\r\n      <Charset>cp852</Charset>\r\n    </collation>\r\n    <collation id=\"27\" parent=\"1\" name=\"cp852_general_ci\">\r\n      <Charset>cp852</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"28\" parent=\"1\" name=\"cp866_bin\">\r\n      <Charset>cp866</Charset>\r\n    </collation>\r\n    <collation id=\"29\" parent=\"1\" name=\"cp866_general_ci\">\r\n      <Charset>cp866</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"30\" parent=\"1\" name=\"cp932_bin\">\r\n      <Charset>cp932</Charset>\r\n    </collation>\r\n    <collation id=\"31\" parent=\"1\" name=\"cp932_japanese_ci\">\r\n      <Charset>cp932</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"32\" parent=\"1\" name=\"dec8_bin\">\r\n      <Charset>dec8</Charset>\r\n    </collation>\r\n    <collation id=\"33\" parent=\"1\" name=\"dec8_swedish_ci\">\r\n      <Charset>dec8</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"34\" parent=\"1\" name=\"eucjpms_bin\">\r\n      <Charset>eucjpms</Charset>\r\n    </collation>\r\n    <collation id=\"35\" parent=\"1\" name=\"eucjpms_japanese_ci\">\r\n      <Charset>eucjpms</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"36\" parent=\"1\" name=\"euckr_bin\">\r\n      <Charset>euckr</Charset>\r\n    </collation>\r\n    <collation id=\"37\" parent=\"1\" name=\"euckr_korean_ci\">\r\n      <Charset>euckr</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"38\" parent=\"1\" name=\"gb18030_bin\">\r\n      <Charset>gb18030</Charset>\r\n    </collation>\r\n    <collation id=\"39\" parent=\"1\" name=\"gb18030_chinese_ci\">\r\n      <Charset>gb18030</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"40\" parent=\"1\" name=\"gb18030_unicode_520_ci\">\r\n      <Charset>gb18030</Charset>\r\n    </collation>\r\n    <collation id=\"41\" parent=\"1\" name=\"gb2312_bin\">\r\n      <Charset>gb2312</Charset>\r\n    </collation>\r\n    <collation id=\"42\" parent=\"1\" name=\"gb2312_chinese_ci\">\r\n      <Charset>gb2312</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"43\" parent=\"1\" name=\"gbk_bin\">\r\n      <Charset>gbk</Charset>\r\n    </collation>\r\n    <collation id=\"44\" parent=\"1\" name=\"gbk_chinese_ci\">\r\n      <Charset>gbk</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"45\" parent=\"1\" name=\"geostd8_bin\">\r\n      <Charset>geostd8</Charset>\r\n    </collation>\r\n    <collation id=\"46\" parent=\"1\" name=\"geostd8_general_ci\">\r\n      <Charset>geostd8</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"47\" parent=\"1\" name=\"greek_bin\">\r\n      <Charset>greek</Charset>\r\n    </collation>\r\n    <collation id=\"48\" parent=\"1\" name=\"greek_general_ci\">\r\n      <Charset>greek</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"49\" parent=\"1\" name=\"hebrew_bin\">\r\n      <Charset>hebrew</Charset>\r\n    </collation>\r\n    <collation id=\"50\" parent=\"1\" name=\"hebrew_general_ci\">\r\n      <Charset>hebrew</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"51\" parent=\"1\" name=\"hp8_bin\">\r\n      <Charset>hp8</Charset>\r\n    </collation>\r\n    <collation id=\"52\" parent=\"1\" name=\"hp8_english_ci\">\r\n      <Charset>hp8</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"53\" parent=\"1\" name=\"keybcs2_bin\">\r\n      <Charset>keybcs2</Charset>\r\n    </collation>\r\n    <collation id=\"54\" parent=\"1\" name=\"keybcs2_general_ci\">\r\n      <Charset>keybcs2</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"55\" parent=\"1\" name=\"koi8r_bin\">\r\n      <Charset>koi8r</Charset>\r\n    </collation>\r\n    <collation id=\"56\" parent=\"1\" name=\"koi8r_general_ci\">\r\n      <Charset>koi8r</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"57\" parent=\"1\" name=\"koi8u_bin\">\r\n      <Charset>koi8u</Charset>\r\n    </collation>\r\n    <collation id=\"58\" parent=\"1\" name=\"koi8u_general_ci\">\r\n      <Charset>koi8u</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"59\" parent=\"1\" name=\"latin1_bin\">\r\n      <Charset>latin1</Charset>\r\n    </collation>\r\n    <collation id=\"60\" parent=\"1\" name=\"latin1_danish_ci\">\r\n      <Charset>latin1</Charset>\r\n    </collation>\r\n    <collation id=\"61\" parent=\"1\" name=\"latin1_general_ci\">\r\n      <Charset>latin1</Charset>\r\n    </collation>\r\n    <collation id=\"62\" parent=\"1\" name=\"latin1_general_cs\">\r\n      <Charset>latin1</Charset>\r\n    </collation>\r\n    <collation id=\"63\" parent=\"1\" name=\"latin1_german1_ci\">\r\n      <Charset>latin1</Charset>\r\n    </collation>\r\n    <collation id=\"64\" parent=\"1\" name=\"latin1_german2_ci\">\r\n      <Charset>latin1</Charset>\r\n    </collation>\r\n    <collation id=\"65\" parent=\"1\" name=\"latin1_spanish_ci\">\r\n      <Charset>latin1</Charset>\r\n    </collation>\r\n    <collation id=\"66\" parent=\"1\" name=\"latin1_swedish_ci\">\r\n      <Charset>latin1</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"67\" parent=\"1\" name=\"latin2_bin\">\r\n      <Charset>latin2</Charset>\r\n    </collation>\r\n    <collation id=\"68\" parent=\"1\" name=\"latin2_croatian_ci\">\r\n      <Charset>latin2</Charset>\r\n    </collation>\r\n    <collation id=\"69\" parent=\"1\" name=\"latin2_czech_cs\">\r\n      <Charset>latin2</Charset>\r\n    </collation>\r\n    <collation id=\"70\" parent=\"1\" name=\"latin2_general_ci\">\r\n      <Charset>latin2</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"71\" parent=\"1\" name=\"latin2_hungarian_ci\">\r\n      <Charset>latin2</Charset>\r\n    </collation>\r\n    <collation id=\"72\" parent=\"1\" name=\"latin5_bin\">\r\n      <Charset>latin5</Charset>\r\n    </collation>\r\n    <collation id=\"73\" parent=\"1\" name=\"latin5_turkish_ci\">\r\n      <Charset>latin5</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"74\" parent=\"1\" name=\"latin7_bin\">\r\n      <Charset>latin7</Charset>\r\n    </collation>\r\n    <collation id=\"75\" parent=\"1\" name=\"latin7_estonian_cs\">\r\n      <Charset>latin7</Charset>\r\n    </collation>\r\n    <collation id=\"76\" parent=\"1\" name=\"latin7_general_ci\">\r\n      <Charset>latin7</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"77\" parent=\"1\" name=\"latin7_general_cs\">\r\n      <Charset>latin7</Charset>\r\n    </collation>\r\n    <collation id=\"78\" parent=\"1\" name=\"macce_bin\">\r\n      <Charset>macce</Charset>\r\n    </collation>\r\n    <collation id=\"79\" parent=\"1\" name=\"macce_general_ci\">\r\n      <Charset>macce</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"80\" parent=\"1\" name=\"macroman_bin\">\r\n      <Charset>macroman</Charset>\r\n    </collation>\r\n    <collation id=\"81\" parent=\"1\" name=\"macroman_general_ci\">\r\n      <Charset>macroman</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"82\" parent=\"1\" name=\"sjis_bin\">\r\n      <Charset>sjis</Charset>\r\n    </collation>\r\n    <collation id=\"83\" parent=\"1\" name=\"sjis_japanese_ci\">\r\n      <Charset>sjis</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"84\" parent=\"1\" name=\"swe7_bin\">\r\n      <Charset>swe7</Charset>\r\n    </collation>\r\n    <collation id=\"85\" parent=\"1\" name=\"swe7_swedish_ci\">\r\n      <Charset>swe7</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"86\" parent=\"1\" name=\"tis620_bin\">\r\n      <Charset>tis620</Charset>\r\n    </collation>\r\n    <collation id=\"87\" parent=\"1\" name=\"tis620_thai_ci\">\r\n      <Charset>tis620</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"88\" parent=\"1\" name=\"ucs2_bin\">\r\n      <Charset>ucs2</Charset>\r\n    </collation>\r\n    <collation id=\"89\" parent=\"1\" name=\"ucs2_croatian_ci\">\r\n      <Charset>ucs2</Charset>\r\n    </collation>\r\n    <collation id=\"90\" parent=\"1\" name=\"ucs2_czech_ci\">\r\n      <Charset>ucs2</Charset>\r\n    </collation>\r\n    <collation id=\"91\" parent=\"1\" name=\"ucs2_danish_ci\">\r\n      <Charset>ucs2</Charset>\r\n    </collation>\r\n    <collation id=\"92\" parent=\"1\" name=\"ucs2_esperanto_ci\">\r\n      <Charset>ucs2</Charset>\r\n    </collation>\r\n    <collation id=\"93\" parent=\"1\" name=\"ucs2_estonian_ci\">\r\n      <Charset>ucs2</Charset>\r\n    </collation>\r\n    <collation id=\"94\" parent=\"1\" name=\"ucs2_general_ci\">\r\n      <Charset>ucs2</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"95\" parent=\"1\" name=\"ucs2_general_mysql500_ci\">\r\n      <Charset>ucs2</Charset>\r\n    </collation>\r\n    <collation id=\"96\" parent=\"1\" name=\"ucs2_german2_ci\">\r\n      <Charset>ucs2</Charset>\r\n    </collation>\r\n    <collation id=\"97\" parent=\"1\" name=\"ucs2_hungarian_ci\">\r\n      <Charset>ucs2</Charset>\r\n    </collation>\r\n    <collation id=\"98\" parent=\"1\" name=\"ucs2_icelandic_ci\">\r\n      <Charset>ucs2</Charset>\r\n    </collation>\r\n    <collation id=\"99\" parent=\"1\" name=\"ucs2_latvian_ci\">\r\n      <Charset>ucs2</Charset>\r\n    </collation>\r\n    <collation id=\"100\" parent=\"1\" name=\"ucs2_lithuanian_ci\">\r\n      <Charset>ucs2</Charset>\r\n    </collation>\r\n    <collation id=\"101\" parent=\"1\" name=\"ucs2_persian_ci\">\r\n      <Charset>ucs2</Charset>\r\n    </collation>\r\n    <collation id=\"102\" parent=\"1\" name=\"ucs2_polish_ci\">\r\n      <Charset>ucs2</Charset>\r\n    </collation>\r\n    <collation id=\"103\" parent=\"1\" name=\"ucs2_roman_ci\">\r\n      <Charset>ucs2</Charset>\r\n    </collation>\r\n    <collation id=\"104\" parent=\"1\" name=\"ucs2_romanian_ci\">\r\n      <Charset>ucs2</Charset>\r\n    </collation>\r\n    <collation id=\"105\" parent=\"1\" name=\"ucs2_sinhala_ci\">\r\n      <Charset>ucs2</Charset>\r\n    </collation>\r\n    <collation id=\"106\" parent=\"1\" name=\"ucs2_slovak_ci\">\r\n      <Charset>ucs2</Charset>\r\n    </collation>\r\n    <collation id=\"107\" parent=\"1\" name=\"ucs2_slovenian_ci\">\r\n      <Charset>ucs2</Charset>\r\n    </collation>\r\n    <collation id=\"108\" parent=\"1\" name=\"ucs2_spanish2_ci\">\r\n      <Charset>ucs2</Charset>\r\n    </collation>\r\n    <collation id=\"109\" parent=\"1\" name=\"ucs2_spanish_ci\">\r\n      <Charset>ucs2</Charset>\r\n    </collation>\r\n    <collation id=\"110\" parent=\"1\" name=\"ucs2_swedish_ci\">\r\n      <Charset>ucs2</Charset>\r\n    </collation>\r\n    <collation id=\"111\" parent=\"1\" name=\"ucs2_turkish_ci\">\r\n      <Charset>ucs2</Charset>\r\n    </collation>\r\n    <collation id=\"112\" parent=\"1\" name=\"ucs2_unicode_520_ci\">\r\n      <Charset>ucs2</Charset>\r\n    </collation>\r\n    <collation id=\"113\" parent=\"1\" name=\"ucs2_unicode_ci\">\r\n      <Charset>ucs2</Charset>\r\n    </collation>\r\n    <collation id=\"114\" parent=\"1\" name=\"ucs2_vietnamese_ci\">\r\n      <Charset>ucs2</Charset>\r\n    </collation>\r\n    <collation id=\"115\" parent=\"1\" name=\"ujis_bin\">\r\n      <Charset>ujis</Charset>\r\n    </collation>\r\n    <collation id=\"116\" parent=\"1\" name=\"ujis_japanese_ci\">\r\n      <Charset>ujis</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"117\" parent=\"1\" name=\"utf16_bin\">\r\n      <Charset>utf16</Charset>\r\n    </collation>\r\n    <collation id=\"118\" parent=\"1\" name=\"utf16_croatian_ci\">\r\n      <Charset>utf16</Charset>\r\n    </collation>\r\n    <collation id=\"119\" parent=\"1\" name=\"utf16_czech_ci\">\r\n      <Charset>utf16</Charset>\r\n    </collation>\r\n    <collation id=\"120\" parent=\"1\" name=\"utf16_danish_ci\">\r\n      <Charset>utf16</Charset>\r\n    </collation>\r\n    <collation id=\"121\" parent=\"1\" name=\"utf16_esperanto_ci\">\r\n      <Charset>utf16</Charset>\r\n    </collation>\r\n    <collation id=\"122\" parent=\"1\" name=\"utf16_estonian_ci\">\r\n      <Charset>utf16</Charset>\r\n    </collation>\r\n    <collation id=\"123\" parent=\"1\" name=\"utf16_general_ci\">\r\n      <Charset>utf16</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"124\" parent=\"1\" name=\"utf16_german2_ci\">\r\n      <Charset>utf16</Charset>\r\n    </collation>\r\n    <collation id=\"125\" parent=\"1\" name=\"utf16_hungarian_ci\">\r\n      <Charset>utf16</Charset>\r\n    </collation>\r\n    <collation id=\"126\" parent=\"1\" name=\"utf16_icelandic_ci\">\r\n      <Charset>utf16</Charset>\r\n    </collation>\r\n    <collation id=\"127\" parent=\"1\" name=\"utf16_latvian_ci\">\r\n      <Charset>utf16</Charset>\r\n    </collation>\r\n    <collation id=\"128\" parent=\"1\" name=\"utf16_lithuanian_ci\">\r\n      <Charset>utf16</Charset>\r\n    </collation>\r\n    <collation id=\"129\" parent=\"1\" name=\"utf16_persian_ci\">\r\n      <Charset>utf16</Charset>\r\n    </collation>\r\n    <collation id=\"130\" parent=\"1\" name=\"utf16_polish_ci\">\r\n      <Charset>utf16</Charset>\r\n    </collation>\r\n    <collation id=\"131\" parent=\"1\" name=\"utf16_roman_ci\">\r\n      <Charset>utf16</Charset>\r\n    </collation>\r\n    <collation id=\"132\" parent=\"1\" name=\"utf16_romanian_ci\">\r\n      <Charset>utf16</Charset>\r\n    </collation>\r\n    <collation id=\"133\" parent=\"1\" name=\"utf16_sinhala_ci\">\r\n      <Charset>utf16</Charset>\r\n    </collation>\r\n    <collation id=\"134\" parent=\"1\" name=\"utf16_slovak_ci\">\r\n      <Charset>utf16</Charset>\r\n    </collation>\r\n    <collation id=\"135\" parent=\"1\" name=\"utf16_slovenian_ci\">\r\n      <Charset>utf16</Charset>\r\n    </collation>\r\n    <collation id=\"136\" parent=\"1\" name=\"utf16_spanish2_ci\">\r\n      <Charset>utf16</Charset>\r\n    </collation>\r\n    <collation id=\"137\" parent=\"1\" name=\"utf16_spanish_ci\">\r\n      <Charset>utf16</Charset>\r\n    </collation>\r\n    <collation id=\"138\" parent=\"1\" name=\"utf16_swedish_ci\">\r\n      <Charset>utf16</Charset>\r\n    </collation>\r\n    <collation id=\"139\" parent=\"1\" name=\"utf16_turkish_ci\">\r\n      <Charset>utf16</Charset>\r\n    </collation>\r\n    <collation id=\"140\" parent=\"1\" name=\"utf16_unicode_520_ci\">\r\n      <Charset>utf16</Charset>\r\n    </collation>\r\n    <collation id=\"141\" parent=\"1\" name=\"utf16_unicode_ci\">\r\n      <Charset>utf16</Charset>\r\n    </collation>\r\n    <collation id=\"142\" parent=\"1\" name=\"utf16_vietnamese_ci\">\r\n      <Charset>utf16</Charset>\r\n    </collation>\r\n    <collation id=\"143\" parent=\"1\" name=\"utf16le_bin\">\r\n      <Charset>utf16le</Charset>\r\n    </collation>\r\n    <collation id=\"144\" parent=\"1\" name=\"utf16le_general_ci\">\r\n      <Charset>utf16le</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"145\" parent=\"1\" name=\"utf32_bin\">\r\n      <Charset>utf32</Charset>\r\n    </collation>\r\n    <collation id=\"146\" parent=\"1\" name=\"utf32_croatian_ci\">\r\n      <Charset>utf32</Charset>\r\n    </collation>\r\n    <collation id=\"147\" parent=\"1\" name=\"utf32_czech_ci\">\r\n      <Charset>utf32</Charset>\r\n    </collation>\r\n    <collation id=\"148\" parent=\"1\" name=\"utf32_danish_ci\">\r\n      <Charset>utf32</Charset>\r\n    </collation>\r\n    <collation id=\"149\" parent=\"1\" name=\"utf32_esperanto_ci\">\r\n      <Charset>utf32</Charset>\r\n    </collation>\r\n    <collation id=\"150\" parent=\"1\" name=\"utf32_estonian_ci\">\r\n      <Charset>utf32</Charset>\r\n    </collation>\r\n    <collation id=\"151\" parent=\"1\" name=\"utf32_general_ci\">\r\n      <Charset>utf32</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"152\" parent=\"1\" name=\"utf32_german2_ci\">\r\n      <Charset>utf32</Charset>\r\n    </collation>\r\n    <collation id=\"153\" parent=\"1\" name=\"utf32_hungarian_ci\">\r\n      <Charset>utf32</Charset>\r\n    </collation>\r\n    <collation id=\"154\" parent=\"1\" name=\"utf32_icelandic_ci\">\r\n      <Charset>utf32</Charset>\r\n    </collation>\r\n    <collation id=\"155\" parent=\"1\" name=\"utf32_latvian_ci\">\r\n      <Charset>utf32</Charset>\r\n    </collation>\r\n    <collation id=\"156\" parent=\"1\" name=\"utf32_lithuanian_ci\">\r\n      <Charset>utf32</Charset>\r\n    </collation>\r\n    <collation id=\"157\" parent=\"1\" name=\"utf32_persian_ci\">\r\n      <Charset>utf32</Charset>\r\n    </collation>\r\n    <collation id=\"158\" parent=\"1\" name=\"utf32_polish_ci\">\r\n      <Charset>utf32</Charset>\r\n    </collation>\r\n    <collation id=\"159\" parent=\"1\" name=\"utf32_roman_ci\">\r\n      <Charset>utf32</Charset>\r\n    </collation>\r\n    <collation id=\"160\" parent=\"1\" name=\"utf32_romanian_ci\">\r\n      <Charset>utf32</Charset>\r\n    </collation>\r\n    <collation id=\"161\" parent=\"1\" name=\"utf32_sinhala_ci\">\r\n      <Charset>utf32</Charset>\r\n    </collation>\r\n    <collation id=\"162\" parent=\"1\" name=\"utf32_slovak_ci\">\r\n      <Charset>utf32</Charset>\r\n    </collation>\r\n    <collation id=\"163\" parent=\"1\" name=\"utf32_slovenian_ci\">\r\n      <Charset>utf32</Charset>\r\n    </collation>\r\n    <collation id=\"164\" parent=\"1\" name=\"utf32_spanish2_ci\">\r\n      <Charset>utf32</Charset>\r\n    </collation>\r\n    <collation id=\"165\" parent=\"1\" name=\"utf32_spanish_ci\">\r\n      <Charset>utf32</Charset>\r\n    </collation>\r\n    <collation id=\"166\" parent=\"1\" name=\"utf32_swedish_ci\">\r\n      <Charset>utf32</Charset>\r\n    </collation>\r\n    <collation id=\"167\" parent=\"1\" name=\"utf32_turkish_ci\">\r\n      <Charset>utf32</Charset>\r\n    </collation>\r\n    <collation id=\"168\" parent=\"1\" name=\"utf32_unicode_520_ci\">\r\n      <Charset>utf32</Charset>\r\n    </collation>\r\n    <collation id=\"169\" parent=\"1\" name=\"utf32_unicode_ci\">\r\n      <Charset>utf32</Charset>\r\n    </collation>\r\n    <collation id=\"170\" parent=\"1\" name=\"utf32_vietnamese_ci\">\r\n      <Charset>utf32</Charset>\r\n    </collation>\r\n    <collation id=\"171\" parent=\"1\" name=\"utf8_bin\">\r\n      <Charset>utf8</Charset>\r\n    </collation>\r\n    <collation id=\"172\" parent=\"1\" name=\"utf8_croatian_ci\">\r\n      <Charset>utf8</Charset>\r\n    </collation>\r\n    <collation id=\"173\" parent=\"1\" name=\"utf8_czech_ci\">\r\n      <Charset>utf8</Charset>\r\n    </collation>\r\n    <collation id=\"174\" parent=\"1\" name=\"utf8_danish_ci\">\r\n      <Charset>utf8</Charset>\r\n    </collation>\r\n    <collation id=\"175\" parent=\"1\" name=\"utf8_esperanto_ci\">\r\n      <Charset>utf8</Charset>\r\n    </collation>\r\n    <collation id=\"176\" parent=\"1\" name=\"utf8_estonian_ci\">\r\n      <Charset>utf8</Charset>\r\n    </collation>\r\n    <collation id=\"177\" parent=\"1\" name=\"utf8_general_ci\">\r\n      <Charset>utf8</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"178\" parent=\"1\" name=\"utf8_general_mysql500_ci\">\r\n      <Charset>utf8</Charset>\r\n    </collation>\r\n    <collation id=\"179\" parent=\"1\" name=\"utf8_german2_ci\">\r\n      <Charset>utf8</Charset>\r\n    </collation>\r\n    <collation id=\"180\" parent=\"1\" name=\"utf8_hungarian_ci\">\r\n      <Charset>utf8</Charset>\r\n    </collation>\r\n    <collation id=\"181\" parent=\"1\" name=\"utf8_icelandic_ci\">\r\n      <Charset>utf8</Charset>\r\n    </collation>\r\n    <collation id=\"182\" parent=\"1\" name=\"utf8_latvian_ci\">\r\n      <Charset>utf8</Charset>\r\n    </collation>\r\n    <collation id=\"183\" parent=\"1\" name=\"utf8_lithuanian_ci\">\r\n      <Charset>utf8</Charset>\r\n    </collation>\r\n    <collation id=\"184\" parent=\"1\" name=\"utf8_persian_ci\">\r\n      <Charset>utf8</Charset>\r\n    </collation>\r\n    <collation id=\"185\" parent=\"1\" name=\"utf8_polish_ci\">\r\n      <Charset>utf8</Charset>\r\n    </collation>\r\n    <collation id=\"186\" parent=\"1\" name=\"utf8_roman_ci\">\r\n      <Charset>utf8</Charset>\r\n    </collation>\r\n    <collation id=\"187\" parent=\"1\" name=\"utf8_romanian_ci\">\r\n      <Charset>utf8</Charset>\r\n    </collation>\r\n    <collation id=\"188\" parent=\"1\" name=\"utf8_sinhala_ci\">\r\n      <Charset>utf8</Charset>\r\n    </collation>\r\n    <collation id=\"189\" parent=\"1\" name=\"utf8_slovak_ci\">\r\n      <Charset>utf8</Charset>\r\n    </collation>\r\n    <collation id=\"190\" parent=\"1\" name=\"utf8_slovenian_ci\">\r\n      <Charset>utf8</Charset>\r\n    </collation>\r\n    <collation id=\"191\" parent=\"1\" name=\"utf8_spanish2_ci\">\r\n      <Charset>utf8</Charset>\r\n    </collation>\r\n    <collation id=\"192\" parent=\"1\" name=\"utf8_spanish_ci\">\r\n      <Charset>utf8</Charset>\r\n    </collation>\r\n    <collation id=\"193\" parent=\"1\" name=\"utf8_swedish_ci\">\r\n      <Charset>utf8</Charset>\r\n    </collation>\r\n    <collation id=\"194\" parent=\"1\" name=\"utf8_tolower_ci\">\r\n      <Charset>utf8</Charset>\r\n    </collation>\r\n    <collation id=\"195\" parent=\"1\" name=\"utf8_turkish_ci\">\r\n      <Charset>utf8</Charset>\r\n    </collation>\r\n    <collation id=\"196\" parent=\"1\" name=\"utf8_unicode_520_ci\">\r\n      <Charset>utf8</Charset>\r\n    </collation>\r\n    <collation id=\"197\" parent=\"1\" name=\"utf8_unicode_ci\">\r\n      <Charset>utf8</Charset>\r\n    </collation>\r\n    <collation id=\"198\" parent=\"1\" name=\"utf8_vietnamese_ci\">\r\n      <Charset>utf8</Charset>\r\n    </collation>\r\n    <collation id=\"199\" parent=\"1\" name=\"utf8mb4_0900_ai_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n      <DefaultForCharset>1</DefaultForCharset>\r\n    </collation>\r\n    <collation id=\"200\" parent=\"1\" name=\"utf8mb4_0900_as_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"201\" parent=\"1\" name=\"utf8mb4_0900_as_cs\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"202\" parent=\"1\" name=\"utf8mb4_0900_bin\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"203\" parent=\"1\" name=\"utf8mb4_bin\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"204\" parent=\"1\" name=\"utf8mb4_croatian_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"205\" parent=\"1\" name=\"utf8mb4_cs_0900_ai_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"206\" parent=\"1\" name=\"utf8mb4_cs_0900_as_cs\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"207\" parent=\"1\" name=\"utf8mb4_czech_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"208\" parent=\"1\" name=\"utf8mb4_da_0900_ai_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"209\" parent=\"1\" name=\"utf8mb4_da_0900_as_cs\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"210\" parent=\"1\" name=\"utf8mb4_danish_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"211\" parent=\"1\" name=\"utf8mb4_de_pb_0900_ai_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"212\" parent=\"1\" name=\"utf8mb4_de_pb_0900_as_cs\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"213\" parent=\"1\" name=\"utf8mb4_eo_0900_ai_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"214\" parent=\"1\" name=\"utf8mb4_eo_0900_as_cs\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"215\" parent=\"1\" name=\"utf8mb4_es_0900_ai_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"216\" parent=\"1\" name=\"utf8mb4_es_0900_as_cs\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"217\" parent=\"1\" name=\"utf8mb4_es_trad_0900_ai_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"218\" parent=\"1\" name=\"utf8mb4_es_trad_0900_as_cs\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"219\" parent=\"1\" name=\"utf8mb4_esperanto_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"220\" parent=\"1\" name=\"utf8mb4_estonian_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"221\" parent=\"1\" name=\"utf8mb4_et_0900_ai_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"222\" parent=\"1\" name=\"utf8mb4_et_0900_as_cs\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"223\" parent=\"1\" name=\"utf8mb4_general_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"224\" parent=\"1\" name=\"utf8mb4_german2_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"225\" parent=\"1\" name=\"utf8mb4_hr_0900_ai_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"226\" parent=\"1\" name=\"utf8mb4_hr_0900_as_cs\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"227\" parent=\"1\" name=\"utf8mb4_hu_0900_ai_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"228\" parent=\"1\" name=\"utf8mb4_hu_0900_as_cs\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"229\" parent=\"1\" name=\"utf8mb4_hungarian_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"230\" parent=\"1\" name=\"utf8mb4_icelandic_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"231\" parent=\"1\" name=\"utf8mb4_is_0900_ai_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"232\" parent=\"1\" name=\"utf8mb4_is_0900_as_cs\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"233\" parent=\"1\" name=\"utf8mb4_ja_0900_as_cs\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"234\" parent=\"1\" name=\"utf8mb4_ja_0900_as_cs_ks\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"235\" parent=\"1\" name=\"utf8mb4_la_0900_ai_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"236\" parent=\"1\" name=\"utf8mb4_la_0900_as_cs\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"237\" parent=\"1\" name=\"utf8mb4_latvian_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"238\" parent=\"1\" name=\"utf8mb4_lithuanian_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"239\" parent=\"1\" name=\"utf8mb4_lt_0900_ai_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"240\" parent=\"1\" name=\"utf8mb4_lt_0900_as_cs\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"241\" parent=\"1\" name=\"utf8mb4_lv_0900_ai_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"242\" parent=\"1\" name=\"utf8mb4_lv_0900_as_cs\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"243\" parent=\"1\" name=\"utf8mb4_persian_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"244\" parent=\"1\" name=\"utf8mb4_pl_0900_ai_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"245\" parent=\"1\" name=\"utf8mb4_pl_0900_as_cs\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"246\" parent=\"1\" name=\"utf8mb4_polish_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"247\" parent=\"1\" name=\"utf8mb4_ro_0900_ai_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"248\" parent=\"1\" name=\"utf8mb4_ro_0900_as_cs\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"249\" parent=\"1\" name=\"utf8mb4_roman_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"250\" parent=\"1\" name=\"utf8mb4_romanian_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"251\" parent=\"1\" name=\"utf8mb4_ru_0900_ai_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"252\" parent=\"1\" name=\"utf8mb4_ru_0900_as_cs\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"253\" parent=\"1\" name=\"utf8mb4_sinhala_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"254\" parent=\"1\" name=\"utf8mb4_sk_0900_ai_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"255\" parent=\"1\" name=\"utf8mb4_sk_0900_as_cs\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"256\" parent=\"1\" name=\"utf8mb4_sl_0900_ai_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"257\" parent=\"1\" name=\"utf8mb4_sl_0900_as_cs\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"258\" parent=\"1\" name=\"utf8mb4_slovak_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"259\" parent=\"1\" name=\"utf8mb4_slovenian_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"260\" parent=\"1\" name=\"utf8mb4_spanish2_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"261\" parent=\"1\" name=\"utf8mb4_spanish_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"262\" parent=\"1\" name=\"utf8mb4_sv_0900_ai_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"263\" parent=\"1\" name=\"utf8mb4_sv_0900_as_cs\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"264\" parent=\"1\" name=\"utf8mb4_swedish_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"265\" parent=\"1\" name=\"utf8mb4_tr_0900_ai_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"266\" parent=\"1\" name=\"utf8mb4_tr_0900_as_cs\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"267\" parent=\"1\" name=\"utf8mb4_turkish_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"268\" parent=\"1\" name=\"utf8mb4_unicode_520_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"269\" parent=\"1\" name=\"utf8mb4_unicode_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"270\" parent=\"1\" name=\"utf8mb4_vi_0900_ai_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"271\" parent=\"1\" name=\"utf8mb4_vi_0900_as_cs\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <collation id=\"272\" parent=\"1\" name=\"utf8mb4_vietnamese_ci\">\r\n      <Charset>utf8mb4</Charset>\r\n    </collation>\r\n    <schema id=\"273\" parent=\"1\" name=\"__recycle_bin__\">\r\n      <CollationName>utf8mb4_0900_ai_ci</CollationName>\r\n    </schema>\r\n    <schema id=\"274\" parent=\"1\" name=\"information_schema\">\r\n      <CollationName>utf8_general_ci</CollationName>\r\n    </schema>\r\n    <schema id=\"275\" parent=\"1\" name=\"mysql\">\r\n      <CollationName>utf8_general_ci</CollationName>\r\n    </schema>\r\n    <schema id=\"276\" parent=\"1\" name=\"performance_schema\">\r\n      <CollationName>utf8mb4_0900_ai_ci</CollationName>\r\n    </schema>\r\n    <schema id=\"277\" parent=\"1\" name=\"shslsc\">\r\n      <CollationName>utf8_general_ci</CollationName>\r\n    </schema>\r\n    <schema id=\"278\" parent=\"1\" name=\"sys\">\r\n      <CollationName>utf8mb4_0900_ai_ci</CollationName>\r\n    </schema>\r\n    <user id=\"279\" parent=\"1\" name=\"aurora\"/>\r\n    <user id=\"280\" parent=\"1\" name=\"cpt202_46\"/>\r\n    <user id=\"281\" parent=\"1\" name=\"mysql.infoschema\">\r\n      <CanLogin>0</CanLogin>\r\n      <Host>localhost</Host>\r\n      <Plugin>caching_sha2_password</Plugin>\r\n    </user>\r\n    <user id=\"282\" parent=\"1\" name=\"mysql.session\">\r\n      <CanLogin>0</CanLogin>\r\n      <Host>localhost</Host>\r\n      <Plugin>caching_sha2_password</Plugin>\r\n    </user>\r\n    <user id=\"283\" parent=\"1\" name=\"mysql.sys\">\r\n      <CanLogin>0</CanLogin>\r\n      <Host>localhost</Host>\r\n      <Plugin>caching_sha2_password</Plugin>\r\n    </user>\r\n    <user id=\"284\" parent=\"1\" name=\"replicator\"/>\r\n    <user id=\"285\" parent=\"1\" name=\"replicator\">\r\n      <Host>10.254.122.16</Host>\r\n    </user>\r\n    <user id=\"286\" parent=\"1\" name=\"replicator\">\r\n      <Host>10.254.122.86</Host>\r\n    </user>\r\n    <user id=\"287\" parent=\"1\" name=\"root\">\r\n      <Host>127.0.0.1</Host>\r\n    </user>\r\n    <user id=\"288\" parent=\"1\" name=\"root\">\r\n      <Host>localhost</Host>\r\n    </user>\r\n    <user id=\"289\" parent=\"1\" name=\"test46\"/>\r\n    <table id=\"290\" parent=\"277\" name=\"admin\">\r\n      <Engine>InnoDB</Engine>\r\n      <CollationName>utf8_general_ci</CollationName>\r\n    </table>\r\n    <table id=\"291\" parent=\"277\" name=\"place\">\r\n      <Engine>InnoDB</Engine>\r\n      <CollationName>utf8_general_ci</CollationName>\r\n    </table>\r\n    <table id=\"292\" parent=\"277\" name=\"reservation_record\">\r\n      <Comment>预约记录</Comment>\r\n      <Engine>InnoDB</Engine>\r\n      <CollationName>utf8_general_ci</CollationName>\r\n    </table>\r\n    <table id=\"293\" parent=\"277\" name=\"stadium\">\r\n      <Engine>InnoDB</Engine>\r\n      <CollationName>utf8_general_ci</CollationName>\r\n    </table>\r\n    <table id=\"294\" parent=\"277\" name=\"user\">\r\n      <Engine>InnoDB</Engine>\r\n      <CollationName>utf8_general_ci</CollationName>\r\n    </table>\r\n    <column id=\"295\" parent=\"290\" name=\"admin_id\">\r\n      <DasType>int(11)|0s</DasType>\r\n      <Position>1</Position>\r\n    </column>\r\n    <column id=\"296\" parent=\"290\" name=\"admin_name\">\r\n      <DasType>varchar(10)|0s</DasType>\r\n      <Position>2</Position>\r\n    </column>\r\n    <column id=\"297\" parent=\"290\" name=\"password\">\r\n      <DasType>varchar(20)|0s</DasType>\r\n      <Position>3</Position>\r\n    </column>\r\n    <column id=\"298\" parent=\"290\" name=\"email\">\r\n      <DasType>varchar(20)|0s</DasType>\r\n      <Position>4</Position>\r\n    </column>\r\n    <column id=\"299\" parent=\"290\" name=\"power\">\r\n      <DasType>int(11)|0s</DasType>\r\n      <Position>5</Position>\r\n    </column>\r\n    <column id=\"300\" parent=\"290\" name=\"create_time\">\r\n      <DasType>datetime|0s</DasType>\r\n      <Position>6</Position>\r\n    </column>\r\n    <column id=\"301\" parent=\"290\" name=\"expiration_time\">\r\n      <DasType>datetime|0s</DasType>\r\n      <Position>7</Position>\r\n    </column>\r\n    <column id=\"302\" parent=\"291\" name=\"place_id\">\r\n      <AutoIncrement>1</AutoIncrement>\r\n      <DasType>int(11)|0s</DasType>\r\n      <NotNull>1</NotNull>\r\n      <Position>1</Position>\r\n    </column>\r\n    <column id=\"303\" parent=\"291\" name=\"sta_id\">\r\n      <DasType>int(11)|0s</DasType>\r\n      <NotNull>1</NotNull>\r\n      <Position>2</Position>\r\n    </column>\r\n    <column id=\"304\" parent=\"291\" name=\"status\">\r\n      <DasType>varchar(20)|0s</DasType>\r\n      <Position>3</Position>\r\n    </column>\r\n    <foreign-key id=\"305\" parent=\"291\" name=\"place_info_stadium_info_sta_id_fk\">\r\n      <ColNames>sta_id</ColNames>\r\n      <RefColNames>sta_id</RefColNames>\r\n      <RefTableName>stadium</RefTableName>\r\n    </foreign-key>\r\n    <index id=\"306\" parent=\"291\" name=\"PRIMARY\">\r\n      <ColNames>place_id</ColNames>\r\n      <Type>btree</Type>\r\n      <Unique>1</Unique>\r\n    </index>\r\n    <index id=\"307\" parent=\"291\" name=\"place_info_place_id_uindex\">\r\n      <ColNames>place_id</ColNames>\r\n      <Type>btree</Type>\r\n      <Unique>1</Unique>\r\n    </index>\r\n    <index id=\"308\" parent=\"291\" name=\"place_info_stadium_info_sta_id_fk\">\r\n      <ColNames>sta_id</ColNames>\r\n      <Type>btree</Type>\r\n    </index>\r\n    <key id=\"309\" parent=\"291\" name=\"PRIMARY\">\r\n      <NameSurrogate>1</NameSurrogate>\r\n      <Primary>1</Primary>\r\n      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>\r\n    </key>\r\n    <key id=\"310\" parent=\"291\" name=\"place_info_place_id_uindex\">\r\n      <UnderlyingIndexName>place_info_place_id_uindex</UnderlyingIndexName>\r\n    </key>\r\n    <column id=\"311\" parent=\"292\" name=\"res_id\">\r\n      <AutoIncrement>1</AutoIncrement>\r\n      <DasType>int(11)|0s</DasType>\r\n      <NotNull>1</NotNull>\r\n      <Position>1</Position>\r\n    </column>\r\n    <column id=\"312\" parent=\"292\" name=\"sta_id\">\r\n      <DasType>int(11)|0s</DasType>\r\n      <Position>2</Position>\r\n    </column>\r\n    <column id=\"313\" parent=\"292\" name=\"place_id\">\r\n      <DasType>int(11)|0s</DasType>\r\n      <NotNull>1</NotNull>\r\n      <Position>3</Position>\r\n    </column>\r\n    <column id=\"314\" parent=\"292\" name=\"user_id\">\r\n      <DasType>int(11)|0s</DasType>\r\n      <NotNull>1</NotNull>\r\n      <Position>4</Position>\r\n    </column>\r\n    <column id=\"315\" parent=\"292\" name=\"user_name\">\r\n      <DasType>varchar(20)|0s</DasType>\r\n      <Position>5</Position>\r\n    </column>\r\n    <column id=\"316\" parent=\"292\" name=\"booking_date\">\r\n      <DasType>datetime|0s</DasType>\r\n      <Position>6</Position>\r\n    </column>\r\n    <column id=\"317\" parent=\"292\" name=\"start_time\">\r\n      <DasType>datetime|0s</DasType>\r\n      <Position>7</Position>\r\n    </column>\r\n    <column id=\"318\" parent=\"292\" name=\"leave_time\">\r\n      <DasType>datetime|0s</DasType>\r\n      <Position>8</Position>\r\n    </column>\r\n    <column id=\"319\" parent=\"292\" name=\"booking_status\">\r\n      <DasType>varchar(20)|0s</DasType>\r\n      <Position>9</Position>\r\n    </column>\r\n    <column id=\"320\" parent=\"292\" name=\"people\">\r\n      <DasType>int(11)|0s</DasType>\r\n      <DefaultExpression>1</DefaultExpression>\r\n      <Position>10</Position>\r\n    </column>\r\n    <foreign-key id=\"321\" parent=\"292\" name=\"reservation_record_stadium_sta_id_fk\">\r\n      <ColNames>sta_id</ColNames>\r\n      <RefColNames>sta_id</RefColNames>\r\n      <RefTableName>stadium</RefTableName>\r\n    </foreign-key>\r\n    <foreign-key id=\"322\" parent=\"292\" name=\"reservation_record_place_info_place_id_fk\">\r\n      <ColNames>place_id</ColNames>\r\n      <RefColNames>place_id</RefColNames>\r\n      <RefTableName>place</RefTableName>\r\n    </foreign-key>\r\n    <foreign-key id=\"323\" parent=\"292\" name=\"reservation_record_user_info_user_id_fk\">\r\n      <ColNames>user_id</ColNames>\r\n      <RefColNames>user_id</RefColNames>\r\n      <RefTableName>user</RefTableName>\r\n    </foreign-key>\r\n    <index id=\"324\" parent=\"292\" name=\"PRIMARY\">\r\n      <ColNames>res_id</ColNames>\r\n      <Type>btree</Type>\r\n      <Unique>1</Unique>\r\n    </index>\r\n    <index id=\"325\" parent=\"292\" name=\"reservation_record_res_id_uindex\">\r\n      <ColNames>res_id</ColNames>\r\n      <Type>btree</Type>\r\n      <Unique>1</Unique>\r\n    </index>\r\n    <index id=\"326\" parent=\"292\" name=\"reservation_record_stadium_sta_id_fk\">\r\n      <ColNames>sta_id</ColNames>\r\n      <Type>btree</Type>\r\n    </index>\r\n    <index id=\"327\" parent=\"292\" name=\"reservation_record_place_info_place_id_fk\">\r\n      <ColNames>place_id</ColNames>\r\n      <Type>btree</Type>\r\n    </index>\r\n    <index id=\"328\" parent=\"292\" name=\"reservation_record_user_info_user_id_fk\">\r\n      <ColNames>user_id</ColNames>\r\n      <Type>btree</Type>\r\n    </index>\r\n    <key id=\"329\" parent=\"292\" name=\"PRIMARY\">\r\n      <NameSurrogate>1</NameSurrogate>\r\n      <Primary>1</Primary>\r\n      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>\r\n    </key>\r\n    <key id=\"330\" parent=\"292\" name=\"reservation_record_res_id_uindex\">\r\n      <UnderlyingIndexName>reservation_record_res_id_uindex</UnderlyingIndexName>\r\n    </key>\r\n    <column id=\"331\" parent=\"293\" name=\"sta_id\">\r\n      <AutoIncrement>1</AutoIncrement>\r\n      <DasType>int(11)|0s</DasType>\r\n      <NotNull>1</NotNull>\r\n      <Position>1</Position>\r\n    </column>\r\n    <column id=\"332\" parent=\"293\" name=\"sta_name\">\r\n      <DasType>varchar(10)|0s</DasType>\r\n      <NotNull>1</NotNull>\r\n      <Position>2</Position>\r\n    </column>\r\n    <column id=\"333\" parent=\"293\" name=\"place_number\">\r\n      <DasType>int(11)|0s</DasType>\r\n      <Position>3</Position>\r\n    </column>\r\n    <column id=\"334\" parent=\"293\" name=\"open_time\">\r\n      <DasType>datetime|0s</DasType>\r\n      <Position>4</Position>\r\n    </column>\r\n    <column id=\"335\" parent=\"293\" name=\"close_time\">\r\n      <DasType>datetime|0s</DasType>\r\n      <Position>5</Position>\r\n    </column>\r\n    <column id=\"336\" parent=\"293\" name=\"sta_info\">\r\n      <DasType>varchar(255)|0s</DasType>\r\n      <Position>6</Position>\r\n    </column>\r\n    <column id=\"337\" parent=\"293\" name=\"sta_picture\">\r\n      <DasType>varchar(255)|0s</DasType>\r\n      <Position>7</Position>\r\n    </column>\r\n    <column id=\"338\" parent=\"293\" name=\"limit\">\r\n      <DasType>int(11)|0s</DasType>\r\n      <Position>8</Position>\r\n    </column>\r\n    <column id=\"339\" parent=\"293\" name=\"price\">\r\n      <DasType>int(11)|0s</DasType>\r\n      <Position>9</Position>\r\n    </column>\r\n    <column id=\"340\" parent=\"293\" name=\"location\">\r\n      <DasType>varchar(255)|0s</DasType>\r\n      <Position>10</Position>\r\n    </column>\r\n    <index id=\"341\" parent=\"293\" name=\"PRIMARY\">\r\n      <ColNames>sta_id</ColNames>\r\n      <Type>btree</Type>\r\n      <Unique>1</Unique>\r\n    </index>\r\n    <index id=\"342\" parent=\"293\" name=\"stadium_info_sta_id_uindex\">\r\n      <ColNames>sta_id</ColNames>\r\n      <Type>btree</Type>\r\n      <Unique>1</Unique>\r\n    </index>\r\n    <index id=\"343\" parent=\"293\" name=\"stadium_info_sta_name_uindex\">\r\n      <ColNames>sta_name</ColNames>\r\n      <Type>btree</Type>\r\n      <Unique>1</Unique>\r\n    </index>\r\n    <key id=\"344\" parent=\"293\" name=\"PRIMARY\">\r\n      <NameSurrogate>1</NameSurrogate>\r\n      <Primary>1</Primary>\r\n      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>\r\n    </key>\r\n    <key id=\"345\" parent=\"293\" name=\"stadium_info_sta_id_uindex\">\r\n      <UnderlyingIndexName>stadium_info_sta_id_uindex</UnderlyingIndexName>\r\n    </key>\r\n    <key id=\"346\" parent=\"293\" name=\"stadium_info_sta_name_uindex\">\r\n      <UnderlyingIndexName>stadium_info_sta_name_uindex</UnderlyingIndexName>\r\n    </key>\r\n    <column id=\"347\" parent=\"294\" name=\"user_id\">\r\n      <AutoIncrement>1</AutoIncrement>\r\n      <DasType>int(11)|0s</DasType>\r\n      <NotNull>1</NotNull>\r\n      <Position>1</Position>\r\n    </column>\r\n    <column id=\"348\" parent=\"294\" name=\"user_name\">\r\n      <DasType>varchar(10)|0s</DasType>\r\n      <NotNull>1</NotNull>\r\n      <Position>2</Position>\r\n    </column>\r\n    <column id=\"349\" parent=\"294\" name=\"email\">\r\n      <DasType>varchar(20)|0s</DasType>\r\n      <Position>3</Position>\r\n    </column>\r\n    <column id=\"350\" parent=\"294\" name=\"password\">\r\n      <DasType>varchar(20)|0s</DasType>\r\n      <Position>4</Position>\r\n    </column>\r\n    <column id=\"351\" parent=\"294\" name=\"sex\">\r\n      <DasType>int(11)|0s</DasType>\r\n      <DefaultExpression>1</DefaultExpression>\r\n      <Position>5</Position>\r\n    </column>\r\n    <column id=\"352\" parent=\"294\" name=\"phone_number\">\r\n      <DasType>varchar(20)|0s</DasType>\r\n      <Position>6</Position>\r\n    </column>\r\n    <column id=\"353\" parent=\"294\" name=\"avatar\">\r\n      <DasType>varchar(255)|0s</DasType>\r\n      <Position>7</Position>\r\n    </column>\r\n    <column id=\"354\" parent=\"294\" name=\"create_time\">\r\n      <DasType>datetime|0s</DasType>\r\n      <Position>8</Position>\r\n    </column>\r\n    <index id=\"355\" parent=\"294\" name=\"PRIMARY\">\r\n      <ColNames>user_id</ColNames>\r\n      <Type>btree</Type>\r\n      <Unique>1</Unique>\r\n    </index>\r\n    <index id=\"356\" parent=\"294\" name=\"user_user_id_uindex\">\r\n      <ColNames>user_id</ColNames>\r\n      <Type>btree</Type>\r\n      <Unique>1</Unique>\r\n    </index>\r\n    <index id=\"357\" parent=\"294\" name=\"user_user_name_uindex\">\r\n      <ColNames>user_name</ColNames>\r\n      <Type>btree</Type>\r\n      <Unique>1</Unique>\r\n    </index>\r\n    <key id=\"358\" parent=\"294\" name=\"PRIMARY\">\r\n      <NameSurrogate>1</NameSurrogate>\r\n      <Primary>1</Primary>\r\n      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>\r\n    </key>\r\n    <key id=\"359\" parent=\"294\" name=\"user_user_id_uindex\">\r\n      <UnderlyingIndexName>user_user_id_uindex</UnderlyingIndexName>\r\n    </key>\r\n    <key id=\"360\" parent=\"294\" name=\"user_user_name_uindex\">\r\n      <UnderlyingIndexName>user_user_name_uindex</UnderlyingIndexName>\r\n    </key>\r\n  </database-model>\r\n</dataSource>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/dataSources/1bda1ae0-ee6d-4420-8f4a-f2d89be01e47.xml b/.idea/dataSources/1bda1ae0-ee6d-4420-8f4a-f2d89be01e47.xml
+--- a/.idea/dataSources/1bda1ae0-ee6d-4420-8f4a-f2d89be01e47.xml	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
++++ b/.idea/dataSources/1bda1ae0-ee6d-4420-8f4a-f2d89be01e47.xml	(date 1714008400607)
+@@ -1,221 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <dataSource name="@shslsc.mysql.polardb.rds.aliyuncs.com">
+   <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.48">
+-    <root id="1">
+-      <DefaultCasing>lower/lower</DefaultCasing>
+-      <DefaultEngine>InnoDB</DefaultEngine>
+-      <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
+-      <Grants>|root||cpt202_46||ALTER|G
+-|root||root|127.0.0.1|ALTER|G
+-|root||root|localhost|ALTER|G
+-|root||cpt202_46||ALTER ROUTINE|G
+-|root||root|127.0.0.1|ALTER ROUTINE|G
+-|root||root|localhost|ALTER ROUTINE|G
+-|root||root|127.0.0.1|BACKUP_ADMIN|G
+-|root||root|localhost|BACKUP_ADMIN|G
+-|root||root|127.0.0.1|BINLOG_ADMIN|G
+-|root||root|localhost|BINLOG_ADMIN|G
+-|root||root|127.0.0.1|CONNECTION_ADMIN|G
+-|root||root|localhost|CONNECTION_ADMIN|G
+-|root||cpt202_46||CREATE|G
+-|root||root|127.0.0.1|CREATE|G
+-|root||root|localhost|CREATE|G
+-|root||root|127.0.0.1|CREATE ROLE|G
+-|root||root|localhost|CREATE ROLE|G
+-|root||cpt202_46||CREATE ROUTINE|G
+-|root||root|127.0.0.1|CREATE ROUTINE|G
+-|root||root|localhost|CREATE ROUTINE|G
+-|root||root|127.0.0.1|CREATE TABLESPACE|G
+-|root||root|localhost|CREATE TABLESPACE|G
+-|root||cpt202_46||CREATE TEMPORARY TABLES|G
+-|root||root|127.0.0.1|CREATE TEMPORARY TABLES|G
+-|root||root|localhost|CREATE TEMPORARY TABLES|G
+-|root||cpt202_46||CREATE USER|G
+-|root||root|127.0.0.1|CREATE USER|G
+-|root||root|localhost|CREATE USER|G
+-|root||cpt202_46||CREATE VIEW|G
+-|root||root|127.0.0.1|CREATE VIEW|G
+-|root||root|localhost|CREATE VIEW|G
+-|root||cpt202_46||DELETE|G
+-|root||root|127.0.0.1|DELETE|G
+-|root||root|localhost|DELETE|G
+-|root||cpt202_46||DROP|G
+-|root||root|127.0.0.1|DROP|G
+-|root||root|localhost|DROP|G
+-|root||root|127.0.0.1|DROP ROLE|G
+-|root||root|localhost|DROP ROLE|G
+-|root||root|127.0.0.1|ENCRYPTION_KEY_ADMIN|G
+-|root||root|localhost|ENCRYPTION_KEY_ADMIN|G
+-|root||cpt202_46||EVENT|G
+-|root||root|127.0.0.1|EVENT|G
+-|root||root|localhost|EVENT|G
+-|root||cpt202_46||EXECUTE|G
+-|root||root|127.0.0.1|EXECUTE|G
+-|root||root|localhost|EXECUTE|G
+-|root||root|127.0.0.1|FILE|G
+-|root||root|localhost|FILE|G
+-|root||root|127.0.0.1|FLUSH_OPTIMIZER_COSTS|G
+-|root||root|localhost|FLUSH_OPTIMIZER_COSTS|G
+-|root||root|127.0.0.1|FLUSH_STATUS|G
+-|root||root|localhost|FLUSH_STATUS|G
+-|root||root|127.0.0.1|FLUSH_TABLES|G
+-|root||root|localhost|FLUSH_TABLES|G
+-|root||root|127.0.0.1|FLUSH_USER_RESOURCES|G
+-|root||root|localhost|FLUSH_USER_RESOURCES|G
+-|root||root|127.0.0.1|GROUP_REPLICATION_ADMIN|G
+-|root||root|localhost|GROUP_REPLICATION_ADMIN|G
+-|root||cpt202_46||INDEX|G
+-|root||root|127.0.0.1|INDEX|G
+-|root||root|localhost|INDEX|G
+-|root||cpt202_46||INSERT|G
+-|root||root|127.0.0.1|INSERT|G
+-|root||root|localhost|INSERT|G
+-|root||cpt202_46||LOCK TABLES|G
+-|root||root|127.0.0.1|LOCK TABLES|G
+-|root||root|localhost|LOCK TABLES|G
+-|root||mysql.session|localhost|PERSIST_RO_VARIABLES_ADMIN|G
+-|root||root|127.0.0.1|PERSIST_RO_VARIABLES_ADMIN|G
+-|root||root|localhost|PERSIST_RO_VARIABLES_ADMIN|G
+-|root||aurora||PROCESS|G
+-|root||cpt202_46||PROCESS|G
+-|root||root|127.0.0.1|PROCESS|G
+-|root||root|localhost|PROCESS|G
+-|root||test46||PROCESS|G
+-|root||cpt202_46||REFERENCES|G
+-|root||root|127.0.0.1|REFERENCES|G
+-|root||root|localhost|REFERENCES|G
+-|root||aurora||RELOAD|G
+-|root||cpt202_46||RELOAD|G
+-|root||replicator|10.254.122.16|RELOAD|G
+-|root||replicator|10.254.122.86|RELOAD|G
+-|root||root|127.0.0.1|RELOAD|G
+-|root||root|localhost|RELOAD|G
+-|root||aurora||REPLICATION CLIENT|G
+-|root||cpt202_46||REPLICATION CLIENT|G
+-|root||replicator|10.254.122.16|REPLICATION CLIENT|G
+-|root||replicator|10.254.122.86|REPLICATION CLIENT|G
+-|root||root|127.0.0.1|REPLICATION CLIENT|G
+-|root||root|localhost|REPLICATION CLIENT|G
+-|root||test46||REPLICATION CLIENT|G
+-|root||aurora||REPLICATION SLAVE|G
+-|root||cpt202_46||REPLICATION SLAVE|G
+-|root||replicator|10.254.122.16|REPLICATION SLAVE|G
+-|root||replicator|10.254.122.86|REPLICATION SLAVE|G
+-|root||root|127.0.0.1|REPLICATION SLAVE|G
+-|root||root|localhost|REPLICATION SLAVE|G
+-|root||test46||REPLICATION SLAVE|G
+-|root||root|127.0.0.1|REPLICATION_SLAVE_ADMIN|G
+-|root||root|localhost|REPLICATION_SLAVE_ADMIN|G
+-|root||root|127.0.0.1|RESOURCE_GROUP_ADMIN|G
+-|root||root|localhost|RESOURCE_GROUP_ADMIN|G
+-|root||root|127.0.0.1|RESOURCE_GROUP_USER|G
+-|root||root|localhost|RESOURCE_GROUP_USER|G
+-|root||root|127.0.0.1|ROLE_ADMIN|G
+-|root||root|localhost|ROLE_ADMIN|G
+-|root||aurora||SELECT|G
+-|root||cpt202_46||SELECT|G
+-|root||mysql.infoschema|localhost|SELECT|G
+-|root||replicator|10.254.122.16|SELECT|G
+-|root||replicator|10.254.122.86|SELECT|G
+-|root||root|127.0.0.1|SELECT|G
+-|root||root|localhost|SELECT|G
+-|root||cpt202_46||SERVERS_ADMIN|G
+-|root||root|127.0.0.1|SERVERS_ADMIN|G
+-|root||root|localhost|SERVERS_ADMIN|G
+-|root||root|127.0.0.1|SET_USER_ID|G
+-|root||root|localhost|SET_USER_ID|G
+-|root||root|127.0.0.1|SHOW DATABASES|G
+-|root||root|localhost|SHOW DATABASES|G
+-|root||cpt202_46||SHOW VIEW|G
+-|root||root|127.0.0.1|SHOW VIEW|G
+-|root||root|localhost|SHOW VIEW|G
+-|root||root|127.0.0.1|SHOW_ROUTINE|G
+-|root||root|localhost|SHOW_ROUTINE|G
+-|root||root|127.0.0.1|SHUTDOWN|G
+-|root||root|localhost|SHUTDOWN|G
+-|root||aurora||SUPER|G
+-|root||mysql.session|localhost|SUPER|G
+-|root||replicator|10.254.122.16|SUPER|G
+-|root||replicator|10.254.122.86|SUPER|G
+-|root||root|127.0.0.1|SUPER|G
+-|root||root|localhost|SUPER|G
+-|root||mysql.session|localhost|SYSTEM_VARIABLES_ADMIN|G
+-|root||root|127.0.0.1|SYSTEM_VARIABLES_ADMIN|G
+-|root||root|localhost|SYSTEM_VARIABLES_ADMIN|G
+-|root||cpt202_46||TRIGGER|G
+-|root||root|127.0.0.1|TRIGGER|G
+-|root||root|localhost|TRIGGER|G
+-|root||cpt202_46||UPDATE|G
+-|root||root|127.0.0.1|UPDATE|G
+-|root||root|localhost|UPDATE|G
+-|root||root|127.0.0.1|XA_RECOVER_ADMIN|G
+-|root||root|localhost|XA_RECOVER_ADMIN|G
+-|root||test46||XA_RECOVER_ADMIN|G
+-|root||cpt202_46||grant option|G
+-|root||replicator|10.254.122.16|grant option|G
+-|root||replicator|10.254.122.86|grant option|G
+-|root||root|127.0.0.1|grant option|G
+-|root||root|localhost|grant option|G
+-mysql|schema||aurora||ALTER|G
+-mysql|schema||aurora||ALTER ROUTINE|G
+-mysql|schema||aurora||CREATE|G
+-mysql|schema||aurora||CREATE ROUTINE|G
+-mysql|schema||aurora||CREATE TEMPORARY TABLES|G
+-mysql|schema||aurora||CREATE VIEW|G
+-mysql|schema||aurora||DELETE|G
+-mysql|schema||aurora||DROP|G
+-mysql|schema||aurora||EVENT|G
+-mysql|schema||aurora||EXECUTE|G
+-mysql|schema||aurora||INDEX|G
+-mysql|schema||aurora||INSERT|G
+-mysql|schema||aurora||LOCK TABLES|G
+-mysql|schema||aurora||REFERENCES|G
+-mysql|schema||aurora||SELECT|G
+-mysql|schema||aurora||SHOW VIEW|G
+-mysql|schema||aurora||TRIGGER|G
+-mysql|schema||aurora||UPDATE|G
+-mysql|schema||aurora||grant option|G
+-performance_schema|schema||mysql.session|localhost|SELECT|G
+-shslsc|schema||test46||ALTER|G
+-shslsc|schema||test46||ALTER ROUTINE|G
+-shslsc|schema||test46||CREATE|G
+-shslsc|schema||test46||CREATE ROUTINE|G
+-shslsc|schema||test46||CREATE TEMPORARY TABLES|G
+-shslsc|schema||test46||CREATE VIEW|G
+-shslsc|schema||test46||DELETE|G
+-shslsc|schema||test46||DROP|G
+-shslsc|schema||test46||EVENT|G
+-shslsc|schema||test46||EXECUTE|G
+-shslsc|schema||test46||INDEX|G
+-shslsc|schema||test46||INSERT|G
+-shslsc|schema||test46||LOCK TABLES|G
+-shslsc|schema||test46||REFERENCES|G
+-shslsc|schema||test46||SELECT|G
+-shslsc|schema||test46||SHOW VIEW|G
+-shslsc|schema||test46||TRIGGER|G
+-shslsc|schema||test46||UPDATE|G
+-sys|schema||mysql.sys|localhost|TRIGGER|G
+-test|schema||aurora||ALTER|G
+-test|schema||aurora||ALTER ROUTINE|G
+-test|schema||aurora||CREATE|G
+-test|schema||aurora||CREATE ROUTINE|G
+-test|schema||aurora||CREATE TEMPORARY TABLES|G
+-test|schema||aurora||CREATE VIEW|G
+-test|schema||aurora||DELETE|G
+-test|schema||aurora||DROP|G
+-test|schema||aurora||EVENT|G
+-test|schema||aurora||EXECUTE|G
+-test|schema||aurora||INDEX|G
+-test|schema||aurora||INSERT|G
+-test|schema||aurora||LOCK TABLES|G
+-test|schema||aurora||REFERENCES|G
+-test|schema||aurora||SELECT|G
+-test|schema||aurora||SHOW VIEW|G
+-test|schema||aurora||TRIGGER|G
+-test|schema||aurora||UPDATE|G
+-test|schema||aurora||grant option|G</Grants>
+-      <ServerVersion>8.0.13</ServerVersion>
+-    </root>
++    <root id="1"/>
+     <collation id="2" parent="1" name="armscii8_bin">
+       <Charset>armscii8</Charset>
+     </collation>
+Index: .idea/dataSources.local.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"dataSourceStorageLocal\" created-in=\"IU-231.9414.13\">\r\n    <data-source name=\"@shslsc.mysql.polardb.rds.aliyuncs.com\" uuid=\"1bda1ae0-ee6d-4420-8f4a-f2d89be01e47\">\r\n      <database-info product=\"MySQL\" version=\"8.0.13\" jdbc-version=\"4.2\" driver-name=\"MySQL Connector/J\" driver-version=\"mysql-connector-j-8.2.0 (Revision: 06a1f724497fd81c6a659131fda822c9e5085b6c)\" dbms=\"MYSQL\" exact-version=\"8.0.13\" exact-driver-version=\"8.2\">\r\n        <extra-name-characters>#@</extra-name-characters>\r\n        <identifier-quote-string>`</identifier-quote-string>\r\n      </database-info>\r\n      <case-sensitivity plain-identifiers=\"lower\" quoted-identifiers=\"lower\" />\r\n      <secret-storage>master_key</secret-storage>\r\n      <user-name>cpt202_46</user-name>\r\n      <schema-mapping>\r\n        <introspection-scope>\r\n          <node kind=\"schema\">\r\n            <name qname=\"@\" />\r\n            <name qname=\"shslsc\" />\r\n          </node>\r\n        </introspection-scope>\r\n      </schema-mapping>\r\n    </data-source>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/dataSources.local.xml b/.idea/dataSources.local.xml
+--- a/.idea/dataSources.local.xml	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
++++ b/.idea/dataSources.local.xml	(date 1713963680413)
+@@ -18,5 +18,22 @@
+         </introspection-scope>
+       </schema-mapping>
+     </data-source>
++    <data-source name="@localhost" uuid="16fcd991-12af-465a-b503-b53e36aa530e">
++      <database-info product="MySQL" version="8.0.29" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-j-8.2.0 (Revision: 06a1f724497fd81c6a659131fda822c9e5085b6c)" dbms="MYSQL" exact-version="8.0.29" exact-driver-version="8.2">
++        <extra-name-characters>#@</extra-name-characters>
++        <identifier-quote-string>`</identifier-quote-string>
++      </database-info>
++      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
++      <secret-storage>master_key</secret-storage>
++      <user-name>root</user-name>
++      <schema-mapping>
++        <introspection-scope>
++          <node kind="schema">
++            <name qname="shslsc" />
++            <name qname="@" />
++          </node>
++        </introspection-scope>
++      </schema-mapping>
++    </data-source>
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/dataSources.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"DataSourceManagerImpl\" format=\"xml\" multifile-model=\"true\">\r\n    <data-source source=\"LOCAL\" name=\"@shslsc.mysql.polardb.rds.aliyuncs.com\" uuid=\"1bda1ae0-ee6d-4420-8f4a-f2d89be01e47\">\r\n      <driver-ref>mysql.8</driver-ref>\r\n      <synchronize>true</synchronize>\r\n      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>\r\n      <jdbc-url>jdbc:mysql://shslsc.mysql.polardb.rds.aliyuncs.com:3306</jdbc-url>\r\n      <working-dir>$ProjectFileDir$</working-dir>\r\n    </data-source>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/dataSources.xml b/.idea/dataSources.xml
+--- a/.idea/dataSources.xml	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
++++ b/.idea/dataSources.xml	(date 1713963680409)
+@@ -8,5 +8,12 @@
+       <jdbc-url>jdbc:mysql://shslsc.mysql.polardb.rds.aliyuncs.com:3306</jdbc-url>
+       <working-dir>$ProjectFileDir$</working-dir>
+     </data-source>
++    <data-source source="LOCAL" name="@localhost" uuid="16fcd991-12af-465a-b503-b53e36aa530e">
++      <driver-ref>mysql.8</driver-ref>
++      <synchronize>true</synchronize>
++      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
++      <jdbc-url>jdbc:mysql://localhost:3306</jdbc-url>
++      <working-dir>$ProjectFileDir$</working-dir>
++    </data-source>
+   </component>
+ </project>
+\ No newline at end of file
+Index: shsl-common/target/classes/META-INF/spring-configuration-metadata.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n  \"groups\": [\r\n    {\r\n      \"name\": \"shsl.alioss\",\r\n      \"type\": \"com.shsl.properties.AliOssProperties\",\r\n      \"sourceType\": \"com.shsl.properties.AliOssProperties\"\r\n    },\r\n    {\r\n      \"name\": \"shsl.jwt\",\r\n      \"type\": \"com.shsl.properties.JwtProperties\",\r\n      \"sourceType\": \"com.shsl.properties.JwtProperties\"\r\n    },\r\n    {\r\n      \"name\": \"shsl.wechat\",\r\n      \"type\": \"com.shsl.properties.WeChatProperties\",\r\n      \"sourceType\": \"com.shsl.properties.WeChatProperties\"\r\n    }\r\n  ],\r\n  \"properties\": [\r\n    {\r\n      \"name\": \"shsl.alioss.access-key-id\",\r\n      \"type\": \"java.lang.String\",\r\n      \"sourceType\": \"com.shsl.properties.AliOssProperties\"\r\n    },\r\n    {\r\n      \"name\": \"shsl.alioss.access-key-secret\",\r\n      \"type\": \"java.lang.String\",\r\n      \"sourceType\": \"com.shsl.properties.AliOssProperties\"\r\n    },\r\n    {\r\n      \"name\": \"shsl.alioss.bucket-name\",\r\n      \"type\": \"java.lang.String\",\r\n      \"sourceType\": \"com.shsl.properties.AliOssProperties\"\r\n    },\r\n    {\r\n      \"name\": \"shsl.alioss.endpoint\",\r\n      \"type\": \"java.lang.String\",\r\n      \"sourceType\": \"com.shsl.properties.AliOssProperties\"\r\n    },\r\n    {\r\n      \"name\": \"shsl.jwt.admin-secret-key\",\r\n      \"type\": \"java.lang.String\",\r\n      \"description\": \"管理端员工生成jwt令牌相关配置\",\r\n      \"sourceType\": \"com.shsl.properties.JwtProperties\"\r\n    },\r\n    {\r\n      \"name\": \"shsl.jwt.admin-token-name\",\r\n      \"type\": \"java.lang.String\",\r\n      \"sourceType\": \"com.shsl.properties.JwtProperties\"\r\n    },\r\n    {\r\n      \"name\": \"shsl.jwt.admin-ttl\",\r\n      \"type\": \"java.lang.Long\",\r\n      \"sourceType\": \"com.shsl.properties.JwtProperties\",\r\n      \"defaultValue\": 0\r\n    },\r\n    {\r\n      \"name\": \"shsl.jwt.user-secret-key\",\r\n      \"type\": \"java.lang.String\",\r\n      \"description\": \"用户端微信用户生成jwt令牌相关配置\",\r\n      \"sourceType\": \"com.shsl.properties.JwtProperties\"\r\n    },\r\n    {\r\n      \"name\": \"shsl.jwt.user-token-name\",\r\n      \"type\": \"java.lang.String\",\r\n      \"sourceType\": \"com.shsl.properties.JwtProperties\"\r\n    },\r\n    {\r\n      \"name\": \"shsl.jwt.user-ttl\",\r\n      \"type\": \"java.lang.Long\",\r\n      \"sourceType\": \"com.shsl.properties.JwtProperties\",\r\n      \"defaultValue\": 0\r\n    },\r\n    {\r\n      \"name\": \"shsl.wechat.api-v3-key\",\r\n      \"type\": \"java.lang.String\",\r\n      \"sourceType\": \"com.shsl.properties.WeChatProperties\"\r\n    },\r\n    {\r\n      \"name\": \"shsl.wechat.appid\",\r\n      \"type\": \"java.lang.String\",\r\n      \"sourceType\": \"com.shsl.properties.WeChatProperties\"\r\n    },\r\n    {\r\n      \"name\": \"shsl.wechat.mch-serial-no\",\r\n      \"type\": \"java.lang.String\",\r\n      \"sourceType\": \"com.shsl.properties.WeChatProperties\"\r\n    },\r\n    {\r\n      \"name\": \"shsl.wechat.mchid\",\r\n      \"type\": \"java.lang.String\",\r\n      \"sourceType\": \"com.shsl.properties.WeChatProperties\"\r\n    },\r\n    {\r\n      \"name\": \"shsl.wechat.notify-url\",\r\n      \"type\": \"java.lang.String\",\r\n      \"sourceType\": \"com.shsl.properties.WeChatProperties\"\r\n    },\r\n    {\r\n      \"name\": \"shsl.wechat.private-key-file-path\",\r\n      \"type\": \"java.lang.String\",\r\n      \"sourceType\": \"com.shsl.properties.WeChatProperties\"\r\n    },\r\n    {\r\n      \"name\": \"shsl.wechat.refund-notify-url\",\r\n      \"type\": \"java.lang.String\",\r\n      \"sourceType\": \"com.shsl.properties.WeChatProperties\"\r\n    },\r\n    {\r\n      \"name\": \"shsl.wechat.secret\",\r\n      \"type\": \"java.lang.String\",\r\n      \"sourceType\": \"com.shsl.properties.WeChatProperties\"\r\n    },\r\n    {\r\n      \"name\": \"shsl.wechat.we-chat-pay-cert-file-path\",\r\n      \"type\": \"java.lang.String\",\r\n      \"sourceType\": \"com.shsl.properties.WeChatProperties\"\r\n    }\r\n  ],\r\n  \"hints\": []\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/shsl-common/target/classes/META-INF/spring-configuration-metadata.json b/shsl-common/target/classes/META-INF/spring-configuration-metadata.json
+--- a/shsl-common/target/classes/META-INF/spring-configuration-metadata.json	(revision b8eb4d7ef132f8f46ac5c813090ba37c838ac10e)
++++ b/shsl-common/target/classes/META-INF/spring-configuration-metadata.json	(date 1713967083960)
+@@ -51,8 +51,7 @@
+     {
+       "name": "shsl.jwt.admin-ttl",
+       "type": "java.lang.Long",
+-      "sourceType": "com.shsl.properties.JwtProperties",
+-      "defaultValue": 0
++      "sourceType": "com.shsl.properties.JwtProperties"
+     },
+     {
+       "name": "shsl.jwt.user-secret-key",
+@@ -68,8 +67,7 @@
+     {
+       "name": "shsl.jwt.user-ttl",
+       "type": "java.lang.Long",
+-      "sourceType": "com.shsl.properties.JwtProperties",
+-      "defaultValue": 0
++      "sourceType": "com.shsl.properties.JwtProperties"
+     },
+     {
+       "name": "shsl.wechat.api-v3-key",

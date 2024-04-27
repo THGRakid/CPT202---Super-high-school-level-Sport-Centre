@@ -51,7 +51,8 @@
     {
       "name": "shsl.jwt.admin-ttl",
       "type": "java.lang.Long",
-      "sourceType": "com.shsl.properties.JwtProperties"
+      "sourceType": "com.shsl.properties.JwtProperties",
+      "defaultValue": 0
     },
     {
       "name": "shsl.jwt.user-secret-key",
@@ -67,7 +68,8 @@
     {
       "name": "shsl.jwt.user-ttl",
       "type": "java.lang.Long",
-      "sourceType": "com.shsl.properties.JwtProperties"
+      "sourceType": "com.shsl.properties.JwtProperties",
+      "defaultValue": 0
     },
     {
       "name": "shsl.wechat.api-v3-key",
