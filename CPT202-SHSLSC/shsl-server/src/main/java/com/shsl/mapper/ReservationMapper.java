@@ -24,4 +24,7 @@ public interface ReservationMapper {
 
     @Select("SELECT * FROM reservation_record WHERE res_id = #{reservationId}")
     ReservationRecord selectReservationById(int reservationId);
+
+    @Select("SELECT COUNT(*) FROM reservation_record WHERE sta_id = #{stadiumId}")
+    int countReservationsByStadiumId(@Param("stadiumId") int stadiumId);
 }
