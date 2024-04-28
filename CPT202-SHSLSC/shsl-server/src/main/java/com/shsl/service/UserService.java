@@ -1,6 +1,7 @@
 package com.shsl.service;
 
 import com.shsl.dto.UserLoginDTO;
+import com.shsl.dto.WeChatLoginDTO;
 import com.shsl.entity.User;
 
 public interface UserService {
@@ -10,4 +11,11 @@ public interface UserService {
      * @return
      */
     User login(UserLoginDTO userLoginDTO);
+
+    /**
+     * 微信登录
+     * @param weChatLoginDTO
+     * @return
+     */
+    User wxLogin(WeChatLoginDTO weChatLoginDTO);
 }

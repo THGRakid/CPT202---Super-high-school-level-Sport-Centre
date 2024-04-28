@@ -2,5 +2,39 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.shsl.mapper.AdminMapper">
-</mapper>
 
+<resultMap id="adminResultMap" type="admin">
+</resultMap>
+
+
+<delete id="deleteByIds">
+    delete from admin where admin_id in
+    <foreach collection="ids" item="id" separator="," open="(" close=")">
+        #{id}
+    </foreach>
+</delete>
+
+<select id="selectByPageAndCondition" resultMap="adminResultMap">
+    select *
+    from admin
+    <where>
+        <if test="admin.adminName != null and admin.adminName != '' ">
+            and  admin_name like #{admin.adminName}
+        </if>
+    </where>
+
+    limit #{begin} , #{size}
+
+</select>
+<select id="selectTotalCountByCondition" resultType="java.lang.Integer">
+    select count(*)
+    from admin
+    <where>
+        <if test="adminName != null and adminName != '' ">
+            and  admin_name like #{adminName}
+        </if>
+    </where>
+
+</select>
+
+</mapper>

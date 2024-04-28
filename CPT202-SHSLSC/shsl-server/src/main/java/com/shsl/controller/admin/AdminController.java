@@ -49,7 +49,7 @@ public class AdminController {
 
         //登录成功后，生成jwt令牌
         Map<String, Object> claims = new HashMap<>();
-        claims.put(JwtClaimsConstant.EMP_ID, admin.getAdminId());
+        claims.put(JwtClaimsConstant.ADMIN_ID, admin.getAdminId());
         String token = JwtUtil.createJWT(
                 jwtProperties.getAdminSecretKey(),
                 jwtProperties.getAdminTtl(),
