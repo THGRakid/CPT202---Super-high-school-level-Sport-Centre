@@ -24,7 +24,7 @@ import java.util.Map;
  * 员工管理
  */
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/user/login")
 @Slf4j
 @Api(tags = "用户相关接口")
 public class UserController {
@@ -49,7 +49,7 @@ public class UserController {
 
         //登录成功后，生成jwt令牌
         Map<String, Object> claims = new HashMap<>();
-        claims.put(JwtClaimsConstant.EMP_ID, user.getUserId());
+        claims.put(JwtClaimsConstant.USER_ID, user.getUserId());
         String token = JwtUtil.createJWT(
                 jwtProperties.getUserSecretKey(),
                 jwtProperties.getUserTtl(),
