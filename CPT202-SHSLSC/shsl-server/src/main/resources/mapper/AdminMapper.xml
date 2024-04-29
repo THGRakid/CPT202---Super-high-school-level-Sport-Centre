@@ -6,35 +6,36 @@
 <resultMap id="adminResultMap" type="admin">
 </resultMap>
 
+    <select id="selectByPage" resultType="com.shsl.entity.Admin">
+        select * from admin
+        <where>
+            <if test="adminName != null and adminName != ''">
+                and admin_name like concat('%',#{adminName},'%')
+            </if>
+        </where>
+        order by create_time desc
+    </select>
 
-<delete id="deleteByIds">
+    <update id="update" parameterType="Admin">
+        update admin
+        <set>
+            <if test="adminName != null">admin_name = #{adminName},</if>
+            <if test="depName != null">dep_name = #{depName},</if>
+            <if test="password != null">password = #{password},</if>
+            <if test="phone != null">phone = #{phone},</if>
+            <if test="email != null">email = #{sex},</if>
+            <if test="createTime != null">create_Time = #{createTime},</if>
+            <if test="expirationTime != null">expiration_Time = #{expirationTime},</if>
+            <if test="power != null">power = #{power},</if>
+        </set>
+        where admin_id = #{adminId}
+    </update>
+<delete id="deleteAdminByIds">
     delete from admin where admin_id in
     <foreach collection="ids" item="id" separator="," open="(" close=")">
         #{id}
     </foreach>
 </delete>
 
-<select id="selectByPageAndCondition" resultMap="adminResultMap">
-    select *
-    from admin
-    <where>
-        <if test="admin.adminName != null and admin.adminName != '' ">
-            and  admin_name like #{admin.adminName}
-        </if>
-    </where>
-
-    limit #{begin} , #{size}
-
-</select>
-<select id="selectTotalCountByCondition" resultType="java.lang.Integer">
-    select count(*)
-    from admin
-    <where>
-        <if test="adminName != null and adminName != '' ">
-            and  admin_name like #{adminName}
-        </if>
-    </where>
-
-</select>
 
 </mapper>

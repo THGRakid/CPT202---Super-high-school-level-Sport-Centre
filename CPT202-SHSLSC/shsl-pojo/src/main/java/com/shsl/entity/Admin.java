@@ -38,5 +38,5 @@ public class Admin implements Serializable {
 
     //权限到期时间
     //@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Date expirationTime;
+    private LocalDateTime expirationTime;
 }

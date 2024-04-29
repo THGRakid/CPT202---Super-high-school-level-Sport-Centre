@@ -11,14 +11,18 @@ import com.shsl.exception.LoginFailedException;
 import com.shsl.exception.PasswordErrorException;
 import com.shsl.mapper.UserMapper;
 import com.shsl.properties.WeChatProperties;
+import com.shsl.result.PageBean;
 import com.shsl.service.UserService;
 import com.shsl.utils.HttpClientUtil;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -39,6 +43,7 @@ public class UserServiceImpl implements UserService {
      * @param userLoginDTO
      * @return
      */
+    @Override
     public User login(UserLoginDTO UserLoginDTO) {
         String userName = UserLoginDTO.getUserName();
         String password = UserLoginDTO.getPassword();
@@ -71,6 +76,7 @@ public class UserServiceImpl implements UserService {
      * @param userLoginDTO
      * @return
      */
+    @Override
     public User wxLogin(WeChatLoginDTO weChatLoginDTO) {
         String openid = getOpenid(weChatLoginDTO.getCode());
 
@@ -112,6 +118,100 @@ public class UserServiceImpl implements UserService {
         JSONObject jsonObject = JSON.parseObject(json);
         String openid = jsonObject.getString("openid");
         return openid;
+    }
+
+    // ------------------------------------------------------------------
+
+    /**
+     *登录后其他用户操作
+     */
+
+    @Override
+    public List<User> selectAll() {
+        List<User> users = userMapper.selectAll();
+
+        return users;
+    }
+
+    @Override
+    public void add(User user) {
+        userMapper.add(user);
+    }
+
+    @Override
+    public void updateUserEmail(Integer id, String email){
+        userMapper.updateUserEmail(id, email);
+    }
+
+    @Override
+    public void updateUserSex(Integer id, String sex){
+        userMapper.updateUserSex(id, sex);
+    }
+
+    @Override
+    public void updateUserAvatar(Integer id, String avatar){
+        userMapper.updateUserAvatar(id, avatar);
+    }
+
+    @Override
+    public void deleteUserById(Integer id) {
+        userMapper.deleteUserById(id);
+    }
+
+    @Override
+    public PageBean<User> selectByPage(int currentPage, int pageSize) {
+        //1、计算开始索引及查询条目数
+        /*
+        参数1：开始索引 = (当前页码 - 1） * 每页显示条数
+        参数2：查询条目数 = 每页显示条数
+         */
+        int begin = (currentPage-1)*pageSize;
+        int size = pageSize;
+
+        //2、查询当前页数据
+        List<User> rowsInPage = userMapper.selectByPage(begin,size);
+
+        //3、查询总记录数
+        int totalCount = userMapper.selectTotalCount();
+
+        //4、封装PageBean对象
+        PageBean<User> pageBean = new PageBean<>();
+        pageBean.setRowsInPage(rowsInPage);
+        pageBean.setTotalCount(totalCount);
+
+        return pageBean;
+    }
+
+    @Override
+    public void deleteByIds(int[] ids) {
+        userMapper.deleteByIds(ids);
+    }
+
+    @Override
+    public PageBean<User> selectByPageAndCondition(int currentPage, int pageSize, User user) {
+        //1. 计算开始索引
+        int begin = (currentPage - 1) * pageSize;
+        // 计算查询条目数
+        int size = pageSize;
+
+        // 处理user条件，模糊表达式
+        String userName = user.getUserName();
+        if (userName != null && userName.length() > 0) {
+            user.setUserName("%" + userName + "%");
+        }
+
+        //2. 查询当前页数据
+        List<User> rows = userMapper.selectByPageAndCondition(begin, size, user);
+
+        //3. 查询总记录数
+        int totalCount = userMapper.selectTotalCountByCondition(user);
+
+        //4. 封装PageBean对象
+        PageBean<User> pageBean = new PageBean<>();
+        pageBean.setRowsInPage(rows);
+        pageBean.setTotalCount(totalCount);
+
+        return pageBean;
     }
 
 }

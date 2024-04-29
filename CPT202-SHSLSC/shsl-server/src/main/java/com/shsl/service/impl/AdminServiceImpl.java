@@ -1,15 +1,28 @@
 package com.shsl.service.impl;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.shsl.constant.MessageConstant;
+import com.shsl.constant.PasswordConstant;
+import com.shsl.constant.PowerConstant;
+import com.shsl.dto.AdminDTO;
 import com.shsl.exception.AccountNotFoundException;
 import com.shsl.exception.PasswordErrorException;
 import com.shsl.dto.AdminLoginDTO;
 import com.shsl.entity.Admin;
 import com.shsl.mapper.AdminMapper;
+import com.shsl.mapper.UserMapper;
+import com.shsl.result.PageResult;
 import com.shsl.service.AdminService;
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
+import com.shsl.dto.AdminPageQueryDTO;
+
+import java.time.LocalDateTime;
+import java.util.List;
 
 
 @Service
@@ -24,6 +37,7 @@ public class AdminServiceImpl implements AdminService {
      * @param adminLoginDTO
      * @return
      */
+    @Override
     public Admin login(AdminLoginDTO adminLoginDTO) {
         String adminName = adminLoginDTO.getAdminName();
         String password = adminLoginDTO.getPassword();
@@ -45,9 +59,96 @@ public class AdminServiceImpl implements AdminService {
             throw new PasswordErrorException(MessageConstant.PASSWORD_ERROR);
         }
 
-
         //3、返回实体对象
         return admin;
     }
+    
 
+    /**
+     * 新增员工
+     *
+     * @param adminDTO
+     */
+    @Override
+    public void insert(AdminDTO adminDTO) {
+        Admin admin = new Admin();
+
+        //对象属性拷贝
+        BeanUtils.copyProperties(adminDTO, admin);
+
+        //设置账号的状态，默认正常状态 1表示正常 0表示锁定
+        admin.setPower(PowerConstant.GRADE1);
+
+        //设置密码，默认密码123456
+        admin.setPassword(DigestUtils.md5DigestAsHex(PasswordConstant.DEFAULT_PASSWORD.getBytes()));
+
+        //设置当前记录的创建时间和修改时间
+        admin.setCreateTime(LocalDateTime.now());
+
+        adminMapper.insert(admin);
+    }
+
+    /**
+     * 分页查询
+     *
+     * @param adminPageQueryDTO
+     * @return
+     */
+    @Override
+    public PageResult selectByPage(AdminPageQueryDTO adminPageQueryDTO) {
+        // select * from admin limit 0,10
+        //开始分页查询
+        PageHelper.startPage(adminPageQueryDTO.getPage(), adminPageQueryDTO.getPageSize());
+
+        Page<Admin> page = adminMapper.selectByPage(adminPageQueryDTO);
+
+        long total = page.getTotal();
+        List<Admin> records = page.getResult();
+
+        return new PageResult(total, records);
+    }
+
+
+    /**
+     * 根据id查询员工
+     *
+     * @param id
+     * @return
+     */
+    @Override
+    public Admin getById(Integer id) {
+        return adminMapper.getById(id);
+    }
+
+    /**
+     * 编辑员工信息
+     *
+     * @param adminDTO
+     */
+    @Override
+    public void update(AdminDTO adminDTO) {
+        Admin admin = new Admin();
+        BeanUtils.copyProperties(adminDTO, admin);
+        adminMapper.update(admin);
+    }
+
+    /**
+     * 编辑员工信息
+     *
+     * @param adminDTO
+     */
+    @Override
+    public void updateAdminPower(Integer power, Integer id) {
+        adminMapper.updateAdminPower(power,id);
+    }
+
+    @Override
+    public void deleteAdminById(AdminDTO adminDTO) {
+        adminMapper.deleteAdminById(adminDTO.getAdminId());
+    }
+
+    @Override
+    public void deleteAdminByIds(int[] ids) {
+        adminMapper.deleteAdminByIds(ids);
+    }
 }

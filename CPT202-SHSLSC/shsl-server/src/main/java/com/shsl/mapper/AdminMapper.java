@@ -1,6 +1,10 @@
 package com.shsl.mapper;
 
+import com.github.pagehelper.Page;
+import com.shsl.annotation.AutoFill;
+import com.shsl.dto.AdminPageQueryDTO;
 import com.shsl.entity.Admin;
+import com.shsl.enumeration.OperationType;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
@@ -17,12 +21,39 @@ public interface AdminMapper {
 
     //查询所有
     @Select("SELECT * FROM admin")
-    @ResultMap("adminResultMap")
     List<Admin> selectAll();
 
-    //添加数据
-    @Insert("insert into admin values(null,#{adminName},#{depName},null,#{phone},#{email},#{createTime},#{expirationTime},1)")
-    void add(Admin admin);
+    /**
+     * 插入员工数据
+     * @param admin
+     */
+    @Insert("insert into admin values(null,#{adminName},#{depName},null,#{phone},#{email},#{createTime},#{expirationTime},#{power})")
+    @AutoFill(value = OperationType.INSERT)
+    void insert(Admin admin);
+
+
+    /**
+     * 分页查询
+     * @param adminPageQueryDTO
+     * @return
+     */
+    Page<Admin> selectByPage(AdminPageQueryDTO adminPageQueryDTO);
+
+    /**
+     * 根据主键动态修改属性
+     * @param admin
+     */
+    @AutoFill(value = OperationType.UPDATE)
+    void update(Admin admin);
+
+    /**
+     * 根据id查询员工信息
+     * @param id
+     * @return
+     */
+    @Select("select * from admin where admin_id = #{id}")
+    Admin getById(Integer id);
+
 
     //更新数据
     @Update("update admin set power = #{power} where admin_id = #{id}")
@@ -32,22 +63,7 @@ public interface AdminMapper {
     @Delete("delete from admin where admin_id = #{id}")
     void deleteAdminById(Integer id);
 
-    //分页查询
-    @Select("select * from admin limit #{begin},#{size}")
-    @ResultMap("adminResultMap")
-    List<Admin> selectByPage(@Param("begin") int begin,@Param("size") int size);
-
-    //查询总记录数
-    @Select("select count(*) from admin ")
-    int selectTotalCount();
-
     //批量删除
-    void deleteByIds(@Param("ids") int[] ids);
-
-    //分页查询
-    List<Admin> selectByPageAndCondition(@Param("begin") int begin,@Param("size") int size,@Param("admin") Admin admin);
-
-    //查询总记录数
-    int selectTotalCountByCondition(Admin admin);
+    void deleteAdminByIds(@Param("ids") int[] ids);
 
 }

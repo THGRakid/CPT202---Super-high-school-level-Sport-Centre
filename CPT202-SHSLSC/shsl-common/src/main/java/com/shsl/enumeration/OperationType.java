@@ -1,4 +1,4 @@
-package com.shsl.enymeration;
+package com.shsl.enumeration;
 
 /**
  * 数据库操作类型
