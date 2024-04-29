@@ -1,8 +1,10 @@
 package com.shsl.service.impl;
 
 import com.shsl.entity.ReservationRecord;
+import com.shsl.entity.Stadium;
 import com.shsl.mapper.ReservationMapper;
 import com.shsl.service.ReservationService;
+import com.shsl.service.StadiumService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,11 +16,29 @@ public class ReservationImpl implements ReservationService {
     @Autowired
     private ReservationMapper reservationMapper;
 
+    @Autowired
+    private StadiumService stadiumService;
+
     @Override
     public boolean makeReservation(ReservationRecord reservationRecord) {
+        // 获取预约的场馆信息，包括最大容纳人数
+        Stadium stadium = stadiumService.getStadiumById(reservationRecord.getStadiumId())
+                .orElseThrow(() -> new RuntimeException("Stadium not found"));
+
+        // 查询当前场馆已预约的人数
+        int currentReservationCount = reservationMapper.countReservationsByStadiumId(stadium.getStaId());
+
+        // 检查当前预约人数是否已达到最大容纳人数
+        if (currentReservationCount >= stadium.getLimit()) {
+            return false; // 已达到上限，不允许添加新的预约记录
+        }
+
+        // 执行添加预约操作
         int rowsAffected = reservationMapper.insertReservation(reservationRecord);
-        return rowsAffected > 0; // 如果插入操作成功，则返回 true，否则返回 false
+        return rowsAffected > 0;
     }
+
+
 
     @Override
     public boolean cancelReservation(int reservationId) {
@@ -40,4 +60,6 @@ public class ReservationImpl implements ReservationService {
     public ReservationRecord getReservationById(int reservationId) {
         return reservationMapper.selectReservationById(reservationId);
     }
+
+
 }

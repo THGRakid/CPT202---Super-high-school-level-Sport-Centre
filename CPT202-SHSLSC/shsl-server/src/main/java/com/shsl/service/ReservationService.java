@@ -13,6 +13,7 @@ public interface ReservationService {
      */
     boolean makeReservation(ReservationRecord reservation);
 
+
     /**
      * 取消预约
      * @param reservationId 预约ID
