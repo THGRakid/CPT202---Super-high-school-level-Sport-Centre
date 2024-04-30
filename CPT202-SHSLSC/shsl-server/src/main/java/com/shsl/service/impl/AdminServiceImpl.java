@@ -6,20 +6,18 @@ import com.shsl.constant.MessageConstant;
 import com.shsl.constant.PasswordConstant;
 import com.shsl.constant.PowerConstant;
 import com.shsl.dto.AdminDTO;
+import com.shsl.dto.AdminLoginDTO;
+import com.shsl.dto.AdminPageQueryDTO;
+import com.shsl.entity.Admin;
 import com.shsl.exception.AccountNotFoundException;
 import com.shsl.exception.PasswordErrorException;
-import com.shsl.dto.AdminLoginDTO;
-import com.shsl.entity.Admin;
 import com.shsl.mapper.AdminMapper;
-import com.shsl.mapper.UserMapper;
 import com.shsl.result.PageResult;
 import com.shsl.service.AdminService;
-import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
-import com.shsl.dto.AdminPageQueryDTO;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -76,7 +74,7 @@ public class AdminServiceImpl implements AdminService {
         //对象属性拷贝
         BeanUtils.copyProperties(adminDTO, admin);
 
-        //设置账号的状态，默认正常状态 1表示正常 0表示锁定
+        //设置账号权限等级，默认等级为1
         admin.setPower(PowerConstant.GRADE1);
 
         //设置密码，默认密码123456

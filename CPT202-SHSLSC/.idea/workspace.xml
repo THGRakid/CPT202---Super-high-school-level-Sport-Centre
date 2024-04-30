@@ -4,45 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e28db028-5cd2-463c-8a8e-351c2e744006" name="更改" comment="WeChat login 2">
-      <change afterPath="$PROJECT_DIR$/shsl-common/src/main/java/com/shsl/constant/PowerConstant.java" afterDir="false" />
+    <list default="true" id="e28db028-5cd2-463c-8a8e-351c2e744006" name="更改" comment="Admin operation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-common/src/main/java/com/shsl/constant/StatusConstant.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-common/src/main/java/com/shsl/enymeration/OperationType.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-common/src/main/java/com/shsl/enumeration/OperationType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-common/target/classes/META-INF/spring-configuration-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-common/target/classes/META-INF/spring-configuration-metadata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-common/target/classes/com/shsl/constant/JwtClaimsConstant.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-common/target/classes/com/shsl/constant/JwtClaimsConstant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-common/target/classes/com/shsl/constant/StatusConstant.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-common/target/classes/com/shsl/enymeration/OperationType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-pojo/src/main/java/com/shsl/dto/AdminDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-pojo/src/main/java/com/shsl/dto/AdminDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-pojo/src/main/java/com/shsl/entity/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-pojo/src/main/java/com/shsl/entity/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/dto/AdminDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/dto/AdminDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/entity/Admin$AdminBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/entity/Admin$AdminBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/entity/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/entity/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/entity/User$UserBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/entity/User$UserBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/controller/admin/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/controller/admin/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-pojo/src/main/java/com/shsl/dto/AdminPageQueryDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-pojo/src/main/java/com/shsl/dto/AdminPageQueryDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/SHSLApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/SHSLApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/controller/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/controller/user/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/mapper/AdminMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/mapper/AdminMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/service/AdminService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/service/SHSLApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/mapper/UserMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/service/impl/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/service/impl/AdminServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/service/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shsl-server/src/main/resources/mapper/AdminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/resources/mapper/AdminMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/controller/admin/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/controller/admin/AdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/controller/user/ReservationController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/controller/user/StadiumController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/controller/user/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/controller/user/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/interceptor/JwtTokenAdminInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/interceptor/JwtTokenAdminInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/mapper/AdminMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/mapper/AdminMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/mapper/UserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/service/AdminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/service/AdminService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/service/SHSLApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/mapper/ReservationMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/mapper/ReservationMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/service/impl/AdminServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/service/impl/AdminServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/mapper/AdminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/mapper/AdminMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/service/impl/ReservationImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/service/impl/ReservationImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +76,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-1.8&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/WorkSpace/CPT202---Super-high-school-level-Sport-Centre/CPT202---Super-high-school-level-Sport-Centre/CPT202-SHSLSC/shsl-server/src/main/java/com/shsl&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/WorkSpace/CPT202---Super-high-school-level-Sport-Centre/CPT202---Super-high-school-level-Sport-Centre/CPT202-SHSLSC/shsl-server/src/main/resources/static&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -124,6 +100,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\resources\static" />
       <recent name="D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\java\com\shsl" />
       <recent name="D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\resources\mapper" />
       <recent name="D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-common\src\main\java\com\shsl" />
@@ -133,8 +110,8 @@
       <recent name="D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\java" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.shsl.utils" />
       <recent name="com.shsl.dto" />
+      <recent name="com.shsl.utils" />
       <recent name="com.shsl.entity" />
       <recent name="com.shsl.result" />
       <recent name="com.shsl.mapper" />
@@ -285,7 +262,10 @@
       <workItem from="1714101896164" duration="1604000" />
       <workItem from="1714200665659" duration="19562000" />
       <workItem from="1714290091563" duration="21173000" />
-      <workItem from="1714352403625" duration="474000" />
+      <workItem from="1714352403625" duration="16687000" />
+      <workItem from="1714397191438" duration="593000" />
+      <workItem from="1714398080994" duration="15000" />
+      <workItem from="1714441296838" duration="1884000" />
     </task>
     <task id="LOCAL-00001" summary="github初始化">
       <option name="closed" value="true" />
@@ -399,7 +379,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714293012600</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Admin operation">
+      <option name="closed" value="true" />
+      <created>1714352936538</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1714352936538</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -442,7 +430,8 @@
     <MESSAGE value="user login" />
     <MESSAGE value="WeChat login" />
     <MESSAGE value="WeChat login 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="WeChat login 2" />
+    <MESSAGE value="Admin operation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Admin operation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -11,59 +11,74 @@ import java.util.List;
 
 @Mapper
 public interface AdminMapper {
-    /**
-     * 管理员工信息
-     */
+/**
+ * Manage Admin Information
+ */
 
-    //根据员工名查询员工
+    /**
+     * 1. Query admins by admin name
+     * @param adminName
+     * @return Admin
+     */
     @Select("select * from admin where admin_name = #{adminName}")
     Admin getByAdminName(String adminName);
 
-    //查询所有
+    /**
+     * 2. Query admins by admin id
+     * @param id
+     * @return Admin
+     */
+    @Select("select * from admin where admin_id = #{id}")
+    Admin getById(Integer id);
+
+    /**
+     * 3. Query all data
+     * @return List<Admin>
+     */
     @Select("SELECT * FROM admin")
+    @ResultMap("adminResultMap")
     List<Admin> selectAll();
 
     /**
-     * 插入员工数据
+     * 4. Paging query
+     * @param adminPageQueryDTO
+     * @return Page<Admin>
+     */
+    Page<Admin> selectByPage(AdminPageQueryDTO adminPageQueryDTO);
+
+    /**
+     * 5. Insert admin data
      * @param admin
      */
     @Insert("insert into admin values(null,#{adminName},#{depName},null,#{phone},#{email},#{createTime},#{expirationTime},#{power})")
     @AutoFill(value = OperationType.INSERT)
     void insert(Admin admin);
 
-
     /**
-     * 分页查询
-     * @param adminPageQueryDTO
-     * @return
-     */
-    Page<Admin> selectByPage(AdminPageQueryDTO adminPageQueryDTO);
-
-    /**
-     * 根据主键动态修改属性
+     * 6. Dynamically modify properties based on the primary key
      * @param admin
      */
     @AutoFill(value = OperationType.UPDATE)
     void update(Admin admin);
 
     /**
-     * 根据id查询员工信息
-     * @param id
-     * @return
+     * 7. Change the admin permission level
+     * @param id, power
      */
-    @Select("select * from admin where admin_id = #{id}")
-    Admin getById(Integer id);
-
-
-    //更新数据
     @Update("update admin set power = #{power} where admin_id = #{id}")
     void updateAdminPower(Integer id, Integer power);
 
-    //删除数据
+    /**
+     * 8. Delete data
+     * @param id
+     */
     @Delete("delete from admin where admin_id = #{id}")
     void deleteAdminById(Integer id);
 
-    //批量删除
+    /**
+     * 8. Delete multiple groups of data in batches
+     * @param ids
+     */
     void deleteAdminByIds(@Param("ids") int[] ids);
 
 }

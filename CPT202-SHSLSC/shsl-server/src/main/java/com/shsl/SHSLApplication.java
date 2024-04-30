@@ -15,8 +15,4 @@ public class SHSLApplication {
         SpringApplication.run(SHSLApplication.class, args);
         log.info("Server started");
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> origin/main

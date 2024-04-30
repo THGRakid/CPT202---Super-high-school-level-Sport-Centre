@@ -2,9 +2,16 @@ package com.shsl.service.impl;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.shsl.constant.MessageConstant;
+import com.shsl.constant.PasswordConstant;
+import com.shsl.constant.PowerConstant;
+import com.shsl.dto.UserDTO;
+import com.shsl.dto.UserPageQueryDTO;
 import com.shsl.dto.UserLoginDTO;
 import com.shsl.dto.WeChatLoginDTO;
+import com.shsl.entity.User;
 import com.shsl.entity.User;
 import com.shsl.exception.AccountNotFoundException;
 import com.shsl.exception.LoginFailedException;
@@ -12,10 +19,12 @@ import com.shsl.exception.PasswordErrorException;
 import com.shsl.mapper.UserMapper;
 import com.shsl.properties.WeChatProperties;
 import com.shsl.result.PageBean;
+import com.shsl.result.PageResult;
 import com.shsl.service.UserService;
 import com.shsl.utils.HttpClientUtil;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
@@ -38,7 +47,7 @@ public class UserServiceImpl implements UserService {
 
 
     /**
-     * 员工登录
+     * 用户登录
      *
      * @param userLoginDTO
      * @return
@@ -94,7 +103,7 @@ public class UserServiceImpl implements UserService {
                     .openid(openid)
                     .createTime(LocalDateTime.now())
                     .build();
-            userMapper.add(user);
+            userMapper.insert(user);
         }
 
         //返回这个用户对象
@@ -134,8 +143,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void add(User user) {
-        userMapper.add(user);
+    public void updateUserPhone(Integer id, String phone){
+        userMapper.updateUserPhone(id, phone);
     }
 
     @Override
@@ -152,66 +161,78 @@ public class UserServiceImpl implements UserService {
     public void updateUserAvatar(Integer id, String avatar){
         userMapper.updateUserAvatar(id, avatar);
     }
-
+    /**
+     * 新增用户
+     *
+     * @param userDTO
+     */
     @Override
-    public void deleteUserById(Integer id) {
-        userMapper.deleteUserById(id);
+    public void add(UserDTO userDTO) {
+        User user = new User();
+
+        //对象属性拷贝
+        BeanUtils.copyProperties(userDTO, user);
+
+        //设置密码，默认密码123456
+        user.setPassword(DigestUtils.md5DigestAsHex(PasswordConstant.DEFAULT_PASSWORD.getBytes()));
+
+        //设置当前记录的创建时间和修改时间
+        user.setCreateTime(LocalDateTime.now());
+
+        userMapper.insert(user);
+    }
+
+    /**
+     * 分页查询
+     *
+     * @param userPageQueryDTO
+     * @return
+     */
+    @Override
+    public PageResult selectByPage(UserPageQueryDTO userPageQueryDTO) {
+        // select * from user limit 0,10
+        //开始分页查询
+        PageHelper.startPage(userPageQueryDTO.getPage(), userPageQueryDTO.getPageSize());
+
+        Page<User> page = userMapper.selectByPage(userPageQueryDTO);
+
+        long total = page.getTotal();
+        List<User> records = page.getResult();
+
+        return new PageResult(total, records);
+    }
+    
+    /**
+     * 根据id查询用户
+     *
+     * @param id
+     * @return
+     */
+    @Override
+    public User getById(Integer id) {
+        return userMapper.getById(id);
+    }
+    
+    /**
+     * 编辑用户信息
+     *
+     * @param userDTO
+     */
+    @Override
+    public void update(UserDTO userDTO) {
+        User user = new User();
+        BeanUtils.copyProperties(userDTO, user);
+        userMapper.update(user);
+    }
+    @Override
+    public void deleteUserById(UserDTO userDTO) {
+        userMapper.deleteUserById(userDTO.getUserId());
     }
 
     @Override
-    public PageBean<User> selectByPage(int currentPage, int pageSize) {
-        //1、计算开始索引及查询条目数
-        /*
-        参数1：开始索引 = (当前页码 - 1） * 每页显示条数
-        参数2：查询条目数 = 每页显示条数
-         */
-        int begin = (currentPage-1)*pageSize;
-        int size = pageSize;
-
-        //2、查询当前页数据
-        List<User> rowsInPage = userMapper.selectByPage(begin,size);
-
-        //3、查询总记录数
-        int totalCount = userMapper.selectTotalCount();
-
-        //4、封装PageBean对象
-        PageBean<User> pageBean = new PageBean<>();
-        pageBean.setRowsInPage(rowsInPage);
-        pageBean.setTotalCount(totalCount);
-
-        return pageBean;
+    public void deleteUserByIds(int[] ids) {
+        userMapper.deleteUserByIds(ids);
     }
 
-    @Override
-    public void deleteByIds(int[] ids) {
-        userMapper.deleteByIds(ids);
-    }
-
-    @Override
-    public PageBean<User> selectByPageAndCondition(int currentPage, int pageSize, User user) {
-        //1. 计算开始索引
-        int begin = (currentPage - 1) * pageSize;
-        // 计算查询条目数
-        int size = pageSize;
-
-        // 处理user条件，模糊表达式
-        String userName = user.getUserName();
-        if (userName != null && userName.length() > 0) {
-            user.setUserName("%" + userName + "%");
-        }
-
-        //2. 查询当前页数据
-        List<User> rows = userMapper.selectByPageAndCondition(begin, size, user);
-
-        //3. 查询总记录数
-        int totalCount = userMapper.selectTotalCountByCondition(user);
-
-        //4. 封装PageBean对象
-        PageBean<User> pageBean = new PageBean<>();
-        pageBean.setRowsInPage(rows);
-        pageBean.setTotalCount(totalCount);
-
-        return pageBean;
-    }
 
 }

@@ -4,16 +4,19 @@ import lombok.Data;
 
 import java.io.Serializable;
 
+/**
+ * The data request when paging query the user data
+ */
 @Data
 public class AdminPageQueryDTO implements Serializable {
 
-    //员工姓名
+    // User name
     private String adminName;
 
-    //页码
+    // Page number
     private int page;
 
-    //每页显示记录数
+    // The number of records displayed per page
     private int pageSize;
 
 }

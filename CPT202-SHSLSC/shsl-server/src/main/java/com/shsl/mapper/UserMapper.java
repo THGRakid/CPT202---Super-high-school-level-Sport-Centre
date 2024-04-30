@@ -1,74 +1,125 @@
 package com.shsl.mapper;
 
+import com.github.pagehelper.Page;
+import com.shsl.annotation.AutoFill;
+import com.shsl.dto.UserPageQueryDTO;
+import com.shsl.dto.UserPageQueryDTO;
+import com.shsl.entity.Admin;
 import com.shsl.entity.User;
+import com.shsl.entity.User;
+import com.shsl.enumeration.OperationType;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 public interface UserMapper {
+/**
+ * Manage User Information
+ */
 
     /**
-     * 根据用户名查询用户
+     * 1. Query users by username
      * @param userName
-     * @return
+     * @return User
      */
     @Select("select * from user where user_name = #{userName}")
     User getByUserName(String userName);
 
     /**
-     * 根据openid查询用户
+     * 2. Query users by openid
      * @param openid
-     * @return
+     * @return User
      */
     @Select("select * from user where openid = #{openid}")
     User getByOpenid(String openid);
 
-    //查询所有
+    /**
+     * 3. Query users by user id
+     * @param id
+     * @return User
+     */
+    @Select("select * from user where user_id = #{id}")
+    User getById(Integer id);
+
+    /**
+     * 4. Query all data
+     * @return List<User>
+     */
     @Select("SELECT * FROM user")
     @ResultMap("userResultMap")
     List<User> selectAll();
 
-    //添加数据
-    @Insert("insert into user (openid, user_name, phone, email, sex, avatar, create_time)values(#{openid},#{userName},#{phone},#{email},#{sex},#{avatar},#{createTime})")
-    void add(User user);
+    /**
+     * 5. Paging query
+     * @param userPageQueryDTO
+     * @return Page<User>
+     */
+    Page<User> selectByPage(UserPageQueryDTO userPageQueryDTO);
 
-    //更新电话数据
+    /**
+     * 6. Use dynamic conditions to count the number of users
+     * @param map
+     * @return Integer
+     */
+    Integer countByMap(Map map);
+
+    /**
+     * 7. Insert user data
+     * @param user
+     */
+    @Insert("insert into user (openid, user_name, phone, email, sex, avatar, create_time)values(#{openid},#{userName},#{phone},#{email},#{sex},#{avatar},#{createTime})")
+    @AutoFill(value = OperationType.INSERT)
+    void insert(User user);
+
+    /**
+     * 8. Dynamically modify properties based on the primary key
+     * @param admin
+     */
+    @AutoFill(value = OperationType.UPDATE)
+    void update(User user);
+
+    /**
+     * 7. Change the user phone number
+     * @param id, phone
+     */
     @Update("update user set phone = #{phone} where user_id = #{id}")
     void updateUserPhone(Integer id, String phone);
 
-    //更新邮箱数据
+    /**
+     * 8. Change the user email
+     * @param id, email
+     */
     @Update("update user set email = #{email} where user_id = #{id}")
     void updateUserEmail(Integer id, String email);
 
-    //更新性别数据
+    /**
+     * 9. Change the user sex
+     * @param id, sex
+     */
     @Update("update user set sex = #{sex} where user_id = #{id}")
     void updateUserSex(Integer id, String sex);
 
-    //更新头像数据
+    /**
+     * 10. Change the user phone number
+     * @param id, avatar
+     */
     @Update("update user set avatar = #{avatar} where user_id = #{id}")
     void updateUserAvatar(Integer id, String avatar);
 
-    //删除数据
+    /**
+     * 11. Delete data
+     * @param id
+     */
     @Delete("delete from user where user_id = #{id}")
     void deleteUserById(Integer id);
 
-    //分页查询
-    @Select("select * from user limit #{begin},#{size}")
-    @ResultMap("userResultMap")
-    List<User> selectByPage(@Param("begin") int begin,@Param("size") int size);
+    /**
+     * 12. Delete multiple groups of data in batches
+     * @param ids
+     */
+    void deleteUserByIds(@Param("ids") int[] ids);
 
-    //查询总记录数
-    @Select("select count(*) from user ")
-    int selectTotalCount();
-
-    //批量删除
-    void deleteByIds(@Param("ids") int[] ids);
-
-    //分页查询
-    List<User> selectByPageAndCondition(@Param("begin") int begin,@Param("size") int size,@Param("user") User user);
-
-    //查询总记录数
-    int selectTotalCountByCondition(User user);
 
 }
