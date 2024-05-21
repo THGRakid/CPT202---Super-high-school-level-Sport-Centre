@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/static/css/style7.css">
+    </head>
+    <body>
+
+        <div class="add-stadium">
+
+            <button id="Close">&times;</button>
+            <h1>Add Stadium Information</h1>
+            <div class="input-box">
+                <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                <input type="text" class="form-control" id="Name" name="Name"
+                       autocomplete="off" placeholder="Stadium name" required/>
+            </div>
+            <div class="input-box">
+                <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                <input type="text" class="form-control" id="picture" name="Picture"
+                       autocomplete="off" placeholder="Picture" required/>
+            </div>
+            <div class="input-box">
+                <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                <input type="text" class="form-control" id="placenumber" name="PlaceNumber"
+                       autocomplete="off" placeholder="Place number" required/>
+            </div>
+            <div class="input-box">
+                <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                <input type="text" class="form-control" id="OpenTime" name="OpenTime"
+                       autocomplete="off" placeholder="OpenTime" required/>
+            </div>
+            <div class="input-box">
+                <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                <input type="text" class="form-control" id="CloseTime" name="CloseTime"
+                       autocomplete="off" placeholder="CloseTime" required/>
+            </div>
+            <div class="input-box">
+                <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                <input type="text" class="form-control" id="Information" name="Information"
+                       autocomplete="off" placeholder="Information" required/>
+            </div>
+            <div class="input-box">
+                <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                <input type="text" class="form-control" id="LimitPeople" name="LimitPeople"
+                       autocomplete="off" placeholder="LimitPeople" required/>
+            </div>
+            <div class="input-box">
+                <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                <input type="text" class="form-control" id="price" name="Price"
+                       autocomplete="off" placeholder="Price" required/>
+            </div>
+            <div class="input-box">
+                <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                <input type="text" class="form-control" id="Location" name="Location"
+                       autocomplete="off" placeholder="Location" required/>
+            </div>
+            <a href=" ">ConfirmAddition</a>
+            <a href=" ">Return the List</a>
+      </div>
+    </body>
+    <script>
+        window.addEventListener("load", function(){
+            setTimeout(
+                function open(event){
+                    document.querySelector(".add-stadium").style.display = "flex";
+                },
+                500
+            )
+        });
+
+       document.querySelector("#Close").addEventListener("click", function(){
+        document.querySelector(".add-stadium").style.display = "none";
+       });
+    </script>
+</html>

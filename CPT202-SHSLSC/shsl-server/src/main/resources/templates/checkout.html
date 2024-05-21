@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+    <style>
+        * {
+   padding: 0;
+   margin: 0;
+}
+header {
+    background-color:#0b3289;
+    height: 40px;
+    width: 100%;
+    position: relative;
+}
+header a{
+    color: white;
+}
+h1{
+    background-color:#0b3289;
+    color:white;
+    position: absolute;
+    height: 40px;
+    width: 100%;
+}
+h2{
+    text-decoration: none;
+}
+
+
+.news{
+    background-color: white;
+    color: whitec;
+    height: 85vh;
+    background-image: url("../static/img/img3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center
+}
+.news p{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border: #0b3289;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.news button:hover{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #0b3289;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+ul  {
+    position:absolute;
+    right: 2vw;
+    top: 1vw;
+    color:azure;
+}
+ul a{
+  color: white;
+  text-decoration: none;
+}
+ul a:hover{
+    text-decoration: underline;
+}
+li{
+display: inline;
+margin-right: 4vw;
+}
+h2 a{
+    background-color: #0b3289;
+    color: blanchedalmond;
+}
+footer{
+    color: aliceblue;
+    background-color: black;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+    </style>
+</head>
+<body>
+    <h1>TICKETING</h1>
+    <ul>
+        <li> <a href="personal_homepage.html" style="color: azure;">Personal Center</a></li>
+        <li> <a href="#" style="color: azure;">Evaluate </a></li>
+        <li> <a href="user_login.html" style="color: azure;">Log Out</a></li>
+    </ul>
+    <main>
+    <section class="news">
+    <h2>Ticket Imformation</h2>
+    <p><strong>Time:17:00-19:00,28th,June,2024</strong></p>
+    <p><strong>Price: $0</strong></p>
+    <p>
+       <strong>Payment method:</strong>
+    </p>
+    <p>
+        <img src="../static/img/wx.jpg" width="40px"><strong>Quentity:2</strong></p>
+    <p><strong><a href="#"><button>GO TO PAY</button></a></strong></p>
+    </section>
+
+    </main>
+    <footer>
+        <h3>Copyright © 2024 Sports Center</h3>
+    </footer>
+        
+</body>
+</html>

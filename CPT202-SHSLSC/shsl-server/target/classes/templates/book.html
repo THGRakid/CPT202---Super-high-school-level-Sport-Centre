@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Reservation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/book_style.css">
+
+
+</head>
+
+<body>
+<header>
+    <div class="logo">
+        <img src="/static/img/logo.jpg" alt="rhythm logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a th:href="@{/user/homepage}">Home</a></li>
+            <li><a th:href="@{/stadium/show}">Book</a></li>
+            <li><a href="#">Event</a></li>
+            <li><a href="#">Lesson</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Contact</a></li>
+            <div class="register-link">
+                <a th:href="@{/user/personalHomepage}">My Account</a>
+            </div>
+            <li><img src="/static/img/Personal_avatar.jpg" alt="User Avatar" class="avatar"></li>
+        </ul>
+        <form action="/search" method="GET">
+            <input type="text" name="query" placeholder="Please write down">
+            <button type="submit"><i class="fas fa-search search-icon"></i></button>
+        </form>
+    </nav>
+</header>
+
+
+<div class="button-container">
+    <button th:href="@{/place/show/(id=${'2'})}" class="sport-button" onclick="showTableAndNavigate('2')">
+        <i class="fas fa-badminton"></i> Badminton
+    </button>
+    <button th:href="@{/place/show/(id=${'1'})}" class="sport-button" onclick="showTableAndNavigate('1')">
+        <i class="fas fa-badminton"></i> Table Tennis
+    </button>
+    <button th:href="@{/place/show/(id=${'3'})}" class="sport-button" onclick="showTableAndNavigate('3')">
+        <i class="fas fa-badminton"></i> GYM
+    </button>
+    <button th:href="@{/place/show/(id=${'4'})}" class="sport-button" onclick="showTableAndNavigate('4')">
+        <i class="fas fa-badminton"></i> Swimming
+    </button>
+    <button class="sport-button" id="basketball"><i class="fas fa-basketball-ball"></i> Basketball</button>
+    <button class="sport-button" id="football"><i class="fas fa-futbol"></i> Football</button>
+    <button class="sport-button" id="martial"><i class="fas fa-fist-raised"></i> Martial Art</button>
+    <button class="sport-button" id="billiard"><i class="fas fa-bowling-ball"></i> Billiard</button>
+    <button class="sport-button" id="golf"><i class="fas fa-golf-ball"></i> Golf</button>
+    <button class="sport-button" id="tennis"><i class="fas fa-racket"></i> Tennis</button>
+    <button class="sport-button" id="squash"><i class="fas fa-cube"></i> Squash</button>
+    <button class="sport-button" id="more"><i class="fas fa-ellipsis-h"></i> More</button>
+
+</div>
+<script>
+    function showTableAndNavigate( id) {
+        showTable();  // 执行显示表格的逻辑
+        window.location.href = '/place/show/' + id;  // 手动执行跳转
+    }
+</script>
+<div id="div_place_list">
+    <table id="tbl_place" style="display: none;">
+        <thead>
+        <tr>
+            <th class="w16">Place Name</th>
+            <th class="w16">Stadium Name</th>
+            <th class="w16">Status</th>
+            <th class="w16">Operation</th>
+        </tr>
+        </thead>
+        <tbody> <!-- 添加tbody -->
+        <tr th:each="place,state:${placeShow}" th:class="${state.odd?'row1':'row2'}">
+            <td>
+                <span th:text="${place.placeId}"></span>
+            </td>
+            <td>
+                <span th:text="${place.staId}"></span>
+            </td>
+            <td>
+                <span th:text="${place.status}"></span>
+            </td>
+            <td>
+                <a th:href="@{/reservation/make(id=${place.staId})}">Book</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    function showTable(id) {
+        document.getElementById('tbl_place').style.display = 'block';
+
+    }
+</script>
+
+
+<script src="/static/js/changecolor.js"></script>
+<script src="/static/js/time.js"></script>
+
+</body>
+</html>
+
+

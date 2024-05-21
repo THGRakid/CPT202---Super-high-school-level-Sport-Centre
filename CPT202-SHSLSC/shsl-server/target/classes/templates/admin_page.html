@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management Page</title>
+    <link rel="stylesheet" href="/static/css/style4.css">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: #eee;
+        }
+
+        * {
+            border: 1px solid black;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .baiSe {
+            background-color: white;
+        }
+
+        .flex1 {
+            flex: 1;
+        }
+
+        .column {
+            flex-direction: column;
+        }
+
+        /* 上下左右外边距 */
+        .mg8 {
+            margin: 8px;
+        }
+
+        /* 右外边距 */
+        .mgr8 {
+            margin-right: 8px;
+        }
+
+        /* 上外边距 */
+        .mgt8 {
+            margin-top: 8px
+        }
+
+        /* 阴影 */
+        .yinYing {
+            box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+            rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+        }
+
+        /* 四个小盒子（用于储存可视化数据） */
+        .shuJu {
+            height: 100px;
+        }
+
+        /* 中间的大盒子 */
+        .lieBiaoXiang {
+            height: 160px;
+        }
+
+        /* 导航条 */
+        .daoHang {
+            padding: 10px 20px;
+            border-bottom: 1px solid rgb(201, 201, 201);
+            font-size: 14px;
+            color: #666;
+        }
+
+        .neiRong::-webkit-scrollbar {
+            display: none; /* Chrome Safari */
+        }
+
+        /* 当屏幕宽度小于600px时要改变的css */
+        @media (max-width: 600px) {
+            /* 小屏幕上取消侧边栏*/
+            .ceBian {
+                display: none;
+            }
+
+            /* 内容栏和数据栏flex方向改为竖向 */
+            .neiRong {
+                flex-direction: column;
+            }
+
+            .shuJuQu {
+                flex-direction: column;
+            }
+
+            /* 右区加左外边距 */
+            .youQu {
+                margin-left: 8px;
+            }
+
+            /* 数据块外边距，大小改为自动宽高 */
+            .shuJu {
+                margin: 0 0 8px;
+                flex: auto;
+            }
+        }
+    </style>
+</head>
+<body class="flex">
+<!-- 侧边栏导航-->
+<div style="width: 200px; z-index:2"
+     class="ceBian baiSe yinYing flex column">
+    <!-- 侧边头像栏 -->
+    <div
+            style="
+        padding: 10px;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid #999;
+       "
+            class="flex"
+    >
+        <img
+                alt="logo"
+                src=""
+                width="40px"
+                height="40px"
+        />
+        <div style="margin-left: 10px">RHYTHM</div>
+    </div>
+</div>
+
+<!-- 导航栏 -->
+
+<ul>
+    <li>Home</li>
+    <li>About</li>
+    <li>Creative Menu Hover Effects</li>
+    <li>Services</li>
+    <li>Portfolio</li>
+    <li>Contact</li>
+
+    <div id="cursor"></div>
+</ul>
+<script src="/static/js/index.js"></script>
+<!-- 主区域-->
+<div class="flex1 flex column">
+    <!-- 头部栏-->
+    <div style="height: 60px; z-index: 1;" class="baiSe yinYing"></div>
+    <!-- 内容区，只能在内容区显示-->
+    <div style="overflow: auto" class="flex1 flex neiRong">
+        <!-- 左区-->
+        <div style="flex: 3;" class="flex column">
+            <!-- 数据区-->
+            <div class="flex shuJuQu">
+                <!-- 四个小块显示重点数据 -->
+                <div class="shuJu baiSe yinYing flex1 mgr8"></div>
+                <div class="shuJu baiSe yinYing flex1 mgr8"></div>
+                <div class="shuJu baiSe yinYing flex1 mgr8"></div>
+                <div class="shuJu baiSe yinYing flex1"></div>
+            </div>
+            <!-- 列表区，列表数据可以无限增加 -->
+            <div class="flex column">
+                <!-- 列表项 -->
+                <div class="lieBiaoXiang mgt8 baiSe yinYing"></div>
+                <div class="lieBiaoXiang mgt8 baiSe yinYing"></div>
+                <div class="lieBiaoXiang mgt8 baiSe yinYing"></div>
+                <div class="lieBiaoXiang mgt8 baiSe yinYing"></div>
+                <div class="lieBiaoXiang mgt8 baiSe yinYing"></div>
+            </div>
+
+        </div>
+        <!-- 右区-->
+        <div style="flex: 1;" class="youQu flex column mgt8 mgr8 ">
+            <!-- 提示区-->
+            <div style="height: 150px;" class="baiSe yinYing "></div>
+            <!-- 消息区-->
+            <div style="height: 300px;" class="baiSe yinYing mgt8"></div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

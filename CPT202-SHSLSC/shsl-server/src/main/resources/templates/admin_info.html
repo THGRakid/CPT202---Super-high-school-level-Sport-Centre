@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Info</title>
+    <link rel="stylesheet" href="../static/css/admin_style.css">
+    <style>
+        table{
+        display: flex;
+        justify-content: center;  
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+        
+        }
+        th{
+            color: #0b3289;
+        }
+        body{
+            background: url(../static/front_end 1/front_end 1/img/alogin1.jpg);
+            backdrop-filter: blur(25px);
+
+        }
+       .new{
+        display: flex;
+        justify-content: center;  
+        position: relative;
+        margin-right: 5px;
+       }
+       button{
+        padding: 15px;
+        border-radius: 5px;
+       }
+
+       table a{
+        font-size: 10px;
+       }
+    </style>
+</head>
+<body>
+    <header>
+    
+            <h1>&nbsp;Admin Info</h1>
+            <ul>
+                <li><a href="admin_homepage.html">Admin home</a></li>
+                    <li><a href="../static/front_end%201/front_end%201/user_Info.html">User Info</a></li>
+                    <li><a href="admin_info.html">Admin Info</a></li>
+                    <li><a href="venue_management.html">Venue management</a></li>
+                <li><a href="#">Book Info</a></li>
+            </ul>
+    </header>
+
+        <div><button onclick="addRow()" class="new">Add new admin info</button>
+
+        <table id="table">
+            <tr>
+                <th>admin ID</th>
+                <th>name</th>
+                <th>password</th>
+                <th>Email</th>
+                <th>power</th>
+                <th>hire time</th>
+                <th>resignation time</th>
+                <th>Operation</th>
+            </tr>
+            <tr>
+                <td>413458</td>
+                <td>Alpha</td>            
+                <td>Passw0rd4134587</td>
+                <td>1546244586@Gmail.com</td>
+                <td>2</td>
+                <td>2023/4/14</td>
+                <td>#</td>
+                <td>
+                    <button onclick="EditRow(this)">Edit</button>
+                    <button onclick="DelRow(this)">Delete</button>
+                </td>
+            </tr>
+        </table>
+           
+    <script src="../static/front_end%201/front_end%201/js/admin_table.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+header,section,footer{
+    background-color:white;
+
+}
+
+h1{
+    position:absolute;
+    left: 120px;
+    top:0;
+    background-position: center;
+}
+body {
+    background:url("/img/Background1.jpg") no-repeat;
+    background-size:100% 100%;
+}
+
+        h2{
+            color: #f4b119;
+        }  
+        
+        p{
+            font-size: 15px;
+        }
+        
+        ul  {
+            position:absolute;
+            right: 2vw;
+            top: 0;
+            color:white
+        }
+        ul a{
+            color: white;
+            text-decoration: none;
+            }
+            ul a:hover{
+            text-decoration: underline;
+            }
+       li{
+        display: inline;
+        margin-right: 4vw;
+       }
+
+       
+     

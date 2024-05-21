@@ -1,0 +1,147 @@
+*{
+    padding: 0;
+    margin:0;
+}
+h1{
+    color:#dadf00; font-size: 60px; font-family: tahoma; position: absolute; left:20px; top:0; line-height: 80px;
+}
+
+header{
+    background-color: #0b3289; height: 30px; width: 1080;
+    border: #0b3289 5px solid;
+    padding: 25px;
+}
+header li{
+    display: inline; margin-right: 4vw;
+} 
+header ul{
+    position:absolute; right:3vw; top:0; line-height: 90px; 
+}
+header a{
+    color:#dadf00;font-family: tahoma; text-decoration: none;  font-size: 20px;right:3vw
+}
+header a:hover{
+    color:#00a092; text-decoration: underline;
+}
+
+section{
+	
+    background-color: #ccc;
+}
+th,td{
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 8px;
+}
+footer{
+    background-color: black;
+}
+div{
+    position: relative;
+    float: left;
+}
+
+/*页面数据主体*/
+#div_conteiner{
+    width: 80%;
+    height: 100%;
+    margin-left: 13%;
+    float: left;
+    margin-top: 3%;
+   
+}
+/*数据列表大盒子*/
+#div_order_list{
+    width: 89%;
+    text-align: center;
+    background-color: #cccccc;
+    border-radius: 20px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+/*搜索栏*/
+.search{
+    margin-bottom: 5px;
+    margin-left: 9%;
+}
+.search input{
+    font-size: 1.2rem;
+    padding: 3px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    border: lightgray solid 2px;
+
+}
+.search button{
+    font-size: 1.2rem;
+    border-radius: 0 5px 5px 0;
+    border: lightgray solid 2px;
+    padding-bottom: 3px;
+    background-color: #cccccc;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    right: 7px;
+}
+
+/*显示数据列表*/
+#tbl_order{
+    width: 80%;
+    text-align: center;
+    line-height:45px;
+    margin-left: 9%;
+    border-radius: 20px;
+}
+#tbl_order,#tbl_order tr,#tbl_order th,#tbl_order td{
+    border: 1px solid gray;
+    border-collapse: collapse;
+}
+.w16{
+    width: 16%;
+}
+.delImg{
+    width: 30px;
+    height: 30px;
+    vertical-align: middle; /* 图片垂直居中 */
+    cursor: pointer;
+}
+thead{
+  font-size: 1.3rem;  
+}
+
+#add_order_div{
+    width: 40%;
+    margin-left: 30%;
+}
+#add_order_tbl{
+    width: 80%;
+    margin-top: 5px;
+    margin-left: 5%;
+    border-collapse: collapse;
+}
+#add_order_tbl,#add_fruit_tbl tr,#add_fruit_tbl th,#add_fruit_tbl td{
+    border: 1px solid lightgray;
+    text-align: center;
+}
+
+/*添加和修改*/
+#add_order_tbl input{
+    outline: none;
+}
+#add_order_tbl td input[type='text']{
+    width: 90%;
+    padding: 4px;
+}
+/*添加修改按钮样式*/
+.addBtn{
+    font-size: 1.2rem;
+    padding: 3px 16px;
+}
+
+/*a链接禁用*/
+a[disabled] {
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+    color: #999;
+}

@@ -1,0 +1,118 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+   
+}
+
+body {
+    background: url("/static/img/register_background.jpg") no-repeat center;
+    background-size: 100% 200%;
+}
+
+.rg_layout {
+    width: 600px;
+    height: 350px;
+    border: 8px solid #FFD026;
+    background-color: white;
+    margin:  100px 400px  100px 400px;
+    
+}
+
+.rg_left {
+    float: left;
+    margin: 50px;
+}
+
+.rg_left > p:first-child {
+    color: #0b3289;
+    font-size: 50px;
+}
+
+.rg_left > p:last-child {
+    color: #0b3289;
+    font-size: 20px;
+}
+
+.rg_center {
+    float: left;
+}
+
+.rg_right {
+    color: #0b3289;
+    float: left;
+    margin: 10px 120px;
+    padding-left: 50px;
+}
+
+.rg_right p {
+    font-size: 15px;
+}
+
+.rg_right p a {
+    color: coral;
+}
+
+.td_left {
+    color: #0b3289;
+    width: 100px;
+    text-align: right;
+    height: 45px;
+}
+
+.td_right {
+    padding-left: 10px;
+}
+
+#username, #password, #email, #name, #tel, #birthday, #checkcode {
+    width: 251px;
+    height: 32px;
+    border: 1px solid #A6A6A6;
+    /*设置边框圆角*/
+    border-radius: 5px;
+    padding-left: 10px;
+    
+}
+
+#checkcode {
+    width: 110px;
+}
+
+#img_check {
+    height: 32px;
+    vertical-align: middle;
+}
+
+#btn_sub {
+    width: 100px;
+    height: 40px;
+    background-color: #FFD026;
+    border: 1px solid #FFD026;
+    padding-left: 10px;
+}
+
+h2{
+    color: #FFD026;
+}
+.input-box input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: 1;
+    outline: none;
+   font-size: 16px;
+    color: #0b3289;
+    padding: 0 35px 0 5px;
+   }
+   
+   .input-box input::placeholder {
+   color: #dadf00;
+   }
+   
+   .input-box .icon {
+    position: absolute;
+    right: 8px;
+   color: #0b3289;
+    font-size: 18px;
+   line-height: 50px;
+   }

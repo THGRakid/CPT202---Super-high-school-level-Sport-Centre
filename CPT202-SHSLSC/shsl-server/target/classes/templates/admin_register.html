@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin register</title>
+  <script>
+
+let input_txt= document.querySelector('.input_txt')
+let input_pass= document.querySelector('.input_pass')
+let input_sub= document.querySelector('.input_sub')
+function adminLogin(){
+    let username = input_txt.value
+    let password = input_pass.value
+    if(username.length >=6 && password.length >=8) {
+        alert("login success")
+
+        localStorage.setItem('username',username)
+        localStorage.setItem('password',password)
+
+        window.location.href ='homepage_blank.html'
+    }else{
+        alert('login failed, please check your username or password')
+    }
+
+
+}   
+
+  </script>
+  
+  
+  
+  <!-- FontAwesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <!-- Custom CSS -->
+  <style>
+    * General CSS *
+
+    body{ 
+        display: flex;
+        justify-content: center;
+        align-items: center;  
+        min-height: 100vh;
+        background: url("../static/img/alogin1.jpg") no-repeat;
+      }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Custom CSS */
+.container {
+  width: 100%;
+  height: 100vh;
+  background: url("../static/img/alogin1.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .login-box {
+  position: relative;
+  width: 390px;
+  height: 420px;
+  background-color: transparent;
+  border: 2px solid #0b3289(92, 72, 72, 0.5);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(15px);
+}
+
+.login-box h2 {
+  font-size: 28px;
+  color: #0b3289;
+  text-align: center;
+}
+
+.login-box .input-box {
+  position: relative;
+  width: 310px;
+  margin: 30px 0;
+  border-bottom: 2px solid #0b3289;
+}
+
+.input-box input {
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #0b3289;
+  padding: 0 35px 0 5px;
+}
+
+.input-box input::placeholder {
+  color: #dadf00;
+}
+
+.input-box .icon {
+  position: absolute;
+  right: 8px;
+  color: #0b3289;
+  font-size: 18px;
+  line-height: 50px;
+}
+
+.login-box .remember-forget {
+  margin: -15px 0 15px;
+  font-size: 15px;
+  color: #dadf00;
+  display: flex;
+  justify-content: space-between;
+}
+
+.remember-forget label input {
+  margin-right: 3px;
+}
+
+.login-box button {
+  width: 100%;
+  height: 40px;
+  background: #dadf00;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #000;
+  transition: all 0.5s;
+}
+
+.login-box button:hover {
+  background: #1f73c9;
+  color: #dadf00;
+}
+
+.login-box .register-link {
+  font-size: 15px;
+  color: #dadf00;
+  text-align: center;
+  margin: 20px 0 10px;
+}
+
+.remember-forget a,
+.register-link a {
+  color: #dadf00;
+  text-decoration: none;
+}
+
+.remember-forget a:hover,
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 460px) {
+  .container .login-box {
+    width: 350px;
+  }
+
+  .login-box .input-box {
+    width: 290px;
+  }
+}
+
+@media (max-width: 360px) {
+  .container .login-box {
+    width: 100%;
+    height: 100vh;
+    border: none;
+  }
+}
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="login-box">
+      <!-- Login Form -->
+      <form action="">
+        <h2>Register</h2>
+        <div class="input-box">
+          <span class="icon"><i class="fa-solid fa-user"></i></span>
+          <input type="text"  class="input_text"  placeholder="Adminname" required />
+        </div>
+        <div class="input-box">
+          <span class="icon"><i class="fa-solid fa-lock"></i></span>
+          <input type="password" class="input_pass" placeholder="Password" required />
+        </div>
+        <div class="input-box">
+            <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+            <input type="email" class="input_Email" placeholder="Email" required />
+          </div>
+
+        <button type="submit">register</button>
+        <div class="register-link">
+          <a href="admin_login.html">Already have an account? Login</a>
+          
+        </div>
+
+      </form>
+    </div>
+  </div>
+  
+</body> 
+
+</html>

@@ -1,0 +1,39 @@
+*{
+    padding: 0;
+    margin:0;
+}
+h1{
+    color:#dadf00; font-size: 60px; font-family: tahoma; position: absolute; left:20px; top:0; line-height: 80px;
+}
+
+header{
+    background-color: #0b3289; height: 30px; width: 1080;
+    border: #0b3289 5px solid;
+    padding: 25px;
+}
+header li{
+    display: inline; margin-right: 4vw;
+} 
+header ul{
+    position:absolute; right:3vw; top:0; line-height: 90px; 
+}
+header a{
+    color:#dadf00;font-family: tahoma; text-decoration: none;  font-size: 20px;right:3vw
+}
+header a:hover{
+    color:#00a092; text-decoration: underline;
+}
+
+section{
+	
+    background-color: #ccc;
+}
+th,td{
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 8px;
+}
+footer{
+    background-color: black;
+}
+

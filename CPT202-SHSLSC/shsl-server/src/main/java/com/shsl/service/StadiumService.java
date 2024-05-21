@@ -1,9 +1,9 @@
 package com.shsl.service;
 
+import com.shsl.entity.Place;
 import com.shsl.entity.Stadium;
 
-import java.util.Collection;
-import java.util.Optional;
+import java.util.List;
 
 public interface StadiumService {
 
@@ -30,21 +30,22 @@ public interface StadiumService {
      * 获取所有体育馆的信息
      * @return 所有体育馆的信息
      */
-    Collection<Stadium> getAllStadiums();
+    List<Stadium> getAllStadiums();
 
     /**
      * 根据ID获取体育馆信息
      * @param id 待获取的体育馆ID
      * @return 对应ID的体育馆信息
      */
-    Optional<Stadium> getStadiumById(Integer id);
+    Stadium getStadiumById(Integer id);
 
     /**
      * 根据名称获取体育馆信息
      * @param name 待获取的体育馆名称
      * @return 对应名称的体育馆信息
      */
-    Optional<Stadium> getStadiumByName(String name);
+    Stadium getStadiumByName(String name);
 
 
+    List<Place> getPlaceById(Integer staId);
 }

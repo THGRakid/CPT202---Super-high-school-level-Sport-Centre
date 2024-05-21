@@ -7,12 +7,10 @@ import com.github.pagehelper.PageHelper;
 import com.shsl.constant.MessageConstant;
 import com.shsl.constant.PasswordConstant;
 import com.shsl.constant.PowerConstant;
-import com.shsl.dto.UserDTO;
-import com.shsl.dto.UserPageQueryDTO;
-import com.shsl.dto.UserLoginDTO;
-import com.shsl.dto.WeChatLoginDTO;
+import com.shsl.dto.*;
 import com.shsl.entity.User;
 import com.shsl.entity.User;
+import com.shsl.exception.AccountAlreadyExistsException;
 import com.shsl.exception.AccountNotFoundException;
 import com.shsl.exception.LoginFailedException;
 import com.shsl.exception.PasswordErrorException;
@@ -58,16 +56,15 @@ public class UserServiceImpl implements UserService {
         String password = UserLoginDTO.getPassword();
 
         //1、根据用户名查询数据库中的数据
-        User user = userMapper.getByUserName(userName);
-
+        User user = userMapper.getByUsername(userName);
         //2、处理各种异常情况（用户名不存在、密码不对、账号被锁定）
         if (user == null) {
             //账号不存在
             throw new AccountNotFoundException(MessageConstant.ACCOUNT_NOT_FOUND);
         }
 
-        //密码比对
-        //对前端传过来的明文密码进行加密处理
+        //Password comparison
+        // Encrypt the plaintext password sent from the front-end
         password = DigestUtils.md5DigestAsHex(password.getBytes());
         if (!password.equals(user.getPassword())) {
             //密码错误
@@ -161,20 +158,25 @@ public class UserServiceImpl implements UserService {
     public void updateUserAvatar(Integer id, String avatar){
         userMapper.updateUserAvatar(id, avatar);
     }
+
     /**
      * 新增用户
      *
-     * @param userDTO
+     * @param userRegisterDTO
      */
     @Override
-    public void add(UserDTO userDTO) {
+    public void insert(UserRegisterDTO userRegisterDTO) {
         User user = new User();
 
         //对象属性拷贝
-        BeanUtils.copyProperties(userDTO, user);
+        BeanUtils.copyProperties(userRegisterDTO, user);
 
+        if (userMapper.findUserNameCount(user.getUserName()) > 0 ) {
+            //账号已存在
+            throw new AccountAlreadyExistsException(MessageConstant.ACCOUNT_ALREADY_EXIST);
+        }
         //设置密码，默认密码123456
-        user.setPassword(DigestUtils.md5DigestAsHex(PasswordConstant.DEFAULT_PASSWORD.getBytes()));
+        user.setPassword(DigestUtils.md5DigestAsHex(userRegisterDTO.getPassword().getBytes()));
 
         //设置当前记录的创建时间和修改时间
         user.setCreateTime(LocalDateTime.now());

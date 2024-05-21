@@ -1,16 +1,18 @@
 package com.shsl.mapper;
 
+import com.shsl.entity.Place;
 import com.shsl.entity.Stadium;
 import org.apache.ibatis.annotations.*;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 @Mapper
 public interface StadiumMapper {
 
-    @Insert("INSERT INTO stadium (sta_name, place_number, open_time, close_time, sta_info, sta_picture, 'limit', price, location) " +
-            "VALUES (#{stadium.staName}, #{stadium.placeNumber}, #{stadium.openTime}, #{stadium.closeTime}, #{stadium.staInfo}, #{stadium.staPicture}, #{stadium.limit}, #{stadium.price}, #{stadium.location})")
+    @Insert("INSERT INTO stadium (sta_id, sta_name, place_number, open_time, close_time, sta_info, sta_picture, 'limit', price, location) " +
+            "VALUES (null,#{stadium.staName}, #{stadium.placeNumber}, #{stadium.openTime}, #{stadium.closeTime}, #{stadium.staInfo}, #{stadium.staPicture}, #{stadium.limit}, #{stadium.price}, #{stadium.location})")
     void addStadium(@Param("stadium") Stadium stadium);
 
     @Update("UPDATE stadium SET sta_name = #{stadium.staName}, place_number = #{stadium.placeNumber}, open_time = #{stadium.openTime}, " +
@@ -22,11 +24,14 @@ public interface StadiumMapper {
     void deleteStadium(@Param("id") Integer id);
 
     @Select("SELECT * FROM stadium")
-    Collection<Stadium> getAllStadiums();
+    List<Stadium> getAllStadiums();
 
     @Select("SELECT * FROM stadium WHERE sta_id = #{id}")
-    Optional<Stadium> getStadiumById(@Param("id") Integer id);
+    Stadium getStadiumById(@Param("id") Integer id);
 
     @Select("SELECT * FROM stadium WHERE sta_name = #{name}")
-    Optional<Stadium> getStadiumByName(@Param("name") String name);
+    Stadium getStadiumByName(@Param("name") String name);
+
+    @Select("SELECT * FROM place WHERE sta_id = #{id}")
+    List<Place> getPlaceByStaId(@Param("id") Integer id);
 }

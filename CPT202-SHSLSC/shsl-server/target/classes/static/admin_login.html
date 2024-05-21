@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Admin login</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <!-- Custom CSS -->
+    <style>
+        * General CSS *
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url("/static/img/alogin1.jpg") no-repeat;
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        /* Custom CSS */
+        .container {
+            width: 100%;
+            height: 100vh;
+            background: url("/static/img/alogin1.jpg") no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container .login-box {
+            position: relative;
+            width: 390px;
+            height: 420px;
+            background-color: transparent;
+            border: 2px solid #0b3289(92, 72, 72, 0.5);
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(15px);
+        }
+
+        .login-box h2 {
+            font-size: 28px;
+            color: #0b3289;
+            text-align: center;
+        }
+
+        .login-box .input-box {
+            position: relative;
+            width: 310px;
+            margin: 30px 0;
+            border-bottom: 2px solid #0b3289;
+        }
+
+        .input-box input {
+            width: 100%;
+            height: 50px;
+            background: transparent;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            color: #0b3289;
+            padding: 0 35px 0 5px;
+        }
+
+        .input-box input::placeholder {
+            color: #dadf00;
+        }
+
+        .input-box .icon {
+            position: absolute;
+            right: 8px;
+            color: #0b3289;
+            font-size: 18px;
+            line-height: 50px;
+        }
+
+        .login-box .remember-forget {
+            margin: -15px 0 15px;
+            font-size: 15px;
+            color: #dadf00;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .remember-forget label input {
+            margin-right: 3px;
+        }
+
+        .login-box button {
+            width: 100%;
+            height: 40px;
+            background: #dadf00;
+            border: none;
+            outline: none;
+            border-radius: 40px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #000;
+            transition: all 0.5s;
+        }
+
+        .login-box button:hover {
+            background: #1f73c9;
+            color: #dadf00;
+        }
+
+        .login-box .register-link {
+            font-size: 15px;
+            color: #dadf00;
+            text-align: center;
+            margin: 20px 0 10px;
+        }
+
+        .remember-forget a,
+        .register-link a {
+            color: #dadf00;
+            text-decoration: none;
+        }
+
+        .remember-forget a:hover,
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 460px) {
+            .container .login-box {
+                width: 350px;
+            }
+
+            .login-box .input-box {
+                width: 290px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .container .login-box {
+                width: 100%;
+                height: 100vh;
+                border: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div class="login-box">
+        <!-- Login Form -->
+        <form th:action="@{/admin/login}" id="loginForm" class="fh5co-form animate-box" onsubmit="return false"
+              method="post"
+              data-animate-effect="fadeInLeft">
+            <div class="input-box">
+                <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                <input type="text" class="form-control" id="adminName" name="adminName"
+                       autocomplete="off" placeholder="Admin name" required/>
+            </div>
+            <div class="input-box">
+                <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                <input type="password" class="input_pass" id="password" name="password"
+                       autocomplete="off" placeholder="Password" required/>
+            </div>
+            <div class="remember-forget">
+                <label><input type="checkbox"/>Remember Me</label>
+
+                <a href="#">Forgot Password?</a>
+            </div>
+            <script type="text/javascript">
+                function login() {
+                    var data = {
+                        "adminName": $("#adminName").val(),
+                        "password": $("#password").val(),
+                    };
+                    $.ajax({
+                        type: "POST",
+                        dataType: "json",
+                        url: '/admin/login',
+                        contentType: "application/json",
+                        data: JSON.stringify(data),
+                        success: function (result) {
+                            console.log("data is :" + result.data)
+                            if (result.code === 1) {
+                                alert("Log in successfully");
+                                var id = result.data.adminId
+                                window.location.replace("homepage" + "?Id=" + id);
+                            } else {
+                                alert(result.msg)
+                                window.location.replace("loginView");
+                            }
+
+                        }
+                    });
+
+                }
+
+            </script>
+            <button type="button" onclick="login()">Login</button>
+
+            <div class="register-link">
+                <a th:href="@{/admin/RegisterView}">Don't have an account? Create Now!</a>
+
+            </div>
+            <div class="register-link">
+                <a th:href="@{/user/loginView}">User login Here!</a>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+<script src="/static/js/login.js"></script>
+</html>

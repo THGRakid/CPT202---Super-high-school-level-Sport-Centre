@@ -20,7 +20,7 @@ public class ReservationRecord implements Serializable {
     private Integer resId;
 
     //场管唯一标识
-    private Integer stadiumId;
+    private Integer staId;
 
     //场地唯一标识
     private Integer placeId;
@@ -35,15 +35,18 @@ public class ReservationRecord implements Serializable {
     private Date bookingDate;
 
     //到达时间
-    private Date startTime;
+    private String startTime;
 
     //结束时间
-    private Date leaveTime;
+    private String leaveTime;
 
     //To be confirmed, confirmed, cancelled, etc
-    private String BookingStatus;
+    private String ReservationRecordStatus;
 
     //人数
     private Integer people;
+
+    //价格
+    private Integer amount;
 
 }

@@ -2,6 +2,7 @@ package com.shsl.service.impl;
 
 import com.shsl.entity.ReservationRecord;
 import com.shsl.entity.Stadium;
+import com.shsl.entity.User;
 import com.shsl.mapper.ReservationMapper;
 import com.shsl.service.ReservationService;
 import com.shsl.service.StadiumService;
@@ -22,8 +23,7 @@ public class ReservationImpl implements ReservationService {
     @Override
     public boolean makeReservation(ReservationRecord reservationRecord) {
         // 获取预约的场馆信息，包括最大容纳人数
-        Stadium stadium = stadiumService.getStadiumById(reservationRecord.getStadiumId())
-                .orElseThrow(() -> new RuntimeException("Stadium not found"));
+        Stadium stadium = stadiumService.getStadiumById(reservationRecord.getStaId());
 
         // 查询当前场馆已预约的人数
         int currentReservationCount = reservationMapper.countReservationsByStadiumId(stadium.getStaId());
@@ -62,4 +62,10 @@ public class ReservationImpl implements ReservationService {
     }
 
 
+    @Override
+    public List<ReservationRecord> getAll() {
+        List<ReservationRecord> reservationRecords = reservationMapper.getAll();
+
+        return reservationRecords;
+    }
 }

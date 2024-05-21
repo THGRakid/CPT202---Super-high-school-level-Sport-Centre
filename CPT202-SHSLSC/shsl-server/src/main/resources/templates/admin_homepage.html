@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="/static/css/admin_style3.css">
+
+</head>
+
+<body>
+    <header>
+    
+        <h1>Admin Page</h1>
+        <ul>
+            <li><a th:href="@{/admin/homepage}">Admin home</a></li>
+            <li><a th:href="@{/user/lists}">User Info</a></li>
+            <li><a th:href="@{/admin/lists}">Admin Info</a></li>
+            <li><a th:href="@{/stadium/lists}">Stadium management</a></li>
+            <li><a th:href="@{/book/lists}">Book Info</a></li>
+        </ul>
+</header>
+
+<section class="news">
+    <h2>Welcome to the awesome gym!</h2>
+       <p>Intimate service, superior environment, help to enjoy a healthy life</p>
+    <p><a href="#">Know More</a></p>
+    </section>
+   </body>
+   <footer>
+    <section class="music">
+        <div><audio loop controls autoplay scr="/static/img/bg_music1.mp3"></audio></div>
+        </section>
+        </footer>
+</html>

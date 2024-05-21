@@ -1,6 +1,7 @@
 package com.shsl.service;
 
 import com.shsl.entity.ReservationRecord;
+import com.shsl.entity.User;
 
 import java.util.List;
 
@@ -41,5 +42,11 @@ public interface ReservationService {
      * @return 预约信息
      */
     ReservationRecord getReservationById(int reservationId);
+
+    /**
+     * 查询所有预约信息
+     * @return List<ReservationRecord>
+     */
+    List<ReservationRecord> getAll();
 
 }

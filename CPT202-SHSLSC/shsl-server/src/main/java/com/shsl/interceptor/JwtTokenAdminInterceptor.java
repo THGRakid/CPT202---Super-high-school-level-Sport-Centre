@@ -38,19 +38,19 @@ public class JwtTokenAdminInterceptor implements HandlerInterceptor {
             return true;
         }
 
-        //1、从请求头中获取令牌
+        //1、Gets the token from the request header
         String token = request.getHeader(jwtProperties.getAdminTokenName());
 
-        //2、校验令牌
+        //2、Check token
         try {
-            log.info("jwt校验:{}", token);
+            log.info(" Check jwt:{}", token);
             Claims claims = JwtUtil.parseJWT(jwtProperties.getAdminSecretKey(), token);
-            Long adminId = Long.valueOf(claims.get(JwtClaimsConstant.ADMIN_ID).toString());
-            log.info("当前员工id：", adminId);
-            //3、通过，放行
+            Integer adminId = Integer.valueOf(claims.get(JwtClaimsConstant.ADMIN_ID).toString());
+            log.info("Current admin id：", adminId);
+            //3、Pass, let him go
             return true;
         } catch (Exception ex) {
-            //4、不通过，响应401状态码
+            //4、If no, the response is 401 status code
             response.setStatus(401);
             return false;
         }

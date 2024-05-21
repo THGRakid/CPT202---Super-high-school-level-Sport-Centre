@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.sql.Time;
 import java.util.Date;
 
 @Data
@@ -25,10 +26,10 @@ public class Stadium implements Serializable {
     private Integer placeNumber;
 
     //开启时间
-    private Date openTime;
+    private String openTime;
 
     //关闭时间
-    private Date closeTime;
+    private String closeTime;
 
     //场馆信息
     private String staInfo;

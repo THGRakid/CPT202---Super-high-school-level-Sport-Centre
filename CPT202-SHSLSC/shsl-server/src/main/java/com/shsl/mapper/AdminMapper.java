@@ -36,7 +36,6 @@ public interface AdminMapper {
      * @return List<Admin>
      */
     @Select("SELECT * FROM admin")
-    @ResultMap("adminResultMap")
     List<Admin> selectAll();
 
     /**

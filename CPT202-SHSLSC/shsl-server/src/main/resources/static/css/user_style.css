@@ -1,0 +1,346 @@
+
+body {
+  font-family: Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #0b3289;
+  color: white;
+  padding: 10px;
+  text-align: left;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+}
+
+.logo {
+  width: 10px;
+  height: 10px;
+}
+
+.logo img {
+  max-width: 50px;
+}
+
+nav{
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #f4b119;
+}
+
+nav ul li a img {
+  width: 25px;
+  float: right;
+  padding: 0 0 50px 0;
+}
+
+nav form {
+  display: flex;
+  justify-content: right;
+  padding: 0 0 8px 0;
+}
+
+.avatar {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+.search-icon {
+  font-size: 15px;
+}
+
+.image-slider {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.image-slider img {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.image-slider img.active {
+  display: block;
+}
+
+.controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.control-button {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  outline: none;
+}
+
+.welcome-section {
+    background-size: cover;
+    background-position: center;
+    height: 160px;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.welcome-message {
+    background-color: rgba(255, 255, 255, 0.7); 
+    padding: 20px;
+    border-radius: 10px;
+    animation: fadenIn 2s ease-in;
+}
+
+.welcome-section h1 {
+  color: #0b3289;
+  font-size: 52px;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+main{
+  padding-top: 50px;
+  text-align: center;
+}
+
+.botton {
+background-color: #0b3289;
+color: white;
+padding: 15px 25px;
+text-decoration: none;
+}
+
+.about-us-section {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #0b3289;
+}
+
+.about-us h2 {
+    margin-bottom: 20px;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+}
+
+.image img {
+    max-width: 100%;
+}
+
+
+section {
+  padding: 20px;
+}
+
+.feedback-section {
+    background-color: #ccc;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.feedback-box {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    display: inline-block;
+}
+
+.feedback-box p {
+    margin-bottom: 20px;
+}
+
+.feedback-box button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.feedback-popup {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.contact-section {
+    background-color: #0b3289;
+    text-align: center;
+}
+
+.contact-text h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.contact-text p {
+    font-size: 18px;
+    color: #fff;
+}
+
+.fixed-buttons {
+    position: fixed;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+}
+
+.fixed-buttons button {
+    width: 50px; 
+    height: 50px; 
+    margin-bottom: 4px; 
+    background-color: #007bff; 
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fixed-buttons button:hover {
+    background-color: #f4b119; 
+}
+
+.fixed-buttons .fas {
+  font-size: 15px;
+  margin-right: 5px;
+}
+
+.modal {
+  display: none; 
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+.modal img {
+  max-width: 100%; 
+  height: auto;
+}
+
+.overlay {
+  display: none; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+}
+
+.modal input[type="text"],
+.modal textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.modal button {
+    padding: 10px 20px;
+    background-color: #0b3289;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal button:hover {
+    background-color: #f4b119;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+ 

@@ -30,12 +30,12 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 员工管理
+ * Administrator Management Controller Layer
  */
 @RestController
-@RequestMapping("/admin/admin")
+@RequestMapping("/admin")
 @Slf4j
-@Api(tags = "管理员相关接口")
+@Api(tags = "Admin Network Interface")
 public class AdminController {
 
     @Autowired
@@ -44,19 +44,19 @@ public class AdminController {
     private JwtProperties jwtProperties;
 
     /**
-     * 登录
+     * Admin Log-in Interface
      *
      * @param adminLoginDTO
      * @return
      */
     @PostMapping("/login")
-    @ApiOperation(value = "管理员登录")
+    @ApiOperation(value = "Admin Log-in")
     public Result<AdminLoginVO> login(@RequestBody AdminLoginDTO adminLoginDTO) {
-        log.info("员工登录：{}", adminLoginDTO);
+        log.info("Admin Log-in：{}", adminLoginDTO);
 
         Admin admin = adminService.login(adminLoginDTO);
 
-        //登录成功后，生成jwt令牌
+        //After successful login, the jwt token is generated
         Map<String, Object> claims = new HashMap<>();
         claims.put(JwtClaimsConstant.ADMIN_ID, admin.getAdminId());
         String token = JwtUtil.createJWT(

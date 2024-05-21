@@ -23,4 +23,5 @@ public class Place implements Serializable {
 
     //status: not open / free / full
     private String status;
+
 }

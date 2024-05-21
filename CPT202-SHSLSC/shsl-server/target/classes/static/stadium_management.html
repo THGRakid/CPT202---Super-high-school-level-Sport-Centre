@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stadium management</title>
+    <link rel="stylesheet" href="/static/css/admin_style2.css">
+
+</head>
+
+<body>
+<header>
+
+    <h1>Stadium manage</h1>
+    <ul>
+        <li><a href="admin_homepage.html">Admin home</a></li>
+        <li><a href="user_Info.html">User Info</a></li>
+        <li><a href="admin_info.html">Admin Info</a></li>
+        <li><a href="venue_management.html">Stadium management</a></li>
+        <li><a href="#">Issue</a></li>
+    </ul>
+</header>
+<body>
+<div id="div_conteiner">
+    <div id="div_stadium_list">
+        <table id="tbl_stadium">
+            <thead>
+            <tr>
+                <th class="w16">Name</th>
+                <th class="w16">Place Number</th>
+                <th class="w16">Open Time</th>
+                <th class="w16">Close Time</th>
+                <th class="w16">Information</th>
+                <th class="w16">Picture</th>
+                <th class="w16">Limit</th>
+                <th class="w16">Price</th>
+                <th class="w16">Location</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr th:each="stadium,state:${stadiumList}" th:class="${state.odd?'row1':'row2'}">
+                <td>
+                    <span th:text="${stadium.id}"></span>
+                </td>
+                <td>
+                    <span th:text="${stadium.staName}"></span>
+                </td>
+                <td>
+                    <span th:text="${stadium.placeNumber}"></span>
+                </td>
+                <td>
+                    <span th:text="${#dates.format(stadium.openTime,'hh/mm/ss')}"></span>
+                </td>
+                <td>
+                    <span th:text="${#dates.format(stadium.closeTime,'hh/mm/ss')}"></span>
+                </td>
+                <td>
+                    <span th:text="${stadium.staInfo}"></span>
+                </td>
+                <td>
+                    <img th:src="@{/}+${stadium.staPicture}" width="60">
+                </td>
+                <td>
+                    <span th:text="${stadium.limit}"></span>
+                </td>
+                <td>
+                    <span th:text="${stadium.picture}"></span>
+                </td>
+                <td>
+                    <span th:text="${stadium.location}"></span>
+                </td>
+
+                <img src="Delete.jpg" th:src="@{/static/img/delete.jpg}" th:onclick="'deleteStadium('+${stadium.id}+')'"
+                     alt="Delet"
+                     class="delImg"/>
+
+            </tr>
+            <script>
+                function deleteStadium(id) {
+                    console.log(id);
+                    if (window.confirm('Are you sure you want to delete this record?')) {
+                        location.href = '[[@{/stadium/delete?id=}]]' + id;
+                    }
+                }
+            </script>
+            <tr th:if="${#lists.isEmpty(stadium)}">
+                <td colspan="6">Sorry,no data available!</td>
+            </tr>
+            </tbody>
+
+            <tfoot>
+            <tr>
+                <td colspan="6">
+                    <span>This is page&nbsp;<span style="color: coral; size: 1.5rem; font-weight: bold"
+                                                  th:text="${pageNum}">1</span>&nbsp;Page&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <a th:if="${pageNum>1}" th:href="#">Previous page</a>
+                    <a th:if="${pageNum==1}" th:disabled="true">Previous page</a>
+                    <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                    <a th:href="#">Last page</a>
+                    <span>&nbsp;&nbsp;Total Columns:<strong style="color: coral; size: 1.5rem;"
+                                                            th:text="${count}"></strong></span>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+        <hr color="black"/>
+        <div id="add_stadium_div">
+            <table id="add_stadium_tbl">
+                <tr>
+                    <td>Order ID:</td>
+                    <td>
+                        <input type="text" id="count"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Items:</td>
+                    <td>
+                        <input type="text" id="name"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Quantity:</td>
+                    <td>
+                        <input type="text" id="count"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Time to order:</td>
+                    <td>
+                        <input type="text" id="remark"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Price:</td>
+                    <td>
+                        <input type="text" id="price"/>
+                    </td>
+                </tr>
+                <th colspan="2">
+                    <input type="button" value="Add" id="addOrUpdateBtn" class="addBtn"/>
+                </th>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

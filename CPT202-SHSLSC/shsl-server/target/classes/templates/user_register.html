@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>register page</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!--    引入格式文件-->
+    <link rel="stylesheet" href="/static/css/user_register.css">
+</head>
+<body>
+<style>
+    * {
+        margin: 0px; /*所有的外边距为0*/
+        padding: 0px; /*所有的内边距为0*/
+        box-sizing: border-box; /*规定两个并排的带边框的框*/
+
+    }
+  
+
+</style>
+<div class="rg_layout">
+    <div class="rg_left">
+        <p>USER REGISTER</p>
+    </div>
+    <div class="rg_center">
+        <div class="rg_form">
+            <form th:action="@{/user/register}" id="registerForm" class="fh5co-form animate-box" onsubmit="return false"
+                  method="post"
+                  data-animate-effect="fadeInLeft">
+               
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                    <input type="text" class="form-control" id="userName" name="userName"
+                           autocomplete="off" placeholder="User name" required/>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                    <input type="password" class="input_pass" id="password" name="password"
+                           autocomplete="off" placeholder="Password" required/>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                    <input type="email" class="input_pass" id="email" name="email"
+                           autocomplete="off" placeholder="Email" required/>
+                </div>
+                <div class="icon">
+                    <img id="num" th:src="@{/user/generateImageCode}"/>
+                    <a href="javascript:;" onclick="changeImageCode()">Next</a>
+                    <script>
+                        function changeImageCode() {
+                            document.getElementById('num').src = '[[@{/user/generateImageCode}]]?' + (new Date()).getTime()
+                        }
+                    </script>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                    <input type="code" class="input_pass" id="code" name="code"
+                           autocomplete="off" placeholder="Code" required/>
+                </div>
+                <script type="text/javascript">
+                    function register() {
+                        
+                        var data = {
+                            "userName": $("#userName").val(),
+                            "password": $("#password").val(),
+                            "email": $("#email").val(),
+                            "code": $("#code").val(),
+                        }
+                    
+                       
+
+                        $.ajax({
+                            type: "POST",
+                            dataType: "json",
+                            url: '/user/register',
+                            contentType: "application/json",
+                            data: JSON.stringify(data),
+                            success: function (result) {
+                                console.log("data is :" + result.data)
+                                if (result.code === 1) {
+                                    alert("Register successfully");
+                                    window.location.replace("LoginView");
+                                } else {
+                                    alert(result.msg)
+                                    window.location.replace("RegisterView");
+                                }
+
+                            }
+                        });
+
+                    }
+
+                </script>
+                <button type="button" onclick="register()">Register</button>
+                </table>
+            </form>
+        </div>
+    </div>
+    <div class="rg_right">
+        <p>Already have an account?<a th:href="@{/user/loginView}">Sign in now</a></p>
+    </div>
+</div>
+</body>
+</html>

@@ -10,7 +10,7 @@ import java.io.Serializable;
 @Data
 public class UserPageQueryDTO implements Serializable {
 
-    // Admin name
+    // user name
     private String userName;
 
     // Page number

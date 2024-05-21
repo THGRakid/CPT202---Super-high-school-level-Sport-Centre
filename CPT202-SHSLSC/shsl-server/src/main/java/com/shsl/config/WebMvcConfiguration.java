@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
@@ -32,9 +33,9 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
      */
     protected void addInterceptors(InterceptorRegistry registry) {
         log.info("开始注册自定义拦截器...");
-        registry.addInterceptor(jwtTokenAdminInterceptor)
-                .addPathPatterns("/admin/**")
-                .excludePathPatterns("/admin/employee/login");
+        //registry.addInterceptor(jwtTokenAdminInterceptor)
+        //        .addPathPatterns("/admin/**")
+        //        .excludePathPatterns("/admin/login");
     }
 
     /**
@@ -67,5 +68,19 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
         log.info("开始设置静态资源映射");
         registry.addResourceHandler("/doc.html").addResourceLocations("classpath:/META-INF/resources/");
         registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
+        registry.addResourceHandler("/**")
+                .addResourceLocations("classpath:/")
+                .addResourceLocations("classpath:/META-INF/resources/");
     }
+    
+    //通过这里面配置: 不需要为每一个访问thymeleaf模板页面单独开发一个controller请求了
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+
+        //viewController 请求路径    viewName: 跳转视图
+        registry.addViewController("addStadium").setViewName("add_stadium");
+    }
+
+
+
 }

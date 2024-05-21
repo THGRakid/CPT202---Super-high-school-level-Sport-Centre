@@ -11,7 +11,6 @@ com\shsl\utils\HttpClientUtil.class
 com\shsl\result\Result.class
 com\shsl\exception\PasswordErrorException.class
 com\shsl\properties\JwtProperties.class
-com\shsl\constant\StatusConstant.class
 com\shsl\exception\BaseException.class
 com\shsl\exception\ReserveFailureByClose.class
 com\shsl\constant\AutoFillConstant.class
@@ -20,9 +19,11 @@ com\shsl\utils\WeChatPayUtil.class
 com\shsl\result\PageResult.class
 com\shsl\exception\LoginFailedException.class
 com\shsl\properties\WeChatProperties.class
+com\shsl\enumeration\OperationType.class
 com\shsl\exception\PasswordEditFailedException.class
 com\shsl\context\BaseContext.class
-com\shsl\enymeration\OperationType.class
+com\shsl\result\PageBean.class
+com\shsl\constant\PowerConstant.class
 com\shsl\properties\AliOssProperties.class
 com\shsl\constant\JwtClaimsConstant.class
 com\shsl\utils\JwtUtil.class

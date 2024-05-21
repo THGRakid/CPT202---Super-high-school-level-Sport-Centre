@@ -1,0 +1,218 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+
+  header {
+    background-color: #0b3289;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+  }
+  
+  .logo {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .logo img {
+    max-width: 50px;
+  }
+  
+  nav{
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  nav ul li a:hover {
+    color: #f4b119;
+  }
+  
+  nav ul li a img {
+    width: 25px;
+    float: right;
+    padding: 0 0 50px 0;
+  }
+  
+  nav form {
+    display: flex;
+    justify-content: right;
+    padding: 0 0 8px 0;
+  }
+  
+  .avatar {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+  }
+  
+  .search-icon {
+    font-size: 15px;
+  }
+
+  .button-container {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    justify-content: space-around;
+    margin-top: 60px;
+  }
+  
+  .sport-button {
+    flex: 1;
+    background-color: #0b3289;
+    color: white;
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .sport-button img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .sport-button:focus {
+    outline: none;
+  }
+  
+  .sport-button.active {
+    background-color: #f4b119;
+  }
+  
+  .time-box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%; 
+    margin: 20px auto; 
+  }
+  
+  .time-button {
+    background-color: #0b3289;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-weight: normal; 
+    cursor: pointer; 
+  }
+  
+  .time-button.active {
+    font-weight: bold; 
+    background-color: #f4b119;
+  }
+  
+
+  #venueInfo {
+    margin-top: 20px;
+}
+
+.venue {
+    margin-bottom: 20px;
+}
+
+.venue h1 {
+    margin-bottom: 10px;
+}
+
+.info-bar {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.info-item {
+    padding: 10px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    align-items: center;
+}
+
+
+.info-item button {
+  margin-top: 10px;
+  background-color: #0b3289;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  transition: background-color 0.3s;
+  right: 10px;
+  cursor: pointer;
+}
+
+.info-item button:hover {
+  background-color: #f4b119;
+}
+
+.info-item button:active {
+  background-color: #f4b119;
+}
+
+   
+.modal {
+  position: fixed; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  background-color: #cccccc;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  z-index: 999;
+}
+
+.modal{
+  padding: 20px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.modal-content .confirm {
+  background-color: #0b3289;
+  color: white; 
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.modal-content .confirm:hover{
+  background-color: #f4b119;
+}
+
+.modal-content .cancel {
+  background-color: #0b3289;
+  color: white; 
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.modal-content .cancel:hover {
+  background-color: #f4b119;
+}
+  

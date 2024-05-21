@@ -9,6 +9,7 @@ import com.shsl.dto.AdminDTO;
 import com.shsl.dto.AdminLoginDTO;
 import com.shsl.dto.AdminPageQueryDTO;
 import com.shsl.entity.Admin;
+import com.shsl.entity.User;
 import com.shsl.exception.AccountNotFoundException;
 import com.shsl.exception.PasswordErrorException;
 import com.shsl.mapper.AdminMapper;
@@ -84,6 +85,13 @@ public class AdminServiceImpl implements AdminService {
         admin.setCreateTime(LocalDateTime.now());
 
         adminMapper.insert(admin);
+    }
+
+    @Override
+    public List<Admin> selectAll() {
+        List<Admin> admins = adminMapper.selectAll();
+
+        return admins;
     }
 
     /**

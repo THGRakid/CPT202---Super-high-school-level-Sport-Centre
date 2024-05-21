@@ -20,12 +20,12 @@ public interface UserMapper {
  */
 
     /**
-     * 1. Query users by username
+     * 1. Query users by userName
      * @param userName
      * @return User
      */
     @Select("select * from user where user_name = #{userName}")
-    User getByUserName(String userName);
+    User getByUsername(String userName);
 
     /**
      * 2. Query users by openid
@@ -48,7 +48,6 @@ public interface UserMapper {
      * @return List<User>
      */
     @Select("SELECT * FROM user")
-    @ResultMap("userResultMap")
     List<User> selectAll();
 
     /**
@@ -69,7 +68,7 @@ public interface UserMapper {
      * 7. Insert user data
      * @param user
      */
-    @Insert("insert into user (openid, user_name, phone, email, sex, avatar, create_time)values(#{openid},#{userName},#{phone},#{email},#{sex},#{avatar},#{createTime})")
+    @Insert("insert into user (openid, user_name, phone, email, password, sex, avatar, create_time)values(#{openid},#{userName},#{phone},#{email},#{password},#{sex},#{avatar},#{createTime})")
     @AutoFill(value = OperationType.INSERT)
     void insert(User user);
 
@@ -81,45 +80,50 @@ public interface UserMapper {
     void update(User user);
 
     /**
-     * 7. Change the user phone number
+     * 9. Change the user phone number
      * @param id, phone
      */
     @Update("update user set phone = #{phone} where user_id = #{id}")
     void updateUserPhone(Integer id, String phone);
 
     /**
-     * 8. Change the user email
+     * 10. Change the user email
      * @param id, email
      */
     @Update("update user set email = #{email} where user_id = #{id}")
     void updateUserEmail(Integer id, String email);
 
     /**
-     * 9. Change the user sex
+     *  11. Change the user sex
      * @param id, sex
      */
     @Update("update user set sex = #{sex} where user_id = #{id}")
     void updateUserSex(Integer id, String sex);
 
     /**
-     * 10. Change the user phone number
+     * 12. Change the user phone number
      * @param id, avatar
      */
     @Update("update user set avatar = #{avatar} where user_id = #{id}")
     void updateUserAvatar(Integer id, String avatar);
 
     /**
-     * 11. Delete data
+     * 13. Delete data
      * @param id
      */
     @Delete("delete from user where user_id = #{id}")
     void deleteUserById(Integer id);
 
     /**
-     * 12. Delete multiple groups of data in batches
+     * 14. Delete multiple groups of data in batches
      * @param ids
      */
     void deleteUserByIds(@Param("ids") int[] ids);
 
-
+    /**
+     * 14. Find the count of username
+     * @param userName
+     */
+    @Select("SELECT COUNT(*) FROM user WHERE user_name = #{userName}")
+    int findUserNameCount(String userName);
 }

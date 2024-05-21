@@ -23,6 +23,12 @@ public class Admin implements Serializable {
     //管理员姓名
     private String adminName;
 
+    //部门姓名
+    private String depName;
+
+    //电话
+    private String phone;
+
     //密码
     private String password;
 

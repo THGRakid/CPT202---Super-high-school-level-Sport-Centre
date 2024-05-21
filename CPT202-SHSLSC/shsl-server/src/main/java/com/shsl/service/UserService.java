@@ -10,59 +10,71 @@ import java.util.List;
 
 public interface UserService {
     /**
-     * 用户登录
+     * User log-in
      * @param userLoginDTO
-     * @return
+     * @return Admin
      */
     User login(UserLoginDTO userLoginDTO);
 
     /**
-     * 微信登录
+     * WeChat login
      * @param weChatLoginDTO
-     * @return
+     * @return Use
      */
     User wxLogin(WeChatLoginDTO weChatLoginDTO);
 
-    //查询所有
+    /**
+     * Query all records
+     * @return List<User>
+     */
     List<User> selectAll();
 
     /**
-     * 分页查询
+     * Paging query
      * @param userPageQueryDTO
-     * @return
+     * @return PageResult
      */
     PageResult selectByPage(UserPageQueryDTO userPageQueryDTO);
 
     /**
-     * 根据id查询用户
+     * Query user by id
      * @param id
-     * @return
+     * @return User
      */
     User getById(Integer id);
 
-    //添加数据
-    void add(UserDTO userDTO);
+    /**
+     * Add new user
+     * @param userRegisterDTO
+     */
+    void insert(UserRegisterDTO userRegisterDTO);
 
     /**
-     * 编辑用户信息
+     * Edit user information
      * @param userDTO
      */
     void update(UserDTO userDTO);
 
-
-    //修改数据
+    /**
+     * Update user data
+     * @param id
+     * @param phone, email, sex, avatar
+     */
     void updateUserPhone(Integer id, String phone);
     void updateUserEmail(Integer id, String email);
     void updateUserSex(Integer id, String sex);
     void updateUserAvatar(Integer id, String avatar);
 
     /**
-     * 删除员工
+     * Delete user by id
      * @param userDTO
      */
     void deleteUserById(UserDTO userDTO);
 
-    //批量删除
+    /**
+     * Delete in batches
+     * @param ids
+     */
     void deleteUserByIds(int[] ids);
 
 
