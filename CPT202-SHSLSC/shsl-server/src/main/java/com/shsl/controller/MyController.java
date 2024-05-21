@@ -63,18 +63,7 @@ public class MyController {
         return personalHomepage;
     }
 
-    @GetMapping("/user/book")
-    @ApiOperation(value = "Book Page")
-    public ModelAndView enterBookPage(Integer id) {
-        ModelAndView bookPage = new ModelAndView("book");
-        return bookPage;
-    }
-    @GetMapping("/user/order")
-    @ApiOperation(value = "Order Page")
-    public ModelAndView order(Integer id) {
-        ModelAndView order = new ModelAndView("order");
-        return order;
-    }
+
 
 
 }

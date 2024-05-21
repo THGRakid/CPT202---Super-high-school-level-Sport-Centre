@@ -2,6 +2,7 @@ package com.shsl.vo;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.models.auth.In;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,7 +21,7 @@ public class StadiumListVO implements Serializable {
     private String staName;
 
     @ApiModelProperty("场地数量")
-    private String placeNumber;
+    private Integer placeNumber;
 
     @ApiModelProperty("开启时间")
     private String openTime;
@@ -35,10 +36,10 @@ public class StadiumListVO implements Serializable {
     private String staPicture;
 
     @ApiModelProperty("场地人数限制")
-    private String limit;
+    private Integer limit;
 
     @ApiModelProperty("场馆价格")
-    private String price;
+    private Integer price;
 
     @ApiModelProperty("场馆位置")
     private String location;

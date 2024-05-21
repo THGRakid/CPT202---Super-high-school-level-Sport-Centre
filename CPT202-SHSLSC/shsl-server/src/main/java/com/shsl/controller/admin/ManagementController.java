@@ -80,18 +80,5 @@ public class ManagementController {
         return "booklist";
     }
 
-    @GetMapping("/stadium/show")
-    @ApiOperation(value = "Stadium Show Page")
-    public ModelAndView order(Integer id) {
-        ModelAndView book = new ModelAndView("book");
-        return book;
-    }
 
-    @RequestMapping("/place/show/{id}")
-    public String showAllPlaces(Model model, @PathVariable Integer id) {
-        log.debug("Show all places information");
-        List<Place> placeShow = stadiumService.getPlaceById(id);
-        model.addAttribute("placeShow", placeShow);
-        return "book";
-    }
 }

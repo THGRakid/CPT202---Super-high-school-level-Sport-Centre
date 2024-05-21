@@ -2,11 +2,15 @@ package com.shsl.controller.user;
 
 import com.shsl.constant.JwtClaimsConstant;
 import com.shsl.constant.MessageConstant;
+import com.shsl.entity.Place;
 import com.shsl.entity.Stadium;
 import com.shsl.exception.TokenError;
 import com.shsl.exception.TokenExpirationError;
 import com.shsl.properties.JwtProperties;
+import com.shsl.result.Result;
+import com.shsl.service.StadiumService;
 import com.shsl.utils.JwtUtil;
+import com.shsl.vo.StadiumListVO;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.MalformedJwtException;
@@ -16,10 +20,13 @@ import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpSession;
 import java.util.Date;
+import java.util.List;
 
 /**
  * User Management Controller Layer
@@ -33,12 +40,18 @@ public class ShowController {
     @Autowired
     private JwtProperties jwtProperties;
 
+    @Autowired
+    private StadiumService stadiumService;
+
+    /**
+     * 1. First login to the home page
+     */
     @GetMapping("/user/homepage")
     @ApiOperation(value = "User Homepage")
-    public ModelAndView enterHomepage(@RequestParam(name = "Token", required = false) String token) {
+    public ModelAndView loginHomepage(@RequestParam(name = "Token", required = false) String token, HttpSession session) {
         ModelAndView modelAndView = new ModelAndView("homepage");
         // 进行Token验证
-        if(token!=null){
+        if (token != null) {
             try {
                 Claims claims = JwtUtil.parseJWT(jwtProperties.getUserSecretKey(), token);
                 // 验证Token是否有效，例如检查是否有必要的claims
@@ -47,13 +60,14 @@ public class ShowController {
                 }
 
                 Integer userId = Integer.valueOf(claims.get(JwtClaimsConstant.USER_ID).toString());
-                log.info("Current user id：{}", userId);
+                log.info("Current user id in homepage：{}", userId);
 
 
+                // 如果Token验证成功，将userId存储在session中，并返回一个ModelAndView对象
 
-            // 如果Token验证成功，则返回一个ModelAndView对象
+                session.setAttribute("userId", userId);
 
-            modelAndView.addObject("userId", userId);
+                modelAndView.addObject("userId", userId);
 
             } catch (Exception e) {
                 // 检查是否是JWT解析异常
@@ -73,6 +87,58 @@ public class ShowController {
         return modelAndView;
     }
 
+
+    /**
+     * 2. Enter to the home page
+     */
+    @GetMapping("/homepage/show")
+    @ApiOperation(value = "Home Page Show")
+    public ModelAndView enterHomepage(HttpSession session) {
+        ModelAndView homepage = new ModelAndView("homepage");
+        return homepage;
+    }
+
+
+    /**
+     * 3. Enter to the book page
+     */
+    @GetMapping("/bookPage/show")
+    @ApiOperation(value = "Book Show Page")
+    public ModelAndView enterBookPage(HttpSession session) {
+        ModelAndView bookPage = new ModelAndView("book");
+        return bookPage;
+    }
+
+
+
+    ///**
+    //     * 4. Enter to stadium book page
+    //     */
+    //    @RequestMapping("/place/show/{id}")
+    //    @ApiOperation(value = "Stadium Book Show Page")
+    //    public String showAllPlaces(Model model, @PathVariable Integer id) {
+    //        log.debug("Show all places information");
+    //        List<Place> placeShow = stadiumService.getPlaceById(id);
+    //        model.addAttribute("placeShow", placeShow);
+    //        return "book";
+    //    }
+
+    /**
+     * 3. Enter to the book page
+     */
+    @GetMapping("/user/book")
+    @ApiOperation(value = "Book Page")
+    public ModelAndView enterBookPage(Integer id) {
+        ModelAndView bookPage = new ModelAndView("book");
+        return bookPage;
+    }
+
+    @GetMapping("/user/order")
+    @ApiOperation(value = "Order Page")
+    public ModelAndView order(Integer id) {
+        ModelAndView order = new ModelAndView("order");
+        return order;
+    }
 }
 
 
