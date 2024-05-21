@@ -53,7 +53,7 @@ shsl:
 # 指定文件上传位置
 photo:
   file:
-    dir: C:\Users\清臻雨童\Desktop\DDL\课程\IOM209
+    dir: C:\Users\清臻雨童\Desktop\DDL\学习\体育馆\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\resources\static\img\store
 
 
 

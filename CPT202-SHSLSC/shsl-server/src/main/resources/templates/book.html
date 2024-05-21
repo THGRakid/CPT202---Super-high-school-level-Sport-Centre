@@ -7,6 +7,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="/static/css/book_style.css">
+    <link rel="stylesheet" href="/static/css/style9.css">
 
 
 </head>
@@ -40,19 +41,87 @@
 <div class="button-container">
     <button class="sport-button" onclick="showTableById('2')"><i class="fas fa-badminton"></i> Badminton</button>
     <button class="sport-button" onclick="showTableById('1')"><i class="fas fa-badminton"></i> Table Tennis</button>
-    <button class="sport-button" onclick="showTableById('3')"><i class="fas fa-badminton"></i> GYM</button>
+    <button class="sport-button" onclick="showTableById('3')"><i class="fas fa-badminton"></i> Fitness room</button>
     <button class="sport-button" onclick="showTableById('4')"><i class="fas fa-badminton"></i> Swimming</button>
     <button class="sport-button" id="basketball"><i class="fas fa-basketball-ball"></i> Basketball</button>
     <button class="sport-button" id="football"><i class="fas fa-futbol"></i> Football</button>
     <button class="sport-button" id="martial"><i class="fas fa-fist-raised"></i> Martial Art</button>
     <button class="sport-button" id="billiard"><i class="fas fa-bowling-ball"></i> Billiard</button>
     <button class="sport-button" id="golf"><i class="fas fa-golf-ball"></i> Golf</button>
-    <button class="sport-button" id="tennis"><i class="fas fa-racket"></i> Tennis</button>
     <button class="sport-button" id="squash"><i class="fas fa-cube"></i> Squash</button>
     <button class="sport-button" id="more"><i class="fas fa-ellipsis-h"></i> More</button>
 
 </div>
+
+<div id="stadiumCardContainer"></div>
+
+<div id="timeSelection" class="hidden form-group">
+    <label for="time">Select time:</label>
+    <div id="timeBox" class="time-box"></div>
+</div>
+<div id="venueInfo" class="hidden">
+    <!--场地信息会生成--><!--不知道能不能用-->
+</div>
+
+<!-- 弹窗 -->
+<div id="reservationModal" class="modal hidden">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Are you sure you want to reserve this Place?</p >
+        <button id="confirmReservation">Yes</button>
+        <button id="cancelReservation">No</button>
+    </div>
+</div>
+
 <script>
+    function showStadium(data) {
+        // 假设data是包含所有必要信息的对象
+        // 创建一个卡片HTML字符串
+        let cardHTML = `
+            <div class="container">
+                <div class="card">
+                    <div class="box">
+                        <div class="img_box">
+                            <video
+                                src="/static/assets/video.mp4"
+                                muted
+                                loop
+                                autoplay
+                            />
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <div class="content">
+                            <h2>${data.dstaName}
+                                <br><span>${data.location}</span>
+                            </h2>
+
+                            <ul>
+                                <li>Limit<span>${data.limit}</span></li>
+                                <li>Price<span>${data.price}</span></li>
+                                <li>Placer<span>${data.placeNumber}</span></li>
+                            </ul>
+
+                            <button onclick="viewPlaces('${data.limit}')">View Places</button>
+                        </div>
+                    </div>
+
+                    <div class="circle">
+                        <div class="img_box">
+                            <img src="${data.staPicture}" alt="Stadium Image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        // 清空之前的卡片里内容（如果有的话）
+        document.getElementById('stadiumCardContainer').innerHTML = '';
+
+        // 将新的卡片HTML添加到容器中
+        document.getElementById('stadiumCardContainer').innerHTML += cardHTML;
+    }
     function showTableById(id) {
 
         $.ajax({
@@ -76,78 +145,6 @@
 
     }
 </script>
-
-<table id="stadiumTable">
-    <thead>
-    <tr>
-        <th>场馆名字</th>
-        <th>场地数量</th>
-        <th>开启时间</th>
-        <th>关闭时间</th>
-        <th>场馆信息</th>
-        <th>场馆图片</th>
-        <th>场地人数限制</th>
-        <th>场馆价格</th>
-        <th>场馆位置</th>
-    </tr>
-    </thead>
-    <tbody id="stadiumTableBody"></tbody>
-</table>
-
-<script>
-    function showStadium(stadium) {
-        // 清除现有的表格行
-        $('#stadiumTableBody').empty();
-
-        // 创建新的表格行
-        var tr = $('<tr>');
-
-        // 添加数据到表格行
-        tr.append($('<td>').text(stadium.staName));
-        tr.append($('<td>').text(stadium.placeNumber));
-        tr.append($('<td>').text(stadium.openTime));
-        tr.append($('<td>').text(stadium.closeTime));
-        tr.append($('<td>').text(stadium.staInfo));
-        tr.append($('<td>').html('<img src="' + stadium.staPicture + '" alt="Stadium Picture" />'));
-        tr.append($('<td>').text(stadium.limit));
-        tr.append($('<td>').text(stadium.price));
-        tr.append($('<td>').text(stadium.location));
-
-        // 将表格行添加到表格的tbody中
-        $('#stadiumTableBody').append(tr);
-    }
-</script>
-
-<div id="div_place_list">
-    <table id="tbl_place" style="display: none;">
-        <thead>
-        <tr>
-            <th class="w16">Place Name</th>
-            <th class="w16">Stadium Name</th>
-            <th class="w16">Status</th>
-            <th class="w16">Operation</th>
-        </tr>
-        </thead>
-        <tbody> <!-- 添加tbody -->
-        <tr th:each="place,state:${placeShow}" th:class="${state.odd?'row1':'row2'}">
-            <td>
-                <span th:text="${place.placeId}"></span>
-            </td>
-            <td>
-                <span th:text="${place.staId}"></span>
-            </td>
-            <td>
-                <span th:text="${place.status}"></span>
-            </td>
-            <td>
-                <a th:href="@{/reservation/make(id=${place.staId})}">Book</a>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-</div>
-
-
 <script src="/static/js/changecolor.js"></script>
 <script src="/static/js/time.js"></script>
 

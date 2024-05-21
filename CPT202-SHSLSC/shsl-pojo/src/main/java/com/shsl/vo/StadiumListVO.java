@@ -23,12 +23,6 @@ public class StadiumListVO implements Serializable {
     @ApiModelProperty("场地数量")
     private Integer placeNumber;
 
-    @ApiModelProperty("开启时间")
-    private String openTime;
-
-    @ApiModelProperty("关闭时间")
-    private String closeTime;
-
     @ApiModelProperty("场馆信息")
     private String staInfo;
 

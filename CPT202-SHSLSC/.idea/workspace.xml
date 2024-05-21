@@ -4,24 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e28db028-5cd2-463c-8a8e-351c2e744006" name="更改" comment="新的开始">
+    <list default="true" id="e28db028-5cd2-463c-8a8e-351c2e744006" name="更改" comment="Book Controller">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1bda1ae0-ee6d-4420-8f4a-f2d89be01e47.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1bda1ae0-ee6d-4420-8f4a-f2d89be01e47.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shsl-pojo/src/main/java/com/shsl/vo/StadiumListVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-pojo/src/main/java/com/shsl/vo/StadiumListVO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/vo/StadiumListVO$StadiumListVOBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/vo/StadiumListVO$StadiumListVOBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/vo/StadiumListVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/vo/StadiumListVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/controller/MyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/controller/MyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/controller/admin/ManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/controller/admin/ManagementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/controller/user/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/controller/user/BookController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/controller/user/ShowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/controller/user/ShowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/resources/static/js/token.js" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/resources/static/js/token.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/resources/static/css/style3.css" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/resources/static/css/style3.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shsl-server/src/main/resources/templates/book.html" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/resources/templates/book.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/resources/templates/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/resources/templates/homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/controller/MyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/controller/MyController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/controller/admin/ManagementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/controller/admin/ManagementController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/resources/templates/book1.html" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/resources/templates/book1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/resources/templates/init.html" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/resources/templates/init.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/controller/user/BookController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/controller/user/BookController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/controller/user/ShowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/controller/user/ShowController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/static/js/next_page.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/static/js/token.js" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/static/js/token.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/static/css/style3.css" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/static/css/style3.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/templates/book.html" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/templates/book.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/templates/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/templates/homepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/templates/book1.html" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/templates/book1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/templates/init.html" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/templates/init.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +88,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "corretto-1.8",
-    "last_opened_file_path": "C:/Users/清臻雨童/Desktop/DDL/学习/体育馆/CPT202---Super-high-school-level-Sport-Centre/CPT202-SHSLSC",
+    "last_opened_file_path": "C:/Users/清臻雨童/Desktop/DDL/学习/体育馆/CPT202---Super-high-school-level-Sport-Centre/CPT202-SHSLSC/shsl-server/src/main/resources/static/css",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -96,7 +98,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "MavenSettings",
-    "spring.configuration.checksum": "355e0e4bae7823ef320f17a8f91d2db6",
+    "spring.configuration.checksum": "0a8fe18d387b54b046ceff9be507a45a",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -110,11 +112,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\清臻雨童\Desktop\DDL\学习\体育馆\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\resources\static\css" />
       <recent name="C:\Users\清臻雨童\Desktop\DDL\学习\CPT202-A2-Code-Group46\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\resources\static\img" />
       <recent name="C:\Users\清臻雨童\Desktop\DDL\学习\CPT202-A2-Code-Group46\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\resources\static\css" />
       <recent name="C:\Users\清臻雨童\Desktop\DDL\学习\CPT202-A2-Code-Group46\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\resources\templates" />
       <recent name="D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC" />
-      <recent name="D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\resources\templates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\resources\static\img" />
@@ -331,7 +333,8 @@
       <workItem from="1716123694156" duration="1816000" />
       <workItem from="1716187135879" duration="2501000" />
       <workItem from="1716256442993" duration="7303000" />
-      <workItem from="1716276157152" duration="8330000" />
+      <workItem from="1716276157152" duration="9068000" />
+      <workItem from="1716285777308" duration="8502000" />
     </task>
     <task id="LOCAL-00001" summary="github初始化">
       <option name="closed" value="true" />
@@ -573,7 +576,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716276239804</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Book Controller">
+      <option name="closed" value="true" />
+      <created>1716285061502</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1716285061502</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -603,7 +614,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="github初始化" />
     <MESSAGE value="entity完成" />
     <MESSAGE value="entity完成‘" />
     <MESSAGE value="Maven install" />
@@ -628,7 +638,8 @@
     <MESSAGE value="Integration 4" />
     <MESSAGE value="Integration 5" />
     <MESSAGE value="新的开始" />
-    <option name="LAST_COMMIT_MESSAGE" value="新的开始" />
+    <MESSAGE value="Book Controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Book Controller" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

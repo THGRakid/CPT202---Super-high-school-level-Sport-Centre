@@ -1,6 +1,6 @@
 /*google-fonts*/
 /* @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap'); */
-@import './google-fonts.css';
+@import 'google_fonts.css';
 
 * {
   margin: 0;
@@ -10,21 +10,25 @@
 }
 
 :root {
-  --clr: #000000
+  --clr: #0b3289
 }
 
-body {
+.container {
   display: flex;
   justify-content: center;
+  min-height: calc(100vh - 80px);
+  max-width: 450px;
   align-items: center;
-  min-height: 100vh;
+  margin-top: 60px;
+  padding: 20px;
   background-color: var(--clr);
+  border-radius: 10px;
 }
+
 
 .card {
   background-color: var(--clr);
   position: relative;
-
   width: 320px;
   height: 430px;
   display: flex;
