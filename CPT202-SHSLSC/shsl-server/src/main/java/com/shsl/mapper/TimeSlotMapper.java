@@ -27,6 +27,6 @@ public interface TimeSlotMapper {
     @Select("SELECT * FROM timeslots WHERE place_id = #{placeId}")
     List<TimeSlots> selectTimeSlotsByPlaceId(int placeId);
 
-    @Select("SELECT * FROM timeslots WHERE week_day = #{day} ORDER BY start_time, place_id")
-    List<TimeSlots> selectTimeSlotsByDay(String day);
+    @Select("SELECT * FROM timeslots WHERE week_day = #{day} AND sta ORDER BY start_time, place_id")
+    List<TimeSlots> selectTimeSlotsByDay(String day, Integer staId);
 }

@@ -1,13 +1,21 @@
 package com.shsl.controller.admin;
 
+import com.shsl.constant.MessageConstant;
 import com.shsl.dto.ReservationDTO;
 import com.shsl.entity.ReservationRecord;
+import com.shsl.exception.AccountNotFoundException;
+import com.shsl.exception.ReserveFailureByClose;
+import com.shsl.exception.SessionFailtoRead;
+import com.shsl.exception.TokenError;
+import com.shsl.result.Result;
 import com.shsl.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
+import java.time.LocalDate;
 import java.util.Collections;
 import java.util.List;
 
@@ -20,13 +28,28 @@ public class ReservationController {
 
     // 提交预约请求
     @PostMapping("/make")
-    public ResponseEntity<String> makeReservation(@RequestBody ReservationDTO reservationDTO) {
-        boolean success = reservationService.makeReservation(reservationDTO);
-        if (success) {
-            return ResponseEntity.ok("预约成功！");
+    public Result makeReservation(@RequestBody ReservationDTO reservationDTO, HttpSession session) {
+
+        if (session != null) {
+            Integer userId = (Integer) session.getAttribute("userId");
+            if (userId != null) {
+                reservationDTO.setReservationDate(String.valueOf(LocalDate.now()));
+                reservationDTO.setUserId(userId);
+
+                boolean success = reservationService.makeReservation(reservationDTO);
+                if (success) {
+                    return Result.success();
+                } else {
+                    throw new ReserveFailureByClose(MessageConstant.RESERVE_FAILURE_BY_CLOSE);
+                }
+            } else {
+                throw new TokenError(MessageConstant.TOKEN_ERROR);
+            }
         } else {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("预约失败，请重试！");
+            throw new SessionFailtoRead(MessageConstant.SESSION_FAIL_TO_READ);
         }
+
+
     }
 
     // 取消预约

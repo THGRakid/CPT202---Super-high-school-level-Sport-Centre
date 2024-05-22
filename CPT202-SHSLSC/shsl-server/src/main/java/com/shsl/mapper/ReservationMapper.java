@@ -22,9 +22,8 @@ public interface ReservationMapper {
     })
     List<ReservationRecord> findAll();
 
-    @Insert("INSERT INTO reservation_record(slot_id, user_id, booking_date) VALUES(#{timeSlot.slotId}, #{userId}, #{reservationDate})")
-    @Options(useGeneratedKeys = true, keyProperty = "id")
-    int insert(ReservationRecord reservation);
+    @Insert("INSERT INTO reservation_record(slot_id, user_id, booking_date) VALUES(#{slotId}, #{userId}, #{reservationDate})")
+    void insert(Integer slotId, Integer userId, LocalDate reservationDate);
 
     @Delete("DELETE FROM reservation_record WHERE res_id = #{id}")
     int deleteReservationById(int id);

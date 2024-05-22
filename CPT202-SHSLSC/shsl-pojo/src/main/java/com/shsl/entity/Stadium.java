@@ -45,4 +45,7 @@ public class Stadium implements Serializable {
 
     //场馆位置
     private String location;
+
+    //场馆图片
+    private String video;
 }

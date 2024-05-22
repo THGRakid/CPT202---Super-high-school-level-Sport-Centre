@@ -26,16 +26,7 @@ public class ReservationImpl implements ReservationService {
     public boolean makeReservation(ReservationDTO reservationDTO) {
         Integer slotId = reservationDTO.getSlotId();
         LocalDate reservationDate = LocalDate.parse(reservationDTO.getReservationDate());
-
-        boolean isReserved = reservationMapper.existsByTimeslotAndReservationDate(slotId, reservationDate);
-        if (isReserved) {
-            return false; // Timeslot already reserved
-        }
-
         TimeSlots timeslot = timeSlotMapper.findById(slotId);
-        if (timeslot == null || timeslot.isBooked()) {
-            return false; // Timeslot is already booked or does not exist
-        }
 
         timeslot.setBooked(true);
         timeSlotMapper.updateBookingStatus(slotId, true);
@@ -43,10 +34,9 @@ public class ReservationImpl implements ReservationService {
         ReservationRecord reservation = new ReservationRecord();
         reservation.setTimeSlot(timeslot); // 设置 TimeSlot
         reservation.setUserId(reservationDTO.getUserId());
-        reservation.setBookingDate(reservationDate); // 确保这个方法存在
-
-        int rowsAffected = reservationMapper.insert(reservation);
-        return rowsAffected > 0;
+        reservation.setBookingDate(reservationDate);
+        reservationMapper.insert(slotId,reservationDTO.getUserId(),reservationDate);
+        return true;
     }
 
     @Override

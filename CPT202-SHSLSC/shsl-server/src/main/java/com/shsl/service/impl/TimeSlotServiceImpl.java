@@ -22,7 +22,7 @@ public class TimeSlotServiceImpl implements TimeSlotService {
     }
 
     @Override
-    public List<TimeSlots> getTimeSlotsByDay(String day) {
-        return timeSlotMapper.selectTimeSlotsByDay(day);
+    public List<TimeSlots> getTimeSlotsByDay(String day, Integer staId) {
+        return timeSlotMapper.selectTimeSlotsByDay(day, staId);
     }
 }

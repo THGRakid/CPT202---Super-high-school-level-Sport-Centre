@@ -17,6 +17,9 @@ import java.io.Serializable;
 @ApiModel(description = "展示场馆的数据格式")
 public class StadiumListVO implements Serializable {
 
+    @ApiModelProperty("场馆编号")
+    private Integer staId;
+
     @ApiModelProperty("场馆名字")
     private String staName;
 
@@ -37,5 +40,8 @@ public class StadiumListVO implements Serializable {
 
     @ApiModelProperty("场馆位置")
     private String location;
+
+    @ApiModelProperty("场馆价格")
+    private String video;
 
 }

@@ -71,18 +71,18 @@
                 <div class="card">
                     <div class="box">
                         <div class="img_box">
-                            <video src="/static/assets/video.mp4" muted loop autoplay></video>
+                            <video id="myVideo" controls src="${data.video}" muted loop autoplay></video>
                         </div>
                     </div>
                     <div class="box">
                         <div class="content">
-                            <h2>${data.staName}<br><span>${data.location}</span></h2>
+                            <h2>${data.staName}<br><span>${data.staInfo}</span></h2>
                             <ul>
                                 <li>Limit<span>${data.limit}</span></li>
                                 <li>Price<span>${data.price}</span></li>
-                                <li>Placer<span>${data.placeNumber}</span></li>
+                                <li>Location<span>${data.location}</span></li>
                             </ul>
-                            <button class="view-places" onclick="displayTimeBox()">View Places</button>
+                            <button class="view-places" onclick="displayTimeBox(${data.staId})">View Places</button>
                         </div>
                     </div>
                     <div class="circle">
@@ -114,7 +114,8 @@
         });
     }
 
-    function displayTimeBox() {
+    function displayTimeBox(data) {
+        const staId = data;
         const oldTimeBox = document.getElementById('timeBox');
         oldTimeBox.innerHTML = '';
 
@@ -138,13 +139,13 @@
                     selectedDate.classList.remove('active');
                 }
                 this.classList.add('active');
-                displayInfoBox(dayOfWeek);
+                displayInfoBox(dayOfWeek, staId);
             };
             oldTimeBox.appendChild(dateElement);
         }
     }
 
-    function displayInfoBox(dayOfWeek) {
+    function displayInfoBox(dayOfWeek, staId) {
         const oldInfoBox = document.getElementById('infoBox');
         oldInfoBox.innerHTML = '';
 
@@ -164,11 +165,11 @@
         $.ajax({
             type: "GET",
             dataType: "json",
-            url: '/timeslot/getPlacesByDate', // 请根据实际情况修改URL
-            data: { day: selectedDay },
+            url: '/timeslot/getPlacesByDate',
+            data: { day: selectedDay , staId: staId},
             success: function (result) {
                 if (result.code === 1) {
-                    const infoItems = result.data; // 假设返回的数据在result.data中
+                    const infoItems = result.data;
                     infoItems.forEach(info => {
                         const infoItem = document.createElement('div');
                         infoItem.classList.add('info-item');
@@ -198,21 +199,22 @@
                     alert(result.msg);
                 }
             },
-
-            error: function () {
-                alert('Error retrieving data');
-            }
         });
     }
 
     function reserveSlot(slotId) {
+        var data = {
+            "slotId": slotId
+        };
         $.ajax({
             type: "POST",
-            url: '/reservation/make', // 请根据实际情况修改URL
-            data: { slotId: slotId },
+            dataType: "json",
+            url: '/reservation/make',
+            contentType: "application/json",
+            data: JSON.stringify(data),
             success: function(response) {
                 if (response.code === 1) {
-                    alert('预定成功');
+                    alert('Book Successfully!');
                     const activeButton = document.querySelector('.time-button.active');
                     if (activeButton) {
                         displayInfoBox(activeButton.textContent.split(', ')[0].substring(0, 3));

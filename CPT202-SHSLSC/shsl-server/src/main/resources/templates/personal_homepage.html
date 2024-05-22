@@ -87,18 +87,38 @@
     <section>
         <div class="box">
             <!-- 个人信息 -->
-            <div id="content7" class="content">
+            <div id="content6" class="content">
                 <h1 style="color: #0b3289; font-size: 30px;">Personal Information</h1>
-                <form th:href="@{/user/update}" method="post">
-                    <div class="form-group">
-                        <h2><label for="name">Name</label><input type="text" id="name" name="name" required></h2></div>
-                    <h2>Gender<input type="radio" name="gender">Male<input type="radio" name="gender">Female</h2>
-                    <div class="form-group">
-                        <h2><label for="phone">Phone Number</label><input type="text" id="phone" name="phone" required></h2></div>
-                    <div class="form-group">
-                        <h2><label for="email">Email</label><input type="email" id="email" name="email" required></h2></div>
-                    <input type="submit" value="Save">
-                </form>
+                <div id="userInfo"></div>
+
+                <script>
+
+                    // 发送GET请求到/user/info路径，获取用户信息
+                    fetch(`/user/info`)
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Failed to fetch user info');
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+
+                            let userInfoHtml = `<h2>Name: ${data.userName}</h2>`;
+                            userInfoHtml += `<img src="${data.avatar}" style="width: 100px; height: 100px;">`;
+                            userInfoHtml += `<p>Gender: ${data.sex === '0' ? 'Female' : 'Male'}</p>`;
+                            userInfoHtml += `<p>Phone: ${data.phone}</p>`;
+                            userInfoHtml += `<p>Email: ${data.email}</p>`;
+                            userInfoHtml += `<p>Create Time: ${data.createTime}</p>`;
+
+
+                            // 将HTML字符串插入到userInfo容器中
+                            document.getElementById('userInfo').innerHTML = userInfoHtml;
+                        })
+                        .catch(error => {
+                            console.error('Error fetching user info:', error);
+
+                        });
+                </script>
             </div>
             <!-- 我的钱包 -->
             <div id="content1" class="content">
@@ -167,8 +187,20 @@
                     </a>
                 </div>
             </div>
-            <div id="content6" class="content">
-                <h1 style="color: #0b3289; font-size: 30px;">Security</h1></div>
+            <!-- 修改个人信息 -->
+            <div id="content8" class="content">
+                <h1 style="color: #0b3289; font-size: 30px;">Personal Information</h1>
+                <form th:href="@{/user/list}" method="get">
+                    <div class="form-group">
+                        <h2><label for="name">Name</label><input type="text" id="name" name="name" required></h2></div>
+                    <h2>Gender<input type="radio" name="gender">Male<input type="radio" name="gender">Female</h2>
+                    <div class="form-group">
+                        <h2><label for="phone">Phone Number</label><input type="text" id="phone" name="phone" required></h2></div>
+                    <div class="form-group">
+                        <h2><label for="email">Email</label><input type="email" id="email" name="email" required></h2></div>
+                    <input type="submit" value="Save">
+                </form>
+            </div>
         </div>
     </section>
 </main>

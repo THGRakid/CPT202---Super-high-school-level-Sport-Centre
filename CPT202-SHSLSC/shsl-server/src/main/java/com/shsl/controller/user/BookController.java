@@ -32,9 +32,9 @@ public class BookController {
         log.info("Show stadium information id：{}", id);
         Stadium stadium = stadiumService.getStadiumById(id);
         StadiumListVO stadiumListVO = new StadiumListVO(
-                stadium.getStaName(), stadium.getPlaceNumber(),
-                stadium.getStaInfo(), stadium.getStaPicture(),
-                stadium.getLimit(), stadium.getPrice(), stadium.getLocation());
+                stadium.getStaId(), stadium.getStaName(), stadium.getPlaceNumber(),
+                stadium.getStaInfo(), stadium.getStaPicture(), stadium.getLimit(),
+                stadium.getPrice(), stadium.getLocation(), stadium.getVideo());
         return Result.success(stadiumListVO);
     }
 }

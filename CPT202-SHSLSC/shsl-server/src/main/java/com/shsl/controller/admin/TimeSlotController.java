@@ -33,8 +33,8 @@ public class TimeSlotController {
     // 根据星期几获取时间段列表
     @RequestMapping("/getPlacesByDate")
     @ApiOperation(value = "Show Detailed Timeslots")
-    public Result<List<TimeSlots>> showPlacesByDate(@RequestParam String day) {
-        List<TimeSlots> timeSlots = timeSlotService.getTimeSlotsByDay(day);
+    public Result<List<TimeSlots>> showPlacesByDate(@RequestParam String day, @RequestParam Integer staId) {
+        List<TimeSlots> timeSlots = timeSlotService.getTimeSlotsByDay(day,staId);
         return Result.success(timeSlots);
     }
 

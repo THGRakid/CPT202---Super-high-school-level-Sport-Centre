@@ -2,15 +2,10 @@ package com.shsl.controller.user;
 
 import com.shsl.constant.JwtClaimsConstant;
 import com.shsl.constant.MessageConstant;
-import com.shsl.entity.Place;
-import com.shsl.entity.Stadium;
 import com.shsl.exception.TokenError;
 import com.shsl.exception.TokenExpirationError;
 import com.shsl.properties.JwtProperties;
-import com.shsl.result.Result;
-import com.shsl.service.StadiumService;
 import com.shsl.utils.JwtUtil;
-import com.shsl.vo.StadiumListVO;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.MalformedJwtException;
@@ -20,13 +15,13 @@ import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 import java.util.Date;
-import java.util.List;
 
 /**
  * User Management Controller Layer
@@ -39,9 +34,6 @@ public class ShowController {
 
     @Autowired
     private JwtProperties jwtProperties;
-
-    @Autowired
-    private StadiumService stadiumService;
 
     /**
      * 1. First login to the home page

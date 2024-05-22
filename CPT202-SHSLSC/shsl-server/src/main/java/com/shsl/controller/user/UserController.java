@@ -9,6 +9,9 @@ import com.shsl.dto.UserPageQueryDTO;
 import com.shsl.dto.UserRegisterDTO;
 import com.shsl.entity.User;
 import com.shsl.exception.CodeErrorException;
+import com.shsl.exception.ReserveFailureByClose;
+import com.shsl.exception.SessionFailtoRead;
+import com.shsl.exception.TokenError;
 import com.shsl.properties.JwtProperties;
 import com.shsl.result.PageResult;
 import com.shsl.result.Result;
@@ -28,6 +31,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -151,11 +155,22 @@ public class UserController {
      * @param id
      * @return
      */
-    @GetMapping("/{id}")
+    @GetMapping("/info")
     @ApiOperation("根据id查询用户信息")
-    public Result<User> getById(@PathVariable Integer id) {
-        User user = userService.getById(id);
-        return Result.success(user);
+    public Result<User> getById(HttpSession session) {
+        if (session != null) {
+            Integer userId = (Integer) session.getAttribute("userId");
+            if (userId != null) {
+                User user = userService.getById(userId);
+
+                return Result.success(user);
+
+            } else {
+                throw new TokenError(MessageConstant.TOKEN_ERROR);
+            }
+        } else {
+            throw new SessionFailtoRead(MessageConstant.SESSION_FAIL_TO_READ);
+        }
     }
 
 

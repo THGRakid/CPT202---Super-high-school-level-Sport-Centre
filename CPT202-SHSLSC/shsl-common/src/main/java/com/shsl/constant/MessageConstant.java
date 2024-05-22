@@ -17,13 +17,13 @@ public class MessageConstant {
     public static final String UNKNOWN_ERROR = "Unknown error!";
     public static final String USER_NOT_LOGIN = "User not logged in!";
     public static final String LOGIN_FAILED = "Login failure!";
-
     public static final String TOKEN_EXPIRATION = "Token has already expired!";
-
     public static final String TOKEN_ERROR = "Token error!";
     public static final String UPLOAD_FAILED = "File upload failure!";
     public static final String PASSWORD_EDIT_FAILED = "Password change failed!";
     public static final String ORDER_STATUS_ERROR = "Order status error!";
     public static final String ORDER_NOT_FOUND = "Order does not exist!";
-
+    public static final String RESERVE_FAILURE_BY_CLOSE = "The place has been closed!";
+    public static final String RESERVE_FAILURE_BY_FULL = "The place has been booked!";
+    public static final String SESSION_FAIL_TO_READ = "Can't find the session!";
 }

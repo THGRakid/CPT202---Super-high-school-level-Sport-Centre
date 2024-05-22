@@ -18,5 +18,5 @@ public interface TimeSlotService {
      * @param day 星期日
      * @return 时间段列表
      */
-    List<TimeSlots> getTimeSlotsByDay(String day);
+    List<TimeSlots> getTimeSlotsByDay(String day, Integer staId);
 }
