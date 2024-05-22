@@ -19,6 +19,7 @@ public class TimeSlots implements Serializable {
 
     private Integer slotId;
     private Integer placeId;
+    private String weekDay;
     private String startTime;
     private String endTime;
     private boolean isBooked;

@@ -1,5 +1,6 @@
 package com.shsl.controller.admin;
 
+import com.shsl.dto.ReservationDTO;
 import com.shsl.entity.ReservationRecord;
 import com.shsl.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,14 +20,15 @@ public class ReservationController {
 
     // 提交预约请求
     @PostMapping("/make")
-    public ResponseEntity<String> makeReservation(@RequestBody ReservationRecord reservation) {
-        boolean success = reservationService.makeReservation(reservation);
+    public ResponseEntity<String> makeReservation(@RequestBody ReservationDTO reservationDTO) {
+        boolean success = reservationService.makeReservation(reservationDTO);
         if (success) {
             return ResponseEntity.ok("预约成功！");
         } else {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("预约失败，请重试！");
         }
     }
+
     // 取消预约
     @DeleteMapping("/cancel/{reservationId}")
     public ResponseEntity<String> cancelReservation(@PathVariable int reservationId) {
@@ -60,6 +62,7 @@ public class ReservationController {
             return ResponseEntity.badRequest().body("未提供有效的查询参数");
         }
     }
+
     // 根据用户ID获取预约记录
     private ResponseEntity<List<ReservationRecord>> getReservationsByUserId(int userId) {
         List<ReservationRecord> reservations = reservationService.getReservationsByUserId(userId);

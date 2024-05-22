@@ -4,26 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e28db028-5cd2-463c-8a8e-351c2e744006" name="更改" comment="Book Controller">
+    <list default="true" id="e28db028-5cd2-463c-8a8e-351c2e744006" name="更改" comment="Book Controller2">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/1bda1ae0-ee6d-4420-8f4a-f2d89be01e47.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1bda1ae0-ee6d-4420-8f4a-f2d89be01e47.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-pojo/src/main/java/com/shsl/vo/StadiumListVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-pojo/src/main/java/com/shsl/vo/StadiumListVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/vo/StadiumListVO$StadiumListVOBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/vo/StadiumListVO$StadiumListVOBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/vo/StadiumListVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/vo/StadiumListVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/controller/user/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/controller/user/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/shslsc.sql" beforeDir="false" afterPath="$PROJECT_DIR$/resources/shslsc.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-pojo/src/main/java/com/shsl/entity/ReservationRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-pojo/src/main/java/com/shsl/entity/ReservationRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-pojo/src/main/java/com/shsl/entity/TimeSlots.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-pojo/src/main/java/com/shsl/entity/TimeSlots.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/entity/ReservationRecord$ReservationRecordBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/entity/ReservationRecord$ReservationRecordBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/entity/ReservationRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/entity/ReservationRecord.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/entity/TimeSlots$TimeSlotsBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/entity/TimeSlots$TimeSlotsBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/entity/TimeSlots.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-pojo/target/classes/com/shsl/entity/TimeSlots.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/controller/admin/ReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/controller/admin/ReservationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/controller/admin/TimeSlotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/controller/admin/TimeSlotController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/controller/user/ShowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/controller/user/ShowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/resources/static/css/style3.css" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/resources/static/css/style3.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/controller/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/controller/user/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/mapper/ReservationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/mapper/ReservationMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/mapper/TimeSlotMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/mapper/TimeSlotMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/service/ReservationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/service/ReservationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/service/TimeSlotService.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/service/TimeSlotService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/service/impl/ReservationImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/service/impl/ReservationImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/service/impl/TimeSlotServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/java/com/shsl/service/impl/TimeSlotServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/resources/static/css/style9.css" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/resources/static/css/style9.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/resources/static/js/1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/resources/static/js/time.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/shsl-server/src/main/resources/templates/book.html" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/resources/templates/book.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/resources/templates/book1.html" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/resources/templates/book1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/resources/templates/init.html" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/src/main/resources/templates/init.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/controller/user/BookController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/controller/user/BookController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/src/main/resources/templates/book1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/controller/admin/ReservationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/controller/admin/ReservationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/controller/admin/TimeSlotController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/controller/admin/TimeSlotController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/controller/user/ShowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/controller/user/ShowController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/static/css/style3.css" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/static/css/style3.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/controller/user/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/controller/user/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/mapper/ReservationMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/mapper/ReservationMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/mapper/TimeSlotMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/mapper/TimeSlotMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/service/ReservationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/service/ReservationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/service/TimeSlotService.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/service/TimeSlotService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/service/impl/ReservationImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/service/impl/ReservationImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/service/impl/TimeSlotServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/com/shsl/service/impl/TimeSlotServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/static/js/1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/static/js/time.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/templates/book.html" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/templates/book.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/templates/book1.html" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/templates/book1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/templates/init.html" beforeDir="false" afterPath="$PROJECT_DIR$/shsl-server/target/classes/templates/init.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shsl-server/target/classes/templates/book1.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,46 +96,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "corretto-1.8",
-    "last_opened_file_path": "C:/Users/清臻雨童/Desktop/DDL/学习/体育馆/CPT202---Super-high-school-level-Sport-Centre/CPT202-SHSLSC/shsl-server/src/main/resources/static/css",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "项目",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "MavenSettings",
-    "spring.configuration.checksum": "0a8fe18d387b54b046ceff9be507a45a",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-1.8&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/清臻雨童/Documents/WeChat Files/wxid_hzj1atcs4ekd22/FileStorage/File/2024-05/CPT202-SHSLSC(1)/CPT202-SHSLSC&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;项目&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;0a8fe18d387b54b046ceff9be507a45a&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\清臻雨童\Desktop\DDL\学习\体育馆\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\resources\static\js" />
       <recent name="C:\Users\清臻雨童\Desktop\DDL\学习\体育馆\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\resources\static\css" />
       <recent name="C:\Users\清臻雨童\Desktop\DDL\学习\CPT202-A2-Code-Group46\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\resources\static\img" />
       <recent name="C:\Users\清臻雨童\Desktop\DDL\学习\CPT202-A2-Code-Group46\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\resources\static\css" />
       <recent name="C:\Users\清臻雨童\Desktop\DDL\学习\CPT202-A2-Code-Group46\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\resources\templates" />
-      <recent name="D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\WorkSpace\CPT202---Super-high-school-level-Sport-Centre\CPT202---Super-high-school-level-Sport-Centre\CPT202-SHSLSC\shsl-server\src\main\resources\static\img" />
@@ -129,11 +148,11 @@
       <recent name="com.shsl.mapper" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.shsl.dto" />
       <recent name="com.shsl" />
       <recent name="com.shsl.entity" />
       <recent name="com.shsl.Repository" />
       <recent name="com.shsl.service" />
-      <recent name="com.shsl.controller.user" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.SHSLApplication">
@@ -334,7 +353,9 @@
       <workItem from="1716187135879" duration="2501000" />
       <workItem from="1716256442993" duration="7303000" />
       <workItem from="1716276157152" duration="9068000" />
-      <workItem from="1716285777308" duration="8502000" />
+      <workItem from="1716285777308" duration="9323000" />
+      <workItem from="1716297334180" duration="14244000" />
+      <workItem from="1716341919038" duration="312000" />
     </task>
     <task id="LOCAL-00001" summary="github初始化">
       <option name="closed" value="true" />
@@ -584,7 +605,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716285061502</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Book Controller2">
+      <option name="closed" value="true" />
+      <created>1716296612627</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1716296612627</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -614,7 +643,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="entity完成" />
     <MESSAGE value="entity完成‘" />
     <MESSAGE value="Maven install" />
     <MESSAGE value="common" />
@@ -639,7 +667,8 @@
     <MESSAGE value="Integration 5" />
     <MESSAGE value="新的开始" />
     <MESSAGE value="Book Controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="Book Controller" />
+    <MESSAGE value="Book Controller2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Book Controller2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

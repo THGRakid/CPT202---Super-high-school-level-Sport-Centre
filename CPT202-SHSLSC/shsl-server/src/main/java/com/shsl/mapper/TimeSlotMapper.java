@@ -8,12 +8,25 @@ import java.util.List;
 @Mapper
 public interface TimeSlotMapper {
 
-    @Insert("INSERT INTO timeslots (placeId, startTime, endTime, isBooked) " +
-            "VALUES (#{placeId}, #{startTime}, #{endTime}, #{isBooked})")
-    int insertTimeSlot(TimeSlots timeSlot);
+    @Select("SELECT * FROM timeslots WHERE slot_id = #{slotId}")
+    TimeSlots findById(int slotId);
 
-    @Select("SELECT * FROM timeslots WHERE placeId = #{placeId}")
+    @Select("SELECT * FROM timeslots")
+    List<TimeSlots> findAll();
+
+    @Insert("INSERT INTO timeslots (place_id, start_time, end_time, is_booked) VALUES (#{placeId}, #{startTime}, #{endTime}, #{isBooked})")
+    @Options(useGeneratedKeys = true, keyProperty = "slotId")
+    void insert(TimeSlots timeslot);
+
+    @Update("UPDATE timeslots SET is_booked = #{isBooked} WHERE slot_id = #{slotId}")
+    void updateBookingStatus(@Param("slotId") int slotId, @Param("isBooked") boolean isBooked);
+
+    @Delete("DELETE FROM timeslots WHERE slot_id = #{slotId}")
+    void deleteById(int slotId);
+
+    @Select("SELECT * FROM timeslots WHERE place_id = #{placeId}")
     List<TimeSlots> selectTimeSlotsByPlaceId(int placeId);
 
-    // 根据需要添加其他操作时间段的方法
+    @Select("SELECT * FROM timeslots WHERE week_day = #{day} ORDER BY start_time, place_id")
+    List<TimeSlots> selectTimeSlotsByDay(String day);
 }

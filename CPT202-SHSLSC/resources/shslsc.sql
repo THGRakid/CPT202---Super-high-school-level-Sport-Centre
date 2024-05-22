@@ -103,5 +103,5 @@ create table reservation_record
     comment '预约记录';
 
 create index reservation_record_stadium_sta_id_fk
-    on reservation_record (sta_id);
+    on reservation_record (slot_id);
 

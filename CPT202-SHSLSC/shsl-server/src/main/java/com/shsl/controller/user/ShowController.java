@@ -109,36 +109,6 @@ public class ShowController {
         return bookPage;
     }
 
-
-
-    ///**
-    //     * 4. Enter to stadium book page
-    //     */
-    //    @RequestMapping("/place/show/{id}")
-    //    @ApiOperation(value = "Stadium Book Show Page")
-    //    public String showAllPlaces(Model model, @PathVariable Integer id) {
-    //        log.debug("Show all places information");
-    //        List<Place> placeShow = stadiumService.getPlaceById(id);
-    //        model.addAttribute("placeShow", placeShow);
-    //        return "book";
-    //    }
-
-    /**
-     * 3. Enter to the book page
-     */
-    @GetMapping("/user/book")
-    @ApiOperation(value = "Book Page")
-    public ModelAndView enterBookPage(Integer id) {
-        ModelAndView bookPage = new ModelAndView("book");
-        return bookPage;
-    }
-
-    @GetMapping("/user/order")
-    @ApiOperation(value = "Order Page")
-    public ModelAndView order(Integer id) {
-        ModelAndView order = new ModelAndView("order");
-        return order;
-    }
 }
 
 

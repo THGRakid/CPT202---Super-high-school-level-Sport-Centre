@@ -1,22 +1,21 @@
 package com.shsl.controller.user;
 
 import com.alibaba.fastjson.JSON;
+import com.shsl.constant.JwtClaimsConstant;
 import com.shsl.constant.MessageConstant;
 import com.shsl.dto.UserDTO;
-import com.shsl.dto.UserPageQueryDTO;
 import com.shsl.dto.UserLoginDTO;
+import com.shsl.dto.UserPageQueryDTO;
 import com.shsl.dto.UserRegisterDTO;
 import com.shsl.entity.User;
-import com.shsl.exception.AccountNotFoundException;
 import com.shsl.exception.CodeErrorException;
+import com.shsl.properties.JwtProperties;
 import com.shsl.result.PageResult;
+import com.shsl.result.Result;
 import com.shsl.service.UserService;
 import com.shsl.utils.JwtUtil;
 import com.shsl.utils.VerifyCodeUtils;
 import com.shsl.vo.UserLoginVO;
-import com.shsl.constant.JwtClaimsConstant;
-import com.shsl.properties.JwtProperties;
-import com.shsl.result.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;

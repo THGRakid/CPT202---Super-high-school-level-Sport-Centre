@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.time.LocalDate;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -32,7 +33,7 @@ public class ReservationRecord implements Serializable {
     private String userName;
 
     //预定日期
-    private Date bookingDate;
+    private LocalDate bookingDate;
 
     //到达时间
     private String startTime;
@@ -48,5 +49,7 @@ public class ReservationRecord implements Serializable {
 
     //价格
     private Integer amount;
+
+    private TimeSlots timeSlot;
 
 }

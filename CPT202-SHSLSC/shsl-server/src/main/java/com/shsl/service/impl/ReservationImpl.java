@@ -1,14 +1,16 @@
 package com.shsl.service.impl;
 
+import com.shsl.dto.ReservationDTO;
 import com.shsl.entity.ReservationRecord;
-import com.shsl.entity.Stadium;
-import com.shsl.entity.User;
+import com.shsl.entity.TimeSlots;
+
 import com.shsl.mapper.ReservationMapper;
+import com.shsl.mapper.TimeSlotMapper;
 import com.shsl.service.ReservationService;
-import com.shsl.service.StadiumService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -18,32 +20,50 @@ public class ReservationImpl implements ReservationService {
     private ReservationMapper reservationMapper;
 
     @Autowired
-    private StadiumService stadiumService;
+    private TimeSlotMapper timeSlotMapper;
 
     @Override
-    public boolean makeReservation(ReservationRecord reservationRecord) {
-        // 获取预约的场馆信息，包括最大容纳人数
-        Stadium stadium = stadiumService.getStadiumById(reservationRecord.getStaId());
+    public boolean makeReservation(ReservationDTO reservationDTO) {
+        Integer slotId = reservationDTO.getSlotId();
+        LocalDate reservationDate = LocalDate.parse(reservationDTO.getReservationDate());
 
-        // 查询当前场馆已预约的人数
-        int currentReservationCount = reservationMapper.countReservationsByStadiumId(stadium.getStaId());
-
-        // 检查当前预约人数是否已达到最大容纳人数
-        if (currentReservationCount >= stadium.getLimit()) {
-            return false; // 已达到上限，不允许添加新的预约记录
+        boolean isReserved = reservationMapper.existsByTimeslotAndReservationDate(slotId, reservationDate);
+        if (isReserved) {
+            return false; // Timeslot already reserved
         }
 
-        // 执行添加预约操作
-        int rowsAffected = reservationMapper.insertReservation(reservationRecord);
+        TimeSlots timeslot = timeSlotMapper.findById(slotId);
+        if (timeslot == null || timeslot.isBooked()) {
+            return false; // Timeslot is already booked or does not exist
+        }
+
+        timeslot.setBooked(true);
+        timeSlotMapper.updateBookingStatus(slotId, true);
+
+        ReservationRecord reservation = new ReservationRecord();
+        reservation.setTimeSlot(timeslot); // 设置 TimeSlot
+        reservation.setUserId(reservationDTO.getUserId());
+        reservation.setBookingDate(reservationDate); // 确保这个方法存在
+
+        int rowsAffected = reservationMapper.insert(reservation);
         return rowsAffected > 0;
     }
 
-
-
     @Override
     public boolean cancelReservation(int reservationId) {
+        ReservationRecord reservation = reservationMapper.findById(reservationId);
+        if (reservation == null) {
+            return false; // Reservation does not exist
+        }
+
+        TimeSlots timeslot = timeSlotMapper.findById(reservation.getTimeSlot().getSlotId());
+        if (timeslot != null) {
+            timeslot.setBooked(false);
+            timeSlotMapper.updateBookingStatus(timeslot.getSlotId(), false);
+        }
+
         int rowsAffected = reservationMapper.deleteReservationById(reservationId);
-        return rowsAffected > 0; // 如果删除操作成功，则返回 true，否则返回 false
+        return rowsAffected > 0;
     }
 
     @Override
@@ -58,14 +78,11 @@ public class ReservationImpl implements ReservationService {
 
     @Override
     public ReservationRecord getReservationById(int reservationId) {
-        return reservationMapper.selectReservationById(reservationId);
+        return reservationMapper.findById(reservationId);
     }
-
 
     @Override
     public List<ReservationRecord> getAll() {
-        List<ReservationRecord> reservationRecords = reservationMapper.getAll();
-
-        return reservationRecords;
+        return reservationMapper.findAll();
     }
 }

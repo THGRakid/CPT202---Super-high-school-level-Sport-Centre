@@ -17,15 +17,12 @@ public class TimeSlotServiceImpl implements TimeSlotService {
     private TimeSlotMapper timeSlotMapper;
 
     @Override
-    public boolean addTimeSlot(TimeSlots timeSlot) {
-        int rowsAffected = timeSlotMapper.insertTimeSlot(timeSlot);
-        return rowsAffected > 0;
-    }
-
-    @Override
     public List<TimeSlots> getTimeSlotsByPlaceId(int placeId) {
         return timeSlotMapper.selectTimeSlotsByPlaceId(placeId);
     }
 
-    // 根据需要添加其他操作时间段的方法
+    @Override
+    public List<TimeSlots> getTimeSlotsByDay(String day) {
+        return timeSlotMapper.selectTimeSlotsByDay(day);
+    }
 }
